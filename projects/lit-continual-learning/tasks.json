@@ -1,0 +1,9 @@
+[
+  {"id": "1", "title": "Define search queries", "owner": "scout", "status": "pending", "priority": "high", "eta": "15min"},
+  {"id": "2", "title": "Paper collection: Continual learning", "owner": "hydro-lit", "status": "pending", "priority": "high", "eta": "1hr"},
+  {"id": "3", "title": "Paper collection: Transfer learning", "owner": "hydro-lit", "status": "pending", "priority": "high", "eta": "1hr"},
+  {"id": "4", "title": "Paper collection: Domain adaptation", "owner": "hydro-lit", "status": "pending", "priority": "medium", "eta": "1hr"},
+  {"id": "5", "title": "Paper collection: Fine-tuning strategies", "owner": "hydro-lit", "status": "pending", "priority": "high", "eta": "1hr"},
+  {"id": "6", "title": "Extract key info + tables", "owner": "hydro-lit", "status": "pending", "priority": "high", "eta": "2hr"},
+  {"id": "7", "title": "Synthesis report", "owner": "scout", "status": "pending", "priority": "high", "eta": "1hr"}
+]

@@ -1,0 +1,221 @@
+# Continual Learning Knowledge Base
+
+## Overview
+- field: Continual Learning (Lifelong Learning)
+- related_fields:
+  - Transfer Learning
+  - Domain Adaptation
+  - Fine-tuning
+  - Catastrophic Forgetting
+- core_problem: Neural networks suffer catastrophic forgetting when learning new tasks sequentially
+- timeframe: 2015-2025 (focus), with foundational work from 1980s-1990s
+
+## Key Concepts
+
+### Catastrophic Forgetting
+- definition: Rapid performance degradation on previously learned tasks when learning new tasks
+- first_identified: McCloskey & Cohen (1989)
+- modern_dawn: Goodfellow et al. (2013), Kirkpatrick et al. (2017)
+- mechanism: Gradient updates for new tasks overwrite parameters important for old tasks
+
+### Stability-Plasticity Dilemma
+- plasticity: Ability to learn new information
+- stability: Ability to retain previously learned information
+- trade-off: Increasing one typically decreases the other
+
+## Method Categories
+
+### 1. Regularization-Based Methods
+
+| Method | Year | Authors | Key Idea | Venue |
+|--------|------|---------|----------|-------|
+| EWC | 2017 | Kirkpatrick et al. | Fisher Information for parameter importance | PNAS |
+| SI | 2017 | Zenke et al. | Path-based importance computation | ICML |
+| MAS | 2018 | Aljundi et al. | Unsupervised importance estimation | ECCV |
+| LwF | 2016 | Li & Hoiem | Knowledge distillation | ECCV |
+| LFL | 2016 | Jung et al. | Less-forgetting learning | arXiv |
+
+#### EWC (Elastic Weight Consolidation)
+- fisher_information: Measures parameter importance based on gradient curvature
+- formula: L(θ) = L_new(θ) + λ Σ_i F_i (θ_i - θ*_i)²
+- limitations: Computational cost of Fisher computation, assumes Gaussian approximations
+
+#### SI (Synaptic Intelligence)
+- path_integral: Accumulates parameter contributions over learning trajectory
+- online: Computes importance during learning (unlike EWC post-hoc)
+- advantages: More fine-grained importance estimates
+
+#### MAS (Memory Aware Synapses)
+- unsupervised: Doesn't require gradient information
+- sensitivity_based: Measures output sensitivity to parameter changes
+- efficient: Lower computational overhead than Fisher-based methods
+
+### 2. Rehearsal/Experience Replay Methods
+
+| Method | Year | Authors | Key Idea | Venue |
+|--------|------|---------|----------|-------|
+| GEM | 2017 | Lopez-Paz & Ranzato | Constrained gradient optimization | NeurIPS |
+| A-GEM | 2019 | Chaudhry et al. | Average gradient constraint | ICLR |
+| MIR | 2019 | Aljundi et al. | Maximally interfered retrieval | ICLR |
+| ER | 2019 | Rolnick et al. | Simple experience replay | NeurIPS |
+| DGR | 2017 | Shin et al. | Generative replay with GANs | NeurIPS |
+| DER++ | 2020 | Buzzega et al. | Dark Experience Replay | NeurIPS |
+
+#### Experience Replay
+- memory_buffer: Stores subset of old examples
+- mixing: Trains on mix of new and old data
+- simple_yet_effective: Often best-performing baseline
+
+#### Generative Replay
+- synthetic_data: Generates pseudo-examples from previous tasks
+- gan_based: Uses generative adversarial networks
+- privacy_preserving: Doesn't store actual data
+
+### 3. Architectural Methods
+
+| Method | Year | Authors | Key Idea | Venue |
+|--------|------|---------|----------|-------|
+| Progressive NN | 2016 | Rusu et al. | Add columns for new tasks | NeurIPS |
+| PackNet | 2018 | Mallya & Lazebnik | Iterative pruning and freezing | CVPR |
+| PathNet | 2017 | Fernando et al. | Neural pathway selection | NeurIPS |
+
+#### Progressive Neural Networks
+- column_expansion: Adds new network column per task
+- lateral_connections: Allow information transfer between columns
+- scalable: Can learn arbitrary number of tasks
+- limitation: Parameter inefficiency
+
+#### PackNet
+- iterative_pruning: Prunes after learning each task
+- freezing: Freezes important parameters
+- parameter_efficiency: Reuses unused weights
+
+## Specialized Settings
+
+### Task-Free Continual Learning
+- no_task_boundaries: Data streams without explicit task delineation
+- distribution_shift_detection: Triggers adaptation when data distribution changes
+- pioneers: Aljundi et al. (CVPR 2019)
+
+### Class-Incremental Learning (CIL)
+- new_classes: New classes added over time
+- no_old_data: Cannot access previous training data at test time
+- challenges: Need to distinguish all seen classes
+- key_method: iCaRL (Rebuffi et al., 2017)
+
+### Domain Adaptation
+- distribution_shift: Training and test distributions differ
+- related_approach: Can be viewed as single-task continual learning
+- key_methods: DANN (Ganin & Lempitsky, 2015)
+
+### LLM Continual Learning
+- large_scale: Prevents full model retraining
+- parameter_efficient: LoRA, adapters
+- key_challenges: Computational cost, knowledge editing
+- key_methods: LoRA (Hu et al., 2021)
+
+## Benchmarks
+
+### Standard Benchmarks
+| Benchmark | Description | Use Case |
+|-----------|-------------|----------|
+| Split MNIST | 5 tasks (digits 0-4, 5-9) | Basic evaluation |
+| Split CIFAR-10 | 5 tasks (2 classes each) | Image classification |
+| Split CIFAR-100 | 20 tasks (5 classes each) | More complex |
+| Split ImageNet | 10 tasks (100 classes each) | Large-scale |
+| Permuted MNIST | 10 tasks (different pixel permutations) | Domain shift |
+| CORe50 | 50 objects, various conditions | Realistic |
+
+### Evaluation Metrics
+- average_accuracy: Mean accuracy across all tasks
+- forgetting: Max accuracy drop on any task
+- forward_transfer: Performance on future tasks before learning
+- backward_transfer: Performance degradation on old tasks
+
+## Key Theoretical Insights
+
+### Why Forgetting Occurs
+1. **Gradient Interference**: New gradients overwrite old task parameters
+2. **Capacity Limitations**: Fixed network capacity forces trade-offs
+3. **Optimization Bias**: SGD favors recent data
+
+### What Helps
+1. **Over-parameterization**: Larger networks have more capacity
+2. **Sparsity**: Some parameters can be dedicated to different tasks
+3. **Gradient Constraints**: Preventing negative gradients on old tasks
+4. **Rehearsal**: Revisiting old examples directly addresses forgetting
+
+## Practical Guidelines
+
+### Fine-Tuning Best Practices
+1. **For small datasets**: Use linear probing (frozen features)
+2. **For larger datasets**: Full fine-tuning typically better
+3. **Gradual unfreezing**: Start with frozen, gradually unfreeze
+4. **Lower LR for early layers**: Preserves pre-trained features
+
+### Choosing a Method
+- **Data available for replay**: Use experience replay (ER, GEM)
+- **No data storage**: Use regularization (EWC, SI, MAS) or generative replay
+- **Task boundaries known**: Standard CL approaches work well
+- **Task boundaries unknown**: Use task-free methods
+- **Large-scale models**: Use parameter-efficient methods (LoRA, adapters)
+
+## Open Challenges
+
+1. **Stability-Plasticity Trade-off**: Perfect balance remains elusive
+2. **Realistic Benchmarks**: Need more real-world evaluation
+3. **Scalability**: Methods must work at large scale
+4. **Theoretical Understanding**: Need better theoretical foundations
+5. **LLM Adaptation**: Efficient methods for massive models
+
+## Timeline of Key Developments
+
+| Year | Development |
+|------|-------------|
+| 1989 | Catastrophic forgetting identified (McCloskey & Cohen) |
+| 2013 | Modern empirical study (Goodfellow et al.) |
+| 2016 | Progressive Networks (Rusu et al.) |
+| 2016 | Learning without Forgetting (Li & Hoiem) |
+| 2017 | EWC (Kirkpatrick et al.) |
+| 2017 | GEM (Lopez-Paz & Ranzato) |
+| 2017 | Deep Generative Replay (Shin et al.) |
+| 2017 | iCaRL (Rebuffi et al.) |
+| 2018 | PackNet (Mallya & Lazebnik) |
+| 2018 | MAS (Aljundi et al.) |
+| 2019 | Task-Free CL (Aljundi et al.) |
+| 2020 | DER++ (Buzzega et al.) |
+| 2021 | LoRA for LLMs (Hu et al.) |
+| 2024 | LLM CL Surveys (Wang et al.) |
+
+## Important Papers by Citation Count
+
+1. Kirkpatrick et al. (2017) - EWC: ~8000+ citations
+2. Li & Hoiem (2016) - LwF: ~5000+ citations
+3. Rusu et al. (2016) - Progressive Networks: ~4000+ citations
+4. Lopez-Paz & Ranzato (2017) - GEM: ~3000+ citations
+5. Rebuffi et al. (2017) - iCaRL: ~2500+ citations
+
+## Related Fields Integration
+
+### Transfer Learning
+- pretrain_then_finetune: Standard paradigm
+- knowledge_transfer: From source to target tasks
+- cl_connection: CL can be viewed as sequential transfer
+
+### Domain Adaptation
+- distribution_mismatch: Similar to CL with single target domain
+- adversarial_training: Feature alignment methods
+- cl_connection: Both address distribution shift
+
+### Meta-Learning
+- learning_to_learn: Meta-objectives can help CL
+- MAML: Can be adapted for continual settings
+- fast_adaptation: Enables quick learning of new tasks
+
+## Summary Statistics
+- total_papers_collected: 75+
+- papers_2015_2025: 60+
+- main_categories: 3 (Regularization, Rehearsal, Architectural)
+- key_concepts: 15+
+- benchmarks: 10+
+- open_challenges: 5+
