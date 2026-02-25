@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "title": "Define search queries for drift detection + recalibration",
+    "owner": "scout",
+    "status": "completed",
+    "priority": "high",
+    "eta": "15min",
+    "evidence": "search-queries.md created"
+  },
+  {
+    "id": "2",
+    "title": "Paper collection: Concept drift detection (ML)",
+    "owner": "hydro-lit",
+    "status": "completed",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "paper list with metadata"
+  },
+  {
+    "id": "3",
+    "title": "Paper collection: Model monitoring in scientific ML",
+    "owner": "hydro-lit",
+    "status": "completed",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "paper list with metadata"
+  },
+  {
+    "id": "4",
+    "title": "Paper collection: Active learning / continual learning",
+    "owner": "hydro-lit",
+    "status": "completed",
+    "priority": "medium",
+    "eta": "1hr",
+    "evidence": "paper list with metadata"
+  },
+  {
+    "id": "5",
+    "title": "Extract key info (methods, metrics, triggers)",
+    "owner": "hydro-lit",
+    "status": "completed",
+    "priority": "high",
+    "eta": "2hr",
+    "evidence": "extraction tables completed"
+  },
+  {
+    "id": "6",
+    "title": "Synthesis report + knowledge file",
+    "owner": "scout",
+    "status": "completed",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "synthesis.md + knowledge.yaml"
+  }
+]
