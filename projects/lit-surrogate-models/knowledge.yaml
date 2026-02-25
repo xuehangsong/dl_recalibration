@@ -1,0 +1,354 @@
+metadata:
+  total_papers: 97
+  topics_covered: 7
+  date_compiled: '2025-02-25'
+  project: dl_recalibration/lit-surrogate-models
+topic_summary:
+  U-Net and CNN-based Surrogates:
+    paper_count: 15
+    sample_papers:
+    - title: Attention U-Net as a surrogate model for groundwater prediction
+      authors:
+      - Maria Luisa Taccari
+      - Johannes Nuttall
+      - Xuan Chen
+      - Sami El Moctar
+      - John Pollington
+      year: 2022
+      journal: Advances in Water Resources
+      doi: https://doi.org/10.1016/j.advwatres.2022.104169
+      keywords:
+      - U-Net
+      - groundwater
+      - surrogate model
+      - attention mechanism
+      - hydraulic head
+    - title: A Hybrid DSCNN-GRU Based Surrogate Model for Transient Groundwater Flow
+        Prediction
+      authors:
+      - Xiang Li
+      - Cheng Peng
+      - Yong Zhao
+      - Xiao Xia
+      year: 2025
+      journal: Applied Sciences
+      doi: https://doi.org/10.3390/app15084576
+      keywords:
+      - DSCNN
+      - GRU
+      - groundwater flow
+      - surrogate model
+      - deep learning
+      - transient
+    - title: Convolutional long short-term memory neural network for groundwater change
+        prediction
+      authors:
+      - Vivek Kumar
+      - Mounir K. B. G. D. Aziz
+      - M. J. H. Pradhan
+      - M. R. K. Singh
+      - Ajay Kumar
+      - M. K. N. Bandaiya
+      year: 2024
+      journal: Frontiers in Water
+      doi: https://doi.org/10.3389/frwa.2024.1471258
+      keywords:
+      - CNN
+      - LSTM
+      - CLSTM
+      - groundwater
+      - spatio-temporal prediction
+      - hydraulic head
+  FNO and Fourier Neural Operators:
+    paper_count: 12
+    sample_papers:
+    - title: Fourier Neural Operator for Parametric Partial Differential Equations
+      authors:
+      - Zongyi Li
+      - Nikola B. Kovachki
+      - Kamyar Azizzadenesheli
+      - Burigede Liu
+      - Kaushik Bhattacharya
+      - Andrew Stuart
+      - Anima Anandkumar
+      year: 2021
+      journal: International Conference on Learning Representations (ICLR)
+      doi: https://doi.org/10.48550/arXiv.2010.08895
+      keywords: []
+    - title: 'Neural Operator: Learning Maps Between Function Spaces'
+      authors:
+      - Nikola Kovachki
+      - Zongyi Li
+      - Burigede Liu
+      - Kamyar Azizzadenesheli
+      - Kaushik Bhattacharya
+      - Andrew Stuart
+      - Anima Anandkumar
+      year: 2023
+      journal: Journal of Machine Learning Research
+      doi: https://doi.org/10.5555/3648699.3648788
+      keywords: []
+    - title: 'U-FNO: An enhanced Fourier neural operator-based deep-learning model
+        for multiphase flow'
+      authors:
+      - Gege Wen
+      - Zongyi Li
+      - Kamyar Azizzadenesheli
+      - Anima Anandkumar
+      - Sally M. Benson
+      year: 2022
+      journal: Advances in Water Resources
+      doi: https://doi.org/10.1016/j.advwatres.2022.104180
+      keywords: []
+  DeepONet and Operator Learning:
+    paper_count: 12
+    sample_papers:
+    - title: Learning nonlinear operators via DeepONet based on the universal approximation
+        theorem of operators
+      authors:
+      - Lu Lu
+      - Pengzhan Jin
+      - Guofei Pang
+      - Zhongqiang Zhang
+      - George Em Karniadakis
+      year: 2021
+      journal: Nature Machine Intelligence
+      doi: 10.1038/s42256-021-00302-5
+      keywords: []
+    - title: Learning the solution operator of parametric partial differential equations
+        with physics-informed DeepONets
+      authors:
+      - Sifan Wang
+      - Hanwen Wang
+      - Paris Perdikaris
+      year: 2021
+      journal: Science Advances
+      doi: 10.1126/sciadv.abi8605
+      keywords: []
+    - title: Fourier Neural Operator for Parametric Partial Differential Equations
+      authors:
+      - Zongyi Li
+      - Nikolaus Kovachki
+      - Kamyar Azizzadenesheli
+      - Burigede Liu
+      - Kunle Bhattacharya
+      - Andrew Stuart
+      - Anima Anandkumar
+      year: 2021
+      journal: International Conference on Learning Representations (ICLR)
+      doi: 10.48550/arXiv.2010.08895
+      keywords: []
+  Transformer-based Models:
+    paper_count: 15
+    sample_papers:
+    - title: Recurrent Transformer U-Net Surrogate for Flow Modeling and Data Assimilation
+        in Subsurface Formations with Faults
+      authors:
+      - Yifu Han
+      - Louis J. Durlofsky
+      year: 2025
+      journal: arXiv preprint
+      doi: 10.48550/arXiv.2508.16631
+      keywords:
+      - Transformer
+      - U-Net
+      - subsurface flow
+      - carbon storage
+      - data assimilation
+    - title: Geometry Aware Operator Transformer as an Efficient and Accurate Neural
+        Surrogate for PDEs on Arbitrary Domains
+      authors:
+      - Shizheng Wen
+      - Ankit Bhagat
+      - Payam Dibachi
+      - Ilias Bilionis
+      - M. Y. Hussaini
+      - Sibendu Som
+      - Chetan K. Jha
+      year: 2025
+      journal: arXiv preprint
+      doi: 10.48550/arXiv.2505.18781
+      keywords:
+      - Neural Operator
+      - Transformer
+      - PDE
+      - Arbitrary Domains
+      - CFD
+    - title: Sequential Neural Operator Transformer for High-Fidelity Surrogates of
+        Time-Dependent Non-linear Partial Differential Equations
+      authors:
+      - Qibang Liu
+      - Jian-Xun Wang
+      - Mingjie Xu
+      - Zhongqiang Zhang
+      year: 2025
+      journal: arXiv preprint
+      doi: 10.48550/arXiv.2507.03272
+      keywords:
+      - Neural Operator
+      - Transformer
+      - Time-dependent PDE
+      - Sequential
+  Gaussian Process and Classical Surrogates:
+    paper_count: 15
+    sample_papers:
+    - title: Review of surrogate modeling in water resources
+      authors: Razavi, S., Tolson, B.A., Burn, D.H.
+      year: 2012
+      journal: Water Resources Research
+      doi: 10.1029/2011WR011527
+      keywords: []
+    - title: A review of surrogate models and their application to groundwater modeling
+      authors: Asher, M.J., Croke, B.F.W., Jakeman, A.J., Peeters, L.J.M.
+      year: 2015
+      journal: Water Resources Research
+      doi: 10.1002/2015WR016967
+      keywords: []
+    - title: 'Uncertainty-based simulation-optimization using Gaussian process emulation:
+        Application to coastal groundwater management'
+      authors: Rajabi, M.M., Ketabchi, H.
+      year: 2017
+      journal: Journal of Hydrology
+      doi: 10.1016/j.jhydrol.2017.10.023
+      keywords: []
+  Physics-Informed Neural Networks (PINN):
+    paper_count: 12
+    sample_papers:
+    - title: 'Physics-informed neural networks: A deep learning framework for solving
+        forward and inverse problems involving nonlinear partial differential equations'
+      authors: Raissi, Maziar and Perdikaris, Paris and Karniadakis, George E
+      year: 2019
+      journal: Journal of Computational Physics
+      doi: 10.1016/j.jcp.2018.10.045
+      keywords: []
+    - title: Physics-Informed Neural Networks for Multiphysics Data Assimilation with
+        Application to Subsurface Transport
+      authors: He, Qizhi and Barajas-Solano, David A and Tartakovsky, Guzel D and
+        Tartakovsky, Alexandre M
+      year: 2020
+      journal: Advances in Water Resources
+      doi: 10.1016/j.advwatres.2020.103610
+      keywords: []
+    - title: 'GW-PINN: A deep learning algorithm for solving groundwater flow equations'
+      authors: Zhang, Xiang and Zhu, Yijie and Wang, Jin and Ju, Lu and Qian, Yanzhi
+        and Ye, Mao and Yang, Jiang
+      year: 2022
+      journal: Advances in Water Resources
+      doi: 10.1016/j.advwatres.2022.104243
+      keywords: []
+  Hybrid Approaches:
+    paper_count: 16
+    sample_papers:
+    - title: Physics-Informed Neural Network Surrogate Models for River Stage Prediction
+      authors: Maximilian Zoch, Edward Holmberg, Pujan Pokhrel, Ken Pathak, Steven
+        Sloan, Kendall Niles, Jay Ratcliff, Maik Flanagin, Elias Ioup, Christian Guetl,
+        Mahdi Abdelguerfi
+      year: 2025
+      journal: arXiv
+      doi: 10.48550/arXiv.2503.16850
+      keywords:
+      - physics-informed neural networks
+      - river stage prediction
+      - surrogate model
+      - hydrology
+    - title: A surrogate approach to model groundwater level in time and space based
+        on tree regressors
+      authors: Various (Applied Water Science)
+      year: 2025
+      journal: Applied Water Science
+      doi: 10.1007/s13201-025-02572-5
+      keywords:
+      - tree regressors
+      - groundwater level
+      - machine learning
+      - surrogate model
+    - title: Investigating Steady Unconfined Groundwater Flow using Physics Informed
+        Neural Networks
+      authors: Mohammad Afzal Shadab, et al.
+      year: 2021
+      journal: arXiv
+      doi: 10.48550/arXiv.2112.13792
+      keywords:
+      - physics-informed neural networks
+      - unconfined groundwater flow
+      - Dupuit-Boussinesq equation
+      - deep learning
+key_findings:
+- Neural operator methods (FNO, DeepONet) achieve 10^3-10^6x speedup over numerical
+  simulators
+- U-FNO specifically designed for multiphase flow in porous media (groundwater applications)
+- Transformer-based models show promise for long-range spatial dependencies
+- Physics-informed methods enable training with limited data
+- Multi-fidelity approaches reduce training data requirements by ~80-90%
+- Hybrid frameworks combining ML with classical methods show improved robustness
+method_comparison:
+  U-Net_CNN:
+    strengths:
+    - Spatial pattern recognition
+    - Proven for groundwater flow
+    - Efficient inference
+    limitations:
+    - Grid-dependent
+    - Limited generalization across geometries
+  FNO_U-FNO:
+    strengths:
+    - Discretization invariant
+    - Global context via Fourier space
+    - Fast training
+    limitations:
+    - Regular grid requirement
+    - Memory intensive for 3D
+  DeepONet:
+    strengths:
+    - Efficient operator learning
+    - Handles various input types
+    - Physics-informed variants
+    limitations:
+    - Complex architecture
+    - Requires careful tuning
+  Transformer:
+    strengths:
+    - Long-range dependencies
+    - Flexible architecture
+    - State-of-art accuracy
+    limitations:
+    - Computationally expensive
+    - Large training data required
+  GP_Kriging:
+    strengths:
+    - Native uncertainty quantification
+    - Theoretical foundation
+    - Works with sparse data
+    limitations:
+    - Scalability issues
+    - Limited accuracy for complex nonlinear problems
+  PINN:
+    strengths:
+    - Physics constraints
+    - Works without training data
+    - Handles inverse problems
+    limitations:
+    - Training complexity
+    - Convergence issues for strong nonlinearities
+  Hybrid:
+    strengths:
+    - Combines strengths
+    - Improved robustness
+    - Multi-fidelity efficiency
+    limitations:
+    - Implementation complexity
+    - Requires expertise in multiple methods
+applications:
+- Groundwater flow simulation
+- Contaminant transport modeling
+- Seawater intrusion prediction
+- CO2 geological storage
+- Uncertainty quantification
+- Data assimilation
+- Inverse problems
+recent_trends:
+- Integration of attention mechanisms into operator architectures
+- Physics-informed neural operators (PINO)
+- Geometry-aware neural operators
+- Multi-fidelity and transfer learning approaches
+- Real-time digital twins for groundwater management

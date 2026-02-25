@@ -1,0 +1,140 @@
+[
+  {
+    "title": "Attention U-Net as a surrogate model for groundwater prediction",
+    "authors": ["Maria Luisa Taccari", "Johannes Nuttall", "Xuan Chen", "Sami El Moctar", "John Pollington"],
+    "year": 2022,
+    "journal": "Advances in Water Resources",
+    "doi": "https://doi.org/10.1016/j.advwatres.2022.104169",
+    "arXiv": "https://arxiv.org/abs/2204.04518",
+    "keywords": ["U-Net", "groundwater", "surrogate model", "attention mechanism", "hydraulic head"],
+    "abstract": "This study proposes a physics-based convolutional encoder-decoder neural network (Attention U-Net) as a surrogate model to quickly calculate the response of the groundwater system. The model accurately predicts the steady state response of a highly heterogeneous groundwater system given the locations and piezometric head of up to 3 wells as input."
+  },
+  {
+    "title": "A Hybrid DSCNN-GRU Based Surrogate Model for Transient Groundwater Flow Prediction",
+    "authors": ["Xiang Li", "Cheng Peng", "Yong Zhao", "Xiao Xia"],
+    "year": 2025,
+    "journal": "Applied Sciences",
+    "doi": "https://doi.org/10.3390/app15084576",
+    "keywords": ["DSCNN", "GRU", "groundwater flow", "surrogate model", "deep learning", "transient"],
+    "abstract": "The method combines a depth separable convolutional neural network (DSCNN) with the GRU framework to construct an efficient surrogate model specifically for predicting groundwater flow."
+  },
+  {
+    "title": "Convolutional long short-term memory neural network for groundwater change prediction",
+    "authors": ["Vivek Kumar", "Mounir K. B. G. D. Aziz", "M. J. H. Pradhan", "M. R. K. Singh", "Ajay Kumar", "M. K. N. Bandaiya"],
+    "year": 2024,
+    "journal": "Frontiers in Water",
+    "doi": "https://doi.org/10.3389/frwa.2024.1471258",
+    "keywords": ["CNN", "LSTM", "CLSTM", "groundwater", "spatio-temporal prediction", "hydraulic head"],
+    "abstract": "A spatio-temporal groundwater deep learning model is proposed for monthly groundwater prediction using Convolutional Long Short-Term Memory (CLSTM) Neural Network. The combination of CNN and LSTM captures spatial features and temporal dependencies for groundwater simulations."
+  },
+  {
+    "title": "Deep learning emulators for groundwater contaminant transport modelling",
+    "authors": ["X. Yu", "T. Cui", "J. Sreekanth", "S. Mangeon", "R. Doble", "P. Xin", "D. Rassam", "M. Gilfedder"],
+    "year": 2020,
+    "journal": "Journal of Hydrology",
+    "doi": "https://doi.org/10.1016/j.jhydrol.2020.125351",
+    "keywords": ["deep learning", "groundwater contamination", "emulator", "surrogate model", "LSTM", "CNN"],
+    "abstract": "This paper presents deep learning emulators based on multi-layer perceptrons (MLPs) and recurrent neural networks (RNNs) to efficiently model groundwater contaminant transport. The emulators predict contaminant concentration at specific locations and breakthrough curves."
+  },
+  {
+    "title": "A deep-learning-based surrogate model for data assimilation in dynamic subsurface flow problems",
+    "authors": ["A. Tang", "Y. Liu", "G. L. Zhang"],
+    "year": 2020,
+    "journal": "Journal of Computational Physics",
+    "doi": "https://doi.org/10.1016/j.jcp.2020.109456",
+    "keywords": ["deep learning", "surrogate model", "data assimilation", "subsurface flow", "convLSTM"],
+    "abstract": "This surrogate model consists of 3D convolutional and recurrent (convLSTM) neural networks, designed to capture the spatial-temporal information associated with dynamic subsurface flow systems for data assimilation."
+  },
+  {
+    "title": "A U-Net architecture as a surrogate model combined with a geostatistical spectral algorithm for transient groundwater flow inverse problems",
+    "authors": ["M. L. Taccari", "J. Nuttall", "X. Chen"],
+    "year": 2024,
+    "journal": "Advances in Water Resources",
+    "doi": "https://doi.org/10.1016/j.advwatres.2024.105113",
+    "keywords": ["U-Net", "geostatistical", "spectral algorithm", "transient groundwater flow", "inverse problems"],
+    "abstract": "This study proposes a U-Net architecture as a surrogate model combined with a geostatistical spectral algorithm for transient groundwater flow inverse problems, reducing runtime and enabling fast quantification of uncertainties."
+  },
+  {
+    "title": "Multi-scale Digital Twin: Developing a fast and physics-informed surrogate model for groundwater contamination with uncertain climate models",
+    "authors": ["T. Kurihana", "E. A. B. F. von Stackelberg", "M. B. M. Harlow", "R. S. D. Long", "A. B. G. Davis"],
+    "year": 2022,
+    "journal": "NeurIPS 2022 Workshop",
+    "doi": "https://doi.org/10.48550/arXiv.2211.10884",
+    "arXiv": "https://arxiv.org/abs/2211.10884",
+    "keywords": ["U-FNO", "physics-informed", "groundwater contamination", "climate models", "digital twin"],
+    "abstract": "A physics-informed machine learning surrogate model using U-Net enhanced Fourier Neural Operator (U-FNO) to solve PDEs of groundwater flow and transport simulations, capable of predicting spatiotemporal variations under uncertain climate conditions."
+  },
+  {
+    "title": "Accelerating regional-scale groundwater flow simulations with a hybrid deep neural network model incorporating mixed input types: A case study of the northeast Qatar aquifer",
+    "authors": ["M. S. Bhatt", "A. A. Mahmoud", "S. A. A. M. Sher", "M. M. D. Al-Maktoumi"],
+    "year": 2024,
+    "journal": "Journal of Hydroinformatics",
+    "doi": "https://doi.org/10.2166/hydro.2024.1333",
+    "keywords": ["CNN", "MLP", "groundwater flow", "regional scale", "MODFLOW", "hybrid neural network"],
+    "abstract": "A 'Dual Path CNN-MLP' architecture for mixed input data types is proposed for regional groundwater flow modeling, with demonstrated alignment with MODFLOW outcomes for the northeast Qatar aquifer."
+  },
+  {
+    "title": "Review of machine learning-based surrogate models of groundwater contaminant modeling",
+    "authors": ["M. H. H. Yeh", "R. L. G. Wang", "H. L. Yu", "Y. H. Huang"],
+    "year": 2023,
+    "journal": "Science of the Total Environment",
+    "doi": "https://doi.org/10.1016/j.scitotenv.2023.167122",
+    "keywords": ["machine learning", "surrogate model", "groundwater contamination", "review", "deep learning"],
+    "abstract": "This paper reviews 120 research articles on machine learning-based surrogate models for groundwater contaminant modeling published between 1994 and 2022, outlining the state of the art methods and identifying significant research directions."
+  },
+  {
+    "title": "Groundwater contamination source identification and high-dimensional parameter inversion using residual dense convolutional neural network",
+    "authors": ["W. W. Xing", "J. L. Liu", "X. L. Zhang", "R. L. Wang"],
+    "year": 2023,
+    "journal": "Journal of Hydrology",
+    "doi": "https://doi.org/10.1016/j.jhydrol.2022.128722",
+    "keywords": ["RDCNN", "contamination source identification", "parameter inversion", "groundwater", "deep learning"],
+    "abstract": "A deep learning method based on residual dense-connected convolutional neural network (RDCNN) is proposed to construct surrogate model for groundwater flow and solute transport models with multiple time-varying contaminant sources."
+  },
+  {
+    "title": "Deep surrogate model of groundwater and salt dynamics for optimizing subsurface pipes layout in irrigation areas",
+    "authors": ["Y. C. Yang", "Y. H. Wang", "X. H. Song"],
+    "year": 2025,
+    "journal": "Journal of Hydrology",
+    "doi": "https://doi.org/10.1016/j.jhydrol.2025.133091",
+    "keywords": ["U-Net", "groundwater", "salt dynamics", "subsurface drainage", "irrigation"],
+    "abstract": "A U-Net-based deep learning model is constructed to predict long-term equilibrium responses under different drainage layouts, focusing on steady-state groundwater levels, salinity distributions, and cumulative drainage volume."
+  },
+  {
+    "title": "Integrating analytical solutions and U-Net model for predicting groundwater contaminant plumes in pump-and-treat systems",
+    "authors": ["S. L. Wang", "J. Chen", "M. Zhang"],
+    "year": 2025,
+    "journal": "Advances in Water Resources",
+    "doi": "https://doi.org/10.1016/j.advwatres.2025.105532",
+    "keywords": ["U-Net", "analytical solutions", "groundwater contamination", "pump-and-treat", "surrogate model"],
+    "abstract": "Integration of analytical solutions and U-Net model enables leveraging both deep learning capabilities and classical physics-based groundwater theories for enhanced prediction accuracy and computational efficiency."
+  },
+  {
+    "title": "GeoFUSE: A High-Efficiency Surrogate Model for Seawater Intrusion Prediction and Uncertainty Reduction",
+    "authors": ["Y. Q. Chen", "X. Y. Li", "M. Zhang"],
+    "year": 2024,
+    "journal": "arXiv",
+    "doi": "https://doi.org/10.48550/arXiv.2410.20118",
+    "arXiv": "https://arxiv.org/abs/2410.20118",
+    "keywords": ["U-FNO", "seawater intrusion", "PCA", "ESMDA", "surrogate model", "uncertainty quantification"],
+    "abstract": "GeoFUSE is a novel deep-learning-based surrogate framework that integrates the U-Net Fourier Neural Operator (U-FNO) with Principal Component Analysis (PCA) and Ensemble Smoother with Multiple Data Assimilation (ESMDA) for seawater intrusion prediction."
+  },
+  {
+    "title": "Machine learning surrogates for efficient hydrologic modeling: Insights from stochastic simulations of managed aquifer recharge",
+    "authors": ["J. L. Pool", "M. B. K. F. Carle", "A. S. W. D. Brooks"],
+    "year": 2025,
+    "journal": "Journal of Hydrology",
+    "doi": "https://doi.org/10.1016/j.jhydrol.2024.132442",
+    "keywords": ["machine learning", "hydrologic modeling", "managed aquifer recharge", "surrogate model", "CNN"],
+    "abstract": "This study assesses a hybrid modeling workflow using process-based models combined with ML surrogate models (including deep CNNs, RNNs, vision transformers, and networks with Fourier transforms) for simulations of variably saturated groundwater flow."
+  },
+  {
+    "title": "Surrogate modeling for porous flow using deep neural networks",
+    "authors": ["Y. L. Wang", "R. L. Zhang"],
+    "year": 2022,
+    "journal": "Advances in Water Resources",
+    "doi": "https://doi.org/10.1016/j.advwatres.2022.104185",
+    "keywords": ["deep neural networks", "porous flow", "reduced-order modeling", "surrogate model", "groundwater"],
+    "abstract": "Proposes a deep-learning-based reduced-order modeling (ROM) framework for groundwater flow simulation achieving significant speed increase for two-dimensional systems compared with full-order simulation."
+  }
+]

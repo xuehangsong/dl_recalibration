@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Review of surrogate modeling in water resources",
+    "authors": "Razavi, S., Tolson, B.A., Burn, D.H.",
+    "year": 2012,
+    "journal": "Water Resources Research",
+    "doi": "10.1029/2011WR011527",
+    "citations": "Highly cited (1000+)",
+    "topic": "surrogate models - review"
+  },
+  {
+    "title": "A review of surrogate models and their application to groundwater modeling",
+    "authors": "Asher, M.J., Croke, B.F.W., Jakeman, A.J., Peeters, L.J.M.",
+    "year": 2015,
+    "journal": "Water Resources Research",
+    "doi": "10.1002/2015WR016967",
+    "citations": "Highly cited (800+)",
+    "topic": "surrogate models - groundwater"
+  },
+  {
+    "title": "Uncertainty-based simulation-optimization using Gaussian process emulation: Application to coastal groundwater management",
+    "authors": "Rajabi, M.M., Ketabchi, H.",
+    "year": 2017,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2017.10.023",
+    "citations": "High citation",
+    "topic": "Gaussian Process surrogate"
+  },
+  {
+    "title": "Review of machine learning-based surrogate models of groundwater contaminant modeling",
+    "authors": "Luo, J., Ma, X., Ji, Y., Li, X., Song, Z., Lu, W.",
+    "year": 2023,
+    "journal": "Environmental Research",
+    "doi": "10.1016/j.envres.2023.117268",
+    "citations": "Recent high impact",
+    "topic": "ML surrogate - groundwater"
+  },
+  {
+    "title": "A Kriging surrogate model coupled in simulation-optimization approach for identifying release history of groundwater sources",
+    "authors": "Yoon, S., Woo, J., Ryu, J., Lee, J., Kim, S.",
+    "year": 2016,
+    "journal": "Journal of Contaminant Hydrology",
+    "doi": "10.1016/j.jconhyd.2016.01.004",
+    "citations": "Well cited",
+    "topic": "kriging surrogate"
+  },
+  {
+    "title": "Using sparse polynomial chaos expansions for the global sensitivity analysis of groundwater lifetime expectancy in a multi-layered hydrogeological model",
+    "authors": "Deman, G., Konakli, K., Sudret, B., Kerrou, J., Perrochet, P., Benabderrahmane, H.",
+    "year": 2016,
+    "journal": "Reliability Engineering & System Safety",
+    "doi": "10.1016/j.ress.2015.11.005",
+    "citations": "Well cited",
+    "topic": "polynomial chaos expansion"
+  },
+  {
+    "title": "Polynomial chaos expansions for uncertainty propagation and moment independent sensitivity analysis of seawater intrusion simulations",
+    "authors": "Kourakos, G., Mantoglou, A.",
+    "year": 2014,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2014.11.020",
+    "citations": "Well cited",
+    "topic": "polynomial chaos expansion"
+  },
+  {
+    "title": "Emulator-enabled approximate Bayesian computation (ABC) and uncertainty analysis for computationally expensive groundwater models",
+    "authors": "Khalil, A., Al-Mullaq, A.A., Elshorbagy, A.",
+    "year": 2018,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2018.07.003",
+    "citations": "Well cited",
+    "topic": "Gaussian Process surrogate"
+  },
+  {
+    "title": "Gaussian process emulators for quantifying uncertainty in CO2 spreading predictions in heterogeneous media",
+    "authors": "Tidrir, M.D., Elsheikh, A.H., Rezaei, N., Seibi, A.C.",
+    "year": 2017,
+    "journal": "Computers & Geosciences",
+    "doi": "10.1016/j.cageo.2017.01.005",
+    "citations": "Well cited",
+    "topic": "Gaussian Process surrogate"
+  },
+  {
+    "title": "Optimal groundwater management using state-space surrogate models: A case study for an arid coastal region",
+    "authors": "Sreekanth, J., Datta, B.",
+    "year": 2016,
+    "journal": "Journal of Hydroinformatics",
+    "doi": "10.2166/hydro.2016.224",
+    "citations": "Well cited",
+    "topic": "surrogate models - groundwater"
+  },
+  {
+    "title": "A surrogate approach to model groundwater level in time and space based on tree regressors",
+    "authors": "Zhang, Y., Li, M., Wang, L., Yang, J.",
+    "year": 2025,
+    "journal": "Applied Water Science",
+    "doi": "10.1007/s13201-025-02572-5",
+    "citations": "Recent",
+    "topic": "surrogate models - ML"
+  },
+  {
+    "title": "Development of a surrogate method of groundwater modeling using gated recurrent unit to improve the efficiency of parameter auto-calibration and global sensitivity analysis",
+    "authors": "Song, J., Yang, Y., Wu, J., Li, Z., Cheng, J.",
+    "year": 2020,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2020.125600",
+    "citations": "Well cited",
+    "topic": "deep learning surrogate"
+  },
+  {
+    "title": "Surrogate models for simulation-optimization of groundwater management in coastal aquifers under climate change",
+    "authors": "Kourgholamin, R., Datta, B.",
+    "year": 2020,
+    "journal": "Water Resources Management",
+    "doi": "10.1007/s11269-020-02633-1",
+    "citations": "Well cited",
+    "topic": "surrogate models - coastal"
+  },
+  {
+    "title": "Machine learning for surrogate groundwater modelling of a small carbonate island",
+    "authors": "Payne, K., Chami, P., Odle, I., Yawson, D.O., Paul, J., Maharaj-Jagdip, A., Cashman, A.",
+    "year": 2023,
+    "journal": "Hydrology",
+    "doi": "10.3390/hydrology10010002",
+    "citations": "Recent",
+    "topic": "ML surrogate - island"
+  },
+  {
+    "title": "Gaussian Process Regression Tuned by Bayesian Optimization for Seawater Intrusion Prediction",
+    "authors": "Zhou, X., Lin, Q., Chai, J., Wang, L., Liu, J.",
+    "year": 2019,
+    "journal": "Water",
+    "doi": "10.3390/w11020191",
+    "citations": "Well cited",
+    "topic": "Gaussian Process surrogate"
+  }
+]

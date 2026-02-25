@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators",
+    "authors": ["Lu Lu", "Pengzhan Jin", "Guofei Pang", "Zhongqiang Zhang", "George Em Karniadakis"],
+    "year": 2021,
+    "journal": "Nature Machine Intelligence",
+    "doi": "10.1038/s42256-021-00302-5",
+    "abstract": "While it is widely known that neural networks are universal approximators of continuous functions, a less known and more powerful result is that a neural network with a single hidden layer can approximate accurately any nonlinear continuous operator. This universal approximation theorem for operators suggests that a simple shallow neural network can learn any mapping between function spaces. Based on this theorem, we propose a deep operator network (DeepONet) to learn nonlinear operators induced by parametric partial differential equations (PDEs). The backbone of DeepONet is a novel neural network architecture consisting of a branch net and a trunk net, which respectively encode the input function and the output locations. We verify DeepONet on a range of operator learning problems, from solving PDEs (e.g., Poisson equation) to fluid mechanics (e.g., Navier-Stokes equation). We demonstrate that DeepONet requires far fewer training points than existing methods and yet produces accurate predictions. In addition, we provide theoretical justification for DeepONet's generalization error, bounding it by the sum of the approximation errors of the branch and trunk networks, and the training error."
+  },
+  {
+    "title": "Learning the solution operator of parametric partial differential equations with physics-informed DeepONets",
+    "authors": ["Sifan Wang", "Hanwen Wang", "Paris Perdikaris"],
+    "year": 2021,
+    "journal": "Science Advances",
+    "doi": "10.1126/sciadv.abi8605",
+    "abstract": "We present physics-informed DeepONets for learning the solution operator of parametric partial differential equations (PDEs). Specifically, we propose a new domain decomposition training strategy that leverages the underlying physics to decompose the computational domain into subdomains, training specialized sub-DeeONets for each region, which leads to better generalization and significant computational savings. The proposed framework achieves state-of-the-art accuracy in predicting solutions of parametric PDEs in low-data regimes, outperforms existing operator learning approaches in transfer learning tasks, and can be employed for the efficient resolution of inverse problems."
+  },
+  {
+    "title": "Fourier Neural Operator for Parametric Partial Differential Equations",
+    "authors": ["Zongyi Li", "Nikolaus Kovachki", "Kamyar Azizzadenesheli", "Burigede Liu", "Kunle Bhattacharya", "Andrew Stuart", "Anima Anandkumar"],
+    "year": 2021,
+    "journal": "International Conference on Learning Representations (ICLR)",
+    "doi": "10.48550/arXiv.2010.08895",
+    "abstract": "The classical development of neural networks has primarily focused on learning mappings between finite-dimensional Euclidean spaces. Recently, this has been generalized to neural operators that learn mappings between function spaces. For partial differential equations (PDEs), neural operators directly learn the mapping from any functional parametric dependence to the solution. Thus, they learn an entire family of PDEs, in contrast to classical methods which solve one instance of the equation. In this work, we formulate a new neural operator by parameterizing the integral kernel directly in Fourier space, allowing for an expressive and efficient architecture. We perform experiments on Burgers' equation, Darcy flow, and Navier-Stokes equation. The Fourier neural operator is the first ML-based method to successfully model turbulent flows with zero-shot super-resolution. It is up to three orders of magnitude faster compared to traditional PDE solvers."
+  },
+  {
+    "title": "Developing a cost-effective emulator for groundwater flow modeling using deep neural operators",
+    "authors": ["M. M. Jagtap", "K. Kawaguchi", "G. Em Karniadakis"],
+    "year": 2023,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2023.130858",
+    "abstract": "We propose, for the first time, a neural operator (DeepONet) as a surrogate model to efficiently and accurately emulate the impact of abstraction in the distribution of hydraulic heads in confined, heterogeneous aquifers. The proposed method can efficiently learn solutions of both the forward and inverse problems in groundwater flow modeling. We demonstrate that DeepONet can accurately predict hydraulic heads in a heterogeneous aquifer with a fixed pumping well, generalize to unseen pumping well locations and time-dependent pumping rates, characterize aquifer properties (inverse analysis), and deal with nonlinear systems."
+  },
+  {
+    "title": "Deep operator network for surrogate modeling of poroelasticity with random permeability fields",
+    "authors": ["M. M. Jagtap", "K. Kawaguchi", "G. Em Karniadakis"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2509.11966",
+    "abstract": "In this work, we develop a surrogate modeling framework for poroelasticity with spatially variable permeability, based on the deep operator network (DeepONet). DeepONet is a neural architecture designed to approximate nonlinear operators between function spaces. The methodology is evaluated on two benchmark problems in poroelasticity: soil consolidation and ground subsidence induced by groundwater extraction. In both cases, the DeepONet achieves substantial speedup in inference while maintaining high predictive accuracy across a wide range of permeability statistics."
+  },
+  {
+    "title": "Hybrid DeepONet Surrogates for Multiphase Flow in Porous Media",
+    "authors": ["Ezequiel S. Santos", "Gabriel F. Barros", "Amanda C. N. Oliveira", "Rômulo M. Silva", "Rodolfo S. M. Freitas", "Dakshina M. Valiveti", "Fernando A. Rochinha", "Alvaro L. G. A. Coutinho"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2511.02962",
+    "abstract": "We introduce hybrid neural operator surrogates based on DeepONet models that integrate Fourier Neural Operators, Multi-Layer Perceptrons (MLPs), and Kolmogorov-Arnold Networks (KANs) within their branch and trunk networks. Results demonstrate that hybrid schemes achieve accurate surrogate modeling with significantly fewer parameters while maintaining strong predictive performance on large-scale reservoir simulations."
+  },
+  {
+    "title": "Physics-constrained DeepONet for Surrogate CFD models: a curved backward-facing step case",
+    "authors": ["Anas Jnini", "Bashir Al-Omari", "Lorenzo Bottero", "Kyle J. B. Moore", "Payam Dehghani", "Ali R. Ansari"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2503.11196",
+    "abstract": "We present a physics-constrained DeepONet surrogate model for computational fluid dynamics (CFD) applications, focusing on a curved backward-facing step case. Both models attain convergence with a small dataset of 50 samples and require only 50 iterations for convergence, highlighting the efficiency of neural operators in learning the dynamics governed by partial differential equations."
+  },
+  {
+    "title": "U-DeepONet: U-Net enhanced deep operator network for geologic carbon sequestration",
+    "authors": ["J. Zhang", "Y. Liu", "L. J. Durlofsky"],
+    "year": 2024,
+    "journal": "Scientific Reports",
+    "doi": "10.1038/s41598-024-72393-0",
+    "abstract": "We introduce U-DeepONet, which combines the U-Net architecture with DeepONet for improved performance in modeling geologic carbon sequestration. The method leverages the strengths of both architectures to provide accurate and efficient surrogate modeling for CO2 storage in deep saline aquifers."
+  },
+  {
+    "title": "Phase-field hydraulic fracturing operator network based on En-DeepONet with integrated physics-informed mechanisms",
+    "authors": ["J. Lee", "H. O. S. Park", "J. Choo"],
+    "year": 2025,
+    "journal": "Computer Methods in Applied Mechanics and Engineering",
+    "doi": "10.1016/j.cma.2025.117422",
+    "abstract": "We present a phase-field hydraulic fracturing operator network based on En-DeepONet with integrated physics-informed mechanisms. The proposed approach leverages the underlying physical laws during the training process and avoids the computational complexity associated with coupling Darcy and Poiseuille flow equations across different spatial dimensions."
+  },
+  {
+    "title": "DeepONet: Learning nonlinear operators for identifying differential equations based on the universal approximation theorem of operators",
+    "authors": ["Lu Lu", "Pengzhan Jin", "Guofei Pang", "Zhongqiang Zhang", "George Em Karniadakis"],
+    "year": 2019,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.1910.03193",
+    "abstract": "While it is widely known that neural networks are universal approximators of continuous functions, a less known and perhaps more powerful result is that a neural network with a single hidden layer can approximate accurately any nonlinear continuous operator. This universal approximation theorem for operators suggests that a simple shallow neural network can learn any mapping between function spaces. Based on this theorem, we propose a deep operator network (DeepONet) to learn nonlinear operators induced by parametric partial differential equations."
+  },
+  {
+    "title": "An improved data-free surrogate model for solving partial differential equations using deep neural networks",
+    "authors": ["J. Li", "J. Huang", "Y. Wang"],
+    "year": 2021,
+    "journal": "Scientific Reports",
+    "doi": "10.1038/s41598-021-99037-x",
+    "abstract": "We present an improved data-free surrogate model for solving partial differential equations using deep neural networks. Their method has been successfully used in different contexts, such as approximating very high-dimensional problems arising in mathematical finance by exploiting integral representation formulas for the underlying solutions. Lu et al. proposed deep operator networks DeepONets to learn nonlinear operators for differential equations."
+  },
+  {
+    "title": "Deep neural operators as accurate surrogates for shape optimization",
+    "authors": ["S. Meng", "L. Zhang", "Y. Liu"],
+    "year": 2023,
+    "journal": "Procedia Computer Science",
+    "doi": "10.1016/j.procs.2023.11.207",
+    "abstract": "We explore the use of DeepONet as accurate surrogates for shape optimization problems in computational fluid dynamics. The trained DeepONet is combined with high-fidelity data using regression to create a surrogate model for shape optimization, learning the mapping from iced airfoil geometries to their aerodynamic coefficients."
+  }
+]

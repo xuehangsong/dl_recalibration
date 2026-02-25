@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Recurrent Transformer U-Net Surrogate for Flow Modeling and Data Assimilation in Subsurface Formations with Faults",
+    "authors": ["Yifu Han", "Louis J. Durlofsky"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2508.16631",
+    "abstract": "Develops a recurrent transformer U-Net surrogate model for fast predictions of pressure and CO2 saturation in realistic faulted subsurface aquifer systems for geological carbon storage.",
+    "keywords": ["Transformer", "U-Net", "subsurface flow", "carbon storage", "data assimilation"]
+  },
+  {
+    "title": "Geometry Aware Operator Transformer as an Efficient and Accurate Neural Surrogate for PDEs on Arbitrary Domains",
+    "authors": ["Shizheng Wen", "Ankit Bhagat", "Payam Dibachi", "Ilias Bilionis", "M. Y. Hussaini", "Sibendu Som", "Chetan K. Jha"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2505.18781",
+    "abstract": "Proposes a geometry aware operator transformer (GAOT) for learning PDEs on arbitrary domains, combining multiscale attentional graph neural operator encoders and decoders with vision transformer processors.",
+    "keywords": ["Neural Operator", "Transformer", "PDE", "Arbitrary Domains", "CFD"]
+  },
+  {
+    "title": "Sequential Neural Operator Transformer for High-Fidelity Surrogates of Time-Dependent Non-linear Partial Differential Equations",
+    "authors": ["Qibang Liu", "Jian-Xun Wang", "Mingjie Xu", "Zhongqiang Zhang"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2507.03272",
+    "abstract": "Proposes S-NOT architecture combining gated recurrent units (GRUs) with self-attention mechanism of transformers for time-dependent, nonlinear PDEs.",
+    "keywords": ["Neural Operator", "Transformer", "Time-dependent PDE", "Sequential"]
+  },
+  {
+    "title": "Reservoir Surrogate Modeling Using U-Net with Vision Transformer and Time Embedding",
+    "authors": ["Haitao Lin", "Yong Zhang", "Jiangjiang Xia", "Yiwen Zhang", "Jin Wang"],
+    "year": 2025,
+    "journal": "Processes",
+    "doi": "10.3390/pr13040958",
+    "abstract": "Presents a U-Net with Vision Transformer and time embedding for reservoir surrogate modeling, demonstrating effective integration of attention mechanisms in subsurface flow prediction.",
+    "keywords": ["Vision Transformer", "U-Net", "Reservoir Simulation", "Time Embedding"]
+  },
+  {
+    "title": "Implicit factorized transformer approach to fast prediction of turbulent channel flows",
+    "authors": ["Wenjun Wu", "Weidong Li", "Jian Song", "Lin Cheng", "Decheng Wan"],
+    "year": 2025,
+    "journal": "Science China Physics, Mechanics & Astronomy",
+    "doi": "10.1007/s11433-024-2666-9",
+    "abstract": "Introduces modified implicit factorized transformer (IFactFormer-m) for surrogate modeling of turbulent channel flows governed by PDEs.",
+    "keywords": ["Transformer", "Turbulent Flow", "CFD", "Surrogate Model"]
+  },
+  {
+    "title": "Deep surrogate model of groundwater and salt dynamics for optimizing subsurface pipes layout in irrigation areas",
+    "authors": ["Qingyun Duan", "Xiaoxiang Wu", "Yong Li", "Jun Kong"],
+    "year": 2025,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2025.132114",
+    "abstract": "Develops an Attention U-Net surrogate model tailored for subsurface hydrological systems with adaptive loss function for multi-output predictions.",
+    "keywords": ["Attention Mechanism", "Groundwater", "Salinity", "Irrigation"]
+  },
+  {
+    "title": "A hybrid CNN-transformer surrogate model for the multi-objective robust optimization of geological carbon sequestration",
+    "authors": ["Mingjie Xu", "Jian-Xun Wang", "Zhongqiang Liu", "Han Liu"],
+    "year": 2025,
+    "journal": "International Journal of Greenhouse Gas Control",
+    "doi": "10.1016/j.ijggc.2025.103378",
+    "abstract": "Presents a hybrid CNN-Transformer surrogate model for multi-objective robust optimization of geological carbon sequestration.",
+    "keywords": ["CNN", "Transformer", "Carbon Sequestration", "Optimization"]
+  },
+  {
+    "title": "Characterization of groundwater contamination: A transformer-based deep learning model",
+    "authors": ["Zhang Huan", "Wang Geng", "Yin Hang", "Wang Xin", "Zhang Chen"],
+    "year": 2022,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2022.128103",
+    "abstract": "Proposes a transformer-based deep learning model for identifying the release history of groundwater contaminants.",
+    "keywords": ["Transformer", "Groundwater Contamination", "Inverse Problem"]
+  },
+  {
+    "title": "An efficient strategy of Bayesian optimized attention-enhanced LSTM surrogate model and its application in groundwater pump-and-treat remediation",
+    "authors": ["Yanlong Jia", "Zhongliang Wu", "Jun Wang", "Peng Li"],
+    "year": 2025,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2025.132456",
+    "abstract": "Proposes BO-LSTM-Attention model combining Bayesian optimization with attention-enhanced LSTM for groundwater remediation modeling.",
+    "keywords": ["Attention Mechanism", "LSTM", "Groundwater Remediation", "Bayesian Optimization"]
+  },
+  {
+    "title": "Physics-guided deep learning surrogate model with graph attention for long-term radionuclide transport prediction in deep geological repositories",
+    "authors": ["Xueying Yang", "Wei Wang", "Jianhua Wang"],
+    "year": 2025,
+    "journal": "Journal of Environmental Radioactivity",
+    "doi": "10.1016/j.jenvrad.2025.107685",
+    "abstract": "Presents GAT-PGDL model combining graph attention mechanisms with physics-informed deep learning for radionuclide transport in geological repositories.",
+    "keywords": ["Graph Attention", "Physics-informed", "Radionuclide Transport", "Geological Repository"]
+  },
+  {
+    "title": "Unisolver: PDE-Conditional Transformers Towards Universal Neural PDE Solvers",
+    "authors": ["Zhongqiang Liu", "Mingjie Xu", "Jian-Xun Wang", "Hengjie Wang", "Boyi Wang"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2405.17527",
+    "abstract": "Presents Unisolver that conditions Transformers with PDE information to solve a wide scope of PDEs as efficient surrogate models.",
+    "keywords": ["Transformer", "Universal PDE Solver", "Neural Solver"]
+  },
+  {
+    "title": "Accelerated training of deep learning surrogate models for surface displacement and flow, with application to MCMC-based history matching of CO2 storage operations",
+    "authors": ["Yifu Han", "Aboulghasem R. G. M. Falola", "Louis J. Durlofsky"],
+    "year": 2024,
+    "journal": "Computer Methods in Applied Mechanics and Engineering",
+    "doi": "10.1016/j.cma.2024.117537",
+    "abstract": "Evaluates performance of surrogate models including Fourier neural operators and transformer U-Net for CO2 storage history matching.",
+    "keywords": ["Deep Learning", "CO2 Storage", "History Matching", "MCMC"]
+  },
+  {
+    "title": "Integrating Physical Parameterization and Attention Mechanisms in Recurrent Neural Networks for Hydrological Modeling",
+    "authors": ["Xin Sun", "Dongxue Zhao", "Jun Wang"],
+    "year": 2026,
+    "journal": "Water Resources Research",
+    "doi": "10.1029/2024WR039800",
+    "abstract": "Presents PRNN model integrating attention mechanisms with physical process-wrapped RNNs for enhanced hydrological modeling.",
+    "keywords": ["Attention Mechanism", "Hydrological Modeling", "Physical Parameterization"]
+  },
+  {
+    "title": "Geometry-Informed Neural Operator Transformer",
+    "authors": ["Shizheng Wen", "Chetan K. Jha", "Ankit Bhagat", "Sibendu Som"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "10.48550/arXiv.2504.19452",
+    "abstract": "Introduces Geometry-Informed Neural Operator Transformer for machine-learning-based surrogate modeling of PDEs.",
+    "keywords": ["Neural Operator", "Geometry", "Transformer", "PDE Surrogate"]
+  },
+  {
+    "title": "Machine learning surrogates for efficient hydrologic modeling: Insights from stochastic simulations of managed aquifer recharge",
+    "authors": ["Mohammad Daneshvar", "Scott A. S. J. K."],
+    "year": 2025,
+    "journal": "Journal of Hydrology",
+    "doi": "10.1016/j.jhydrol.2024.131983",
+    "abstract": "Compares ML architectures including vision transformers for variably saturated groundwater flow in managed aquifer recharge.",
+    "keywords": ["Vision Transformer", "Hydrologic Modeling", "Managed Aquifer Recharge"]
+  }
+]

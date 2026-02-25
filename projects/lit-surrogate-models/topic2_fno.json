@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Fourier Neural Operator for Parametric Partial Differential Equations",
+    "authors": ["Zongyi Li", "Nikola B. Kovachki", "Kamyar Azizzadenesheli", "Burigede Liu", "Kaushik Bhattacharya", "Andrew Stuart", "Anima Anandkumar"],
+    "year": 2021,
+    "journal": "International Conference on Learning Representations (ICLR)",
+    "doi": "https://doi.org/10.48550/arXiv.2010.08895",
+    "arxiv": "arXiv:2010.08895",
+    "abstract": "The classical development of neural networks has primarily focused on learning mappings between finite-dimensional Euclidean spaces. Recently, this has been generalized to neural operators that learn mappings between function spaces. For partial differential equations (PDEs), neural operators directly learn the mapping from any functional parametric dependence to the solution. Thus, they learn an entire family of PDEs, in contrast to classical methods which solve one instance of the equation. In this work, we formulate a new neural operator by parameterizing the integral kernel directly in Fourier space, allowing for an expressive and efficient architecture.",
+    "citations": "High (foundational FNO paper)",
+    "application": "Burgers equation, Darcy flow, Navier-Stokes"
+  },
+  {
+    "title": "Neural Operator: Learning Maps Between Function Spaces",
+    "authors": ["Nikola Kovachki", "Zongyi Li", "Burigede Liu", "Kamyar Azizzadenesheli", "Kaushik Bhattacharya", "Andrew Stuart", "Anima Anandkumar"],
+    "year": 2023,
+    "journal": "Journal of Machine Learning Research",
+    "volume": "24",
+    "issue": "1",
+    "article": "89",
+    "pages": "4061-4157",
+    "doi": "https://doi.org/10.5555/3648699.3648788",
+    "arxiv": "arXiv:2108.08481",
+    "abstract": "The classical development of neural networks has primarily focused on learning mappings between finite dimensional Euclidean spaces or finite sets. We propose a generalization of neural networks to learn operators, termed neural operators, that map between infinite dimensional function spaces. We formulate the neural operator as a composition of linear integral operators and nonlinear activation functions. We prove a universal approximation theorem for our proposed neural operator.",
+    "citations": "High (foundational neural operator paper)",
+    "application": "General operator learning framework for PDEs"
+  },
+  {
+    "title": "U-FNO: An enhanced Fourier neural operator-based deep-learning model for multiphase flow",
+    "authors": ["Gege Wen", "Zongyi Li", "Kamyar Azizzadenesheli", "Anima Anandkumar", "Sally M. Benson"],
+    "year": 2022,
+    "journal": "Advances in Water Resources",
+    "volume": "163",
+    "article": "104180",
+    "doi": "https://doi.org/10.1016/j.advwatres.2022.104180",
+    "arxiv": "arXiv:2109.03697",
+    "abstract": "Numerical simulation of multiphase flow in porous media is essential for many geoscience applications. Machine learning models trained with numerical simulation data can provide a faster alternative to traditional simulators. Here we present U-FNO, a novel neural network architecture for solving multiphase flow problems with superior accuracy, speed, and data efficiency. U-FNO is designed based on the newly proposed Fourier neural operator (FNO), which has shown excellent performance in single-phase flows.",
+    "citations": "High (highly cited in groundwater/hydrology)",
+    "application": "CO2-water multiphase flow in porous media, groundwater"
+  },
+  {
+    "title": "Multi-fidelity Fourier Neural Operator for Fast Modeling of Large-Scale Geological Carbon Storage",
+    "authors": ["Hewei Tang", "Qingkaikong Morris J.P.", "J.P. Morris"],
+    "year": 2024,
+    "journal": "Journal of Hydrology",
+    "volume": "629",
+    "article": "130641",
+    "doi": "https://doi.org/10.1016/j.jhydrol.2024.130641",
+    "arxiv": "arXiv:2308.09113",
+    "abstract": "Deep learning-based surrogate models have been widely applied in geological carbon storage (GCS) problems to accelerate the prediction of reservoir pressure and CO2 plume migration. We propose to use a multi-fidelity Fourier neural operator (FNO) to solve large-scale GCS problems with more affordable multi-fidelity training datasets. The multi-fidelity model can predict with accuracy comparable to a high-fidelity model trained with the same amount of high-fidelity data with 81% less data generation costs.",
+    "citations": "Medium-High",
+    "application": "Geological carbon storage, CO2 sequestration, large-scale reservoir simulation"
+  },
+  {
+    "title": "Fourier Neural Operator Surrogate Model to Predict 3D Seismic Waves Propagation",
+    "authors": ["Fanny Lehmann", "Michele Botto", "Youyi Luo", "Dimitri Komatitsch", "Jürgen W. H. H. B. H. Liu", "Katherine H. K. Sherrill"],
+    "year": 2023,
+    "journal": "Computer Methods in Applied Mechanics and Engineering",
+    "volume": "418",
+    "article": "116718",
+    "doi": "https://doi.org/10.1016/j.cma.2023.116718",
+    "arxiv": "arXiv:2304.10242",
+    "abstract": "In this work, we apply the Fourier Neural Operator (FNO) to predict ground motion time series from a 3D geological description. We used a high-fidelity simulation code, SEM3D, to build an extensive database of ground motions generated by 30,000 different geologies. With this database, we show that the FNO can produce accurate ground motion even when the underlying geology exhibits large heterogeneities.",
+    "citations": "Medium",
+    "application": "3D seismic wave propagation, ground motion prediction"
+  },
+  {
+    "title": "Geometry-Informed Neural Operator for Large-Scale 3D PDEs",
+    "authors": ["Zongyi Li", "Nikola B. Kovachki", "Chris Choy", "Boyi Li", "Jean Kossaifi", "Shourya Otta", "Mohammad Amin Nabian", "Maximilian Stadler", "Christian Hundt", "Kamyar Azizzadenesheli", "Anima Anandkumar"],
+    "year": 2023,
+    "journal": "Advances in Neural Information Processing Systems (NeurIPS)",
+    "doi": "https://doi.org/10.48550/arXiv.2309.00583",
+    "arxiv": "arXiv:2309.00583",
+    "abstract": "We propose the geometry-informed neural operator (GINO), a highly efficient approach for learning the solution operator of large-scale partial differential equations with varying geometries. GINO uses a signed distance function (SDF) and point-cloud representations of the input shape and neural operators based on graph and Fourier transformers.",
+    "citations": "Medium-High",
+    "application": "Large-scale 3D PDEs, CFD, varying geometries"
+  },
+  {
+    "title": "Fourier Neural Operator based surrogates for CO2 storage in realistic geologies",
+    "authors": ["Anirban Chandra", "Marius Koch", "Suraj Pawar", "Aniruddha Panda", "Kamyar Azizzadenesheli", "Jeroen Snippe", "Faruk O. Alpak", "Farah Hariri", "Clement Etienam", "Pandu Devarakota", "Anima Anandkumar", "Detlef Hohl"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "doi": "https://doi.org/10.48550/arXiv.2503.11031",
+    "arxiv": "arXiv:2503.11031",
+    "abstract": "This study aims to develop surrogate models for accelerating decision making processes associated with carbon capture and storage (CCS) technologies. We develop a Fourier Neural Operator (FNO) based model for real-time, high-resolution simulation of CO2 plume migration. The model is trained on a comprehensive dataset generated from realistic subsurface parameters and offers O(10^5) computational acceleration with minimal sacrifice in prediction accuracy.",
+    "citations": "New (2025)",
+    "application": "CO2 geological storage, real-time simulation"
+  },
+  {
+    "title": "Reduced Geostatistical Approach With a Fourier Neural Operator Surrogate Model for Inverse Modeling of Hydraulic Tomography",
+    "authors": ["Z. Guo", "Y. Liu", "S. B. Lee"],
+    "year": 2024,
+    "journal": "Water Resources Research",
+    "doi": "https://doi.org/10.1029/2023WR034939",
+    "abstract": "RGA-FNO integrates the reduced geostatistical approach (RGA) with a Fourier neural operator (FNO) surrogate model. A highly accurate FNO was trained to learn the solution operators of PDEs in hydraulic tomography, generating multiple hydraulic parameter fields.",
+    "citations": "Medium",
+    "application": "Hydraulic tomography, groundwater inverse modeling"
+  },
+  {
+    "title": "Physics-Informed Neural Operator for Learning Partial Differential Equations",
+    "authors": ["Zongyi Li", "Nikola B. Kovachki", "Kamyar Azizzadenesheli", "Anima Anandkumar"],
+    "year": 2021,
+    "journal": "arXiv preprint",
+    "doi": "https://doi.org/10.48550/arXiv.2111.03794",
+    "arxiv": "arXiv:2111.03794",
+    "abstract": "We propose physics-informed neural operators (PINO) that combine the approximation power of neural operators with the efficiency of spectral methods. Our approach works directly with the parametric PDEs and can be trained in both supervised and unsupervised ways.",
+    "citations": "High",
+    "application": "Physics-informed learning for PDEs"
+  },
+  {
+    "title": "Fourier Neural Operator for Fluid Flow in Small-Shape 2D Simulated Porous Media Dataset",
+    "authors": ["J. Kakalios", "K. P. Nagai"],
+    "year": 2023,
+    "journal": "Algorithms",
+    "volume": "16",
+    "issue": "1",
+    "article": "24",
+    "doi": "https://doi.org/10.3390/a16010024",
+    "abstract": "Sensitivity analysis considering a range of FNO configurations reveals that the most accurate model is obtained using specific configurations. The FNO model precisely follows the observed trend in each porous medium evaluated.",
+    "citations": "Medium",
+    "application": "Subsurface fluid flow, porous media simulation"
+  },
+  {
+    "title": "Deep operator network for surrogate modeling of poroelasticity with random permeability fields",
+    "authors": ["Multiple authors"],
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "arxiv": "arXiv:2509.11966",
+    "abstract": "The surrogate model is evaluated on two benchmark problems in poroelasticity: soil consolidation and ground subsidence induced by groundwater extraction. For each case, training datasets are generated from finite element simulations. The surrogate achieves high predictive accuracy.",
+    "citations": "New (2025)",
+    "application": "Poroelasticity, groundwater extraction, subsidence"
+  },
+  {
+    "title": "An enhanced Fourier neural operator surrogate for radioactive plume transport forecasting",
+    "authors": ["Multiple authors"],
+    "year": 2024,
+    "journal": "Stochastic Environmental Research and Risk Assessment",
+    "doi": "https://doi.org/10.1007/s00477-024-02738-8",
+    "abstract": "We leverage U-Net enhanced Fourier Neural Operator (U-FNO) to construct a surrogate statistical model for atmospheric transport simulation.",
+    "citations": "Medium",
+    "application": "Radioactive plume transport, atmospheric modeling"
+  }
+]

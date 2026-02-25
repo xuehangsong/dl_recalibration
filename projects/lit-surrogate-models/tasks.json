@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Define search queries for surrogate models",
+    "owner": "scout",
+    "status": "pending",
+    "priority": "high",
+    "eta": "15min",
+    "evidence": "search-queries.md created"
+  },
+  {
+    "id": "2",
+    "title": "Paper collection: U-Net, CNN surrogates",
+    "owner": "hydro-lit",
+    "status": "pending",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "10+ papers"
+  },
+  {
+    "id": "3",
+    "title": "Paper collection: FNO, U-FNO, Neural Operators",
+    "owner": "hydro-lit",
+    "status": "pending",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "10+ papers"
+  },
+  {
+    "id": "4",
+    "title": "Paper collection: DeepONet, operator learning",
+    "owner": "hydro-lit",
+    "status": "pending",
+    "priority": "medium",
+    "eta": "1hr",
+    "evidence": "10+ papers"
+  },
+  {
+    "id": "5",
+    "title": "Paper collection: GP, classical surrogates + PINN",
+    "owner": "hydro-lit",
+    "status": "pending",
+    "priority": "medium",
+    "eta": "1hr",
+    "evidence": "10+ papers"
+  },
+  {
+    "id": "6",
+    "title": "Extract key info + comparison tables",
+    "owner": "hydro-lit",
+    "status": "pending",
+    "priority": "high",
+    "eta": "2hr",
+    "evidence": "extraction tables"
+  },
+  {
+    "id": "7",
+    "title": "Synthesis report + knowledge file",
+    "owner": "scout",
+    "status": "pending",
+    "priority": "high",
+    "eta": "1hr",
+    "evidence": "synthesis.md + knowledge.yaml"
+  }
+]

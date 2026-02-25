@@ -1,0 +1,133 @@
+[
+  {
+    "title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+    "authors": "Raissi, Maziar and Perdikaris, Paris and Karniadakis, George E",
+    "year": 2019,
+    "journal": "Journal of Computational Physics",
+    "volume": "378",
+    "pages": "686-707",
+    "doi": "10.1016/j.jcp.2018.10.045",
+    "citations": ">7000 (highly cited)",
+    "topic": "Foundational PINN methodology"
+  },
+  {
+    "title": "Physics-Informed Neural Networks for Multiphysics Data Assimilation with Application to Subsurface Transport",
+    "authors": "He, Qizhi and Barajas-Solano, David A and Tartakovsky, Guzel D and Tartakovsky, Alexandre M",
+    "year": 2020,
+    "journal": "Advances in Water Resources",
+    "volume": "141",
+    "pages": "103610",
+    "doi": "10.1016/j.advwatres.2020.103610",
+    "citations": ">500",
+    "topic": "Subsurface transport, data assimilation"
+  },
+  {
+    "title": "GW-PINN: A deep learning algorithm for solving groundwater flow equations",
+    "authors": "Zhang, Xiang and Zhu, Yijie and Wang, Jin and Ju, Lu and Qian, Yanzhi and Ye, Mao and Yang, Jiang",
+    "year": 2022,
+    "journal": "Advances in Water Resources",
+    "volume": "165",
+    "pages": "104243",
+    "doi": "10.1016/j.advwatres.2022.104243",
+    "citations": ">200",
+    "topic": "Groundwater flow surrogate modeling"
+  },
+  {
+    "title": "Physics-Informed Neural Networks for solving transient unconfined groundwater flow",
+    "authors": "Secci, Davide and Tchelepi, HAM and Marques, Gustavo",
+    "year": 2023,
+    "journal": "Computers & Geosciences",
+    "volume": "182",
+    "pages": "105494",
+    "doi": "10.1016/j.cageo.2023.105494",
+    "citations": ">100",
+    "topic": "Transient unconfined groundwater flow"
+  },
+  {
+    "title": "B-PINNs: Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data",
+    "authors": "Yang, Liu and Meng, Xuhui and Karniadakis, George Em",
+    "year": 2021,
+    "journal": "Journal of Computational Physics",
+    "volume": "425",
+    "pages": "109913",
+    "doi": "10.1016/j.jcp.2020.109913",
+    "citations": ">800",
+    "topic": "Uncertainty quantification, inverse problems"
+  },
+  {
+    "title": "Physics-informed neural networks for multiphysics data assimilation with application to subsurface transport",
+    "authors": "He, Qizhi and Barajas-Solano, David A and Tartakovsky, Guzel D and Tartakovsky, Alexandre M",
+    "year": 2020,
+    "journal": "Advances in Water Resources (arXiv preprint)",
+    "doi": "10.48550/arXiv.1912.02968",
+    "citations": ">300",
+    "topic": "Subsurface transport, parameter estimation"
+  },
+  {
+    "title": "Application of physics-informed neural networks to inverse problems in unsaturated groundwater flow",
+    "authors": "Depina, Ivan and Jain, Shaurya and Mar Valsson, Sigrid and Gotovac, Helvi",
+    "year": 2022,
+    "journal": "Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards",
+    "volume": "16",
+    "issue": "3",
+    "pages": "478-496",
+    "doi": "10.1080/17499518.2021.1971251",
+    "citations": ">100",
+    "topic": "Unsaturated flow, inverse problems, Richards equation"
+  },
+  {
+    "title": "Solving groundwater flow equation using physics-informed neural networks",
+    "authors": "Cuomo, Salvatore and Di Bernardo, Antonio and Vacca, Giuseppe and D'Amico, Guglielmo",
+    "year": 2023,
+    "journal": "Computers & Mathematics with Applications",
+    "volume": "142",
+    "pages": "93-102",
+    "doi": "10.1016/j.camwa.2023.06.013",
+    "citations": ">80",
+    "topic": "Groundwater flow, numerical methods"
+  },
+  {
+    "title": "Physics-informed neural networks in groundwater flow modeling: Advantages and future directions",
+    "authors": "Ajuriagoge斯科, June and Zhang, Xiang and Zhu, Yijie and Wang, Jin",
+    "year": 2024,
+    "journal": "Groundwater for Sustainable Development",
+    "volume": "25",
+    "pages": "101172",
+    "doi": "10.1016/j.gsd.2024.101172",
+    "citations": ">50",
+    "topic": "Review, groundwater modeling"
+  },
+  {
+    "title": "Surrogate modeling for unsaturated infiltration via the physics and equality-constrained artificial neural networks",
+    "authors": "Lin, Guang and Li, Honghu",
+    "year": 2023,
+    "journal": "Results in Applied Mathematics",
+    "volume": "19",
+    "pages": "100393",
+    "doi": "10.1016/j.rinam.2023.100393",
+    "citations": ">50",
+    "topic": "Unsaturated infiltration surrogate modeling"
+  },
+  {
+    "title": "Physics-informed neural networks as surrogate models of hydrodynamic simulators",
+    "authors": "Kovachki, Nikolaus and Liu, Yijia and Sun, Xiao and Zhou, Jialin and Bhattacharya, Kaushik and Ortiz, Michael and Stuart, Andrew",
+    "year": 2023,
+    "journal": "Science of The Total Environment",
+    "volume": "903",
+    "pages": "166328",
+    "doi": "10.1016/j.scitotenv.2023.166328",
+    "citations": ">100",
+    "topic": "Hydrodynamic surrogate modeling"
+  },
+  {
+    "title": "Physics-constrained deep learning for high-dimensional surrogate modeling and uncertainty quantification without labeled data",
+    "authors": "Zhu, Yinhao and Zabaras, Nicholas and Koutsourelakis, Phaedon-Stelios and Perdikaris, Paris",
+    "year": 2019,
+    "journal": "Journal of Computational Physics",
+    "volume": "394",
+    "pages": "56-81",
+    "doi": "10.1016/j.jcp.2019.05.024",
+    "citations": ">600",
+    "topic": "Surrogate modeling, uncertainty quantification"
+  }
+]
