@@ -1,0 +1,314 @@
+# Knowledge Base: Operational Frameworks for Scientific Software
+
+## Project Information
+
+project:
+  name: lit-operational-frameworks
+  title: "Literature Review: Operational Frameworks for Scientific Software"
+  description: "Comprehensive review of digital twins, real-time monitoring, cloud HPC, scientific software, and CI/CD"
+  created: "2025-02-25"
+  scope:
+    - "Digital twin frameworks"
+    - "Real-time monitoring systems"
+    - "Cloud HPC integration"
+    - "Scientific software architecture"
+    - "CI/CD for scientific software"
+    - "Containerized workflows"
+
+## Paper Collection Statistics
+
+statistics:
+  total_papers: 55
+  papers_2015_2025: 47
+  papers_2020_2025: 35
+  percentage_recent: 85
+  year_range: "2012-2025"
+
+year_distribution:
+  2025: 8
+  2024: 14
+  2023: 6
+  2022: 2
+  2021: 4
+  2020: 1
+  2015_2019: 8
+  pre_2015: 12
+
+publication_types:
+  academic_journals: 28
+  conference_proceedings: 12
+  technical_reports: 10
+  software_repositories: 5
+
+## Key Frameworks and Tools
+
+digital_twin_frameworks:
+  - name: "HP2C-DT"
+    description: "High-Precision High-Performance Computer-enabled Digital Twin"
+    year: 2025
+    url: "https://arxiv.org/abs/2506.10523"
+    key_features:
+      - "HPC integration for heavy computational tasks"
+      - "Real-time decision making at edge"
+      - "Probabilistic analysis capabilities"
+      - "Synthetic data generation"
+
+  - name: "Digital Twin Factory"
+    description: "Framework for design and deployment"
+    year: 2025
+    url: "https://ui.adsabs.harvard.edu/abs/2025EGUGA..27.1299X/abstract"
+    key_features:
+      - "Digital Twin as a Service (DTaaS)"
+      - "PaaS-level abstraction"
+      - "Hybrid HPC/Cloud access"
+
+  - name: "FIWARE Digital Twin for HPC Centers"
+    description: "IoT platform-based digital twin"
+    year: 2024
+    url: "https://dl.acm.org/doi/10.1145/3679240.3734677"
+    key_features:
+      - "Six-element architecture"
+      - "IoT platform integration"
+      - "HPC model integration"
+
+monitoring_systems:
+  - name: "Altair HPCWorks"
+    description: "Complete HPC and cloud platform with AI-driven monitoring"
+    year: 2025
+    url: "https://altair.com/hpcworks-2026"
+    key_features:
+      - "Per-second metrics"
+      - "AI-driven scheduling"
+      - "Per-job I/O monitoring"
+      - "Cloud scaling"
+
+  - name: "NetData HPC Monitoring"
+    description: "Real-time HPC observability"
+    year: 2024
+    url: "https://www.netdata.cloud/solutions/use-cases/hpc/"
+    key_features:
+      - "Per-second metrics"
+      - "Anomaly detection"
+      - "GPU monitoring"
+      - "InfiniBand monitoring"
+
+  - name: "Redfish Telemetry Model"
+    description: "Standard for next-generation HPC system monitoring"
+    year: 2023
+    url: "https://www.mdpi.com/2073-8994/15/6/1134"
+    key_features:
+      - "Standardized hardware telemetry"
+      - "Vendor interoperability"
+      - "Power/thermal monitoring"
+
+cloud_hpc_platforms:
+  - name: "E4S (Extreme-Scale Scientific Software Stack)"
+    description: "Delivery vehicle for ECP HPC libraries and tools"
+    year: 2020
+    url: "https://e4s-project.github.io/"
+    key_features:
+      - "Spack-based source builds"
+      - "Container distributions"
+      - "Multi-architecture support"
+      - "Cross-platform compatibility"
+
+  - name: "CyberWater"
+    description: "Asynchronous modeling workflows with on-demand HPC/Cloud"
+    year: 2024
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S0167739X24001535"
+    key_features:
+      - "On-demand HPC access"
+      - "Desktop workflow integration"
+      - "Async job management"
+
+  - name: "Rescale"
+    description: "Cloud simulation platform"
+    year: 2021
+    url: "https://rescale.com/"
+    key_features:
+      - "Cloud HPC simulation"
+      - "Automated scaling"
+      - "Simulation automation"
+
+  - name: "Nekkloud"
+    description: "Web-based environment for Nektar++"
+    year: 2017
+    url: "https://www.academia.edu/143859264/"
+    key_features:
+      - "Web interface"
+      - "Cluster and cloud deployment"
+      - "End-user accessibility"
+
+cicd_tools:
+  - name: "E4S CI/CD Pipeline"
+    description: "Continuous integration for ECP software"
+    year: 2021
+    url: "https://www.exascaleproject.org/continuous-integration-the-path-to-the-future-for-hpc/"
+    key_features:
+      - "Multi-architecture testing"
+      - "Containerized builds"
+      - "Cross-platform deployment"
+
+  - name: "Singularity + Jenkins"
+    description: "Container-based CI/CD for HPC"
+    year: 2019
+    url: "https://www.osti.gov/servlets/purl/1544252"
+    key_features:
+      - "HPC-native containers"
+      - "Jenkins automation"
+      - "Performance validation"
+
+  - name: "Guix CI/CD"
+    description: "Reproducible CI/CD for HPC"
+    year: 2023
+    url: "https://hpc.guix.info/blog/2023/03/contiguous-integration-and-continuous-delivery-for-hpc/"
+    key_features:
+      - "Binary preservation"
+      - "Reproducible builds"
+      - "Transparent binary distribution"
+
+container_orchestration:
+  - name: "Kubernetes on HPC"
+    description: "Container orchestration for HPC systems"
+    year: 2021
+    url: "https://journalofcloudcomputing.springeropen.com/articles/10.1186/s13677-021-00231-z"
+    key_features:
+      - "PBS integration"
+      - "Auto-scaling containers"
+      - "Moab scheduler support"
+
+  - name: "Kub"
+    description: "Elastic HPC workloads on containerized environments"
+    year: 2024
+    url: "https://arxiv.org/pdf/2410.10655"
+    key_features:
+      - "Kubernetes/OpenShift/Swarm comparison"
+      - "Elastic scaling"
+      - "HPC workload support"
+
+## Research Themes
+
+themes:
+  convergence:
+    description: "Convergence of cloud, HPC, edge computing, and IoT"
+    evidence:
+      - "Digital twins combining IoT, HPC, cloud, and edge"
+      - "Hybrid cloud-HPC platforms"
+      - "Edge-HPC integration for monitoring"
+
+  standardization:
+    description: "Progress in standardization across domains"
+    evidence:
+      - "Redfish telemetry standards"
+      - "E4S software packaging conventions"
+      - "Container standards (OCI)"
+
+  automation:
+    description: "Increasing automation in scientific software lifecycle"
+    evidence:
+      - "CI/CD adoption in HPC"
+      - "Automated container orchestration"
+      - "AI-driven scheduling"
+
+## Key Findings
+
+findings:
+  digital_twins:
+    - "Digital twins transitioning from prototypes to operational systems"
+    - "HPC integration enables sophisticated real-time analytics"
+    - "Domain-specific applications growing across manufacturing, healthcare, environment"
+    - "2025 shows emergence of HPC-enabled digital twins (HP2C-DT)"
+
+  monitoring:
+    - "Per-second monitoring becoming standard"
+    - "AI-driven anomaly detection emerging"
+    - "Standards-based telemetry (Redfish) adoption increasing"
+    - "Edge monitoring integration growing"
+
+  cloud_hpc:
+    - "Hybrid cloud-HPC platforms mature and commercially available"
+    - "Web interfaces democratize HPC access"
+    - "Asynchronous workflows enable non-blocking operations"
+    - "Cloud bursting for peak demands"
+
+  software_architecture:
+    - "E4S provides comprehensive software stack"
+    - "Spack + containers dominant delivery mechanism"
+    - "SDK approach improves ecosystem coherence"
+    - "Operational excellence patterns from cloud adapted for HPC"
+
+  cicd:
+    - "CI/CD successfully adapted for HPC environments"
+    - "Container-based pipelines provide consistency"
+    - "Performance overhead concerns mostly resolved"
+    - "Trade-off between performance and portability acknowledged"
+
+  containers:
+    - "Kubernetes integration with HPC schedulers advancing"
+    - "Container orchestration standards emerging"
+    - "Elastic scaling capabilities improving"
+    - "Performance remains consideration for HPC workloads"
+
+## Research Gaps
+
+gaps:
+  - "Performance overhead optimization for containerized HPC"
+  - "Improved reproducibility in complex workflows"
+  - "Security frameworks for interconnected scientific systems"
+  - "Better cloud-native/HPC integration tooling"
+  - "Dynamic resource allocation in scientific workflows"
+  - "Provenance tracking mechanisms"
+
+## Recommendations
+
+recommendations:
+  - "Adopt containerization for software delivery using E4S"
+  - "Implement CI/CD pipelines adapted for HPC with Singularity/Guix"
+  - "Design for hybrid deployment (cloud/HPC/edge)"
+  - "Incorporate standards-based monitoring from outset"
+  - "Consider digital twin architectures for real-time optimization"
+  - "Leverage SDK approach for ecosystem integration"
+
+## Topic Categories
+
+topics:
+  digital_twins:
+    paper_count: 15
+    key_years: [2024, 2025]
+    dominant_approach: "HPC-enabled digital twins with real-time analytics"
+
+  real_time_monitoring:
+    paper_count: 10
+    key_years: [2023, 2024, 2025]
+    dominant_approach: "Per-second metrics with AI-driven analysis"
+
+  cloud_hpc_integration:
+    paper_count: 10
+    key_years: [2021, 2024]
+    dominant_approach: "Hybrid platforms with web interfaces"
+
+  scientific_software_architecture:
+    paper_count: 8
+    key_years: [2021, 2022, 2023, 2024]
+    dominant_approach: "E4S stack with Spack/container delivery"
+
+  cicd_scientific_software:
+    paper_count: 7
+    key_years: [2019, 2023, 2024]
+    dominant_approach: "Container-based CI with performance validation"
+
+  containerized_workflows:
+    paper_count: 5
+    key_years: [2019, 2021, 2024, 2025]
+    dominant_approach: "Kubernetes on HPC with elastic scaling"
+
+## Validation
+
+validation:
+  meets_50_papers: true
+  meets_20_from_2015_2025: true
+  papers_count: 55
+  papers_2015_2025_count: 47
+  synthesis_word_count: 4200
+
+---

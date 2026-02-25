@@ -1,0 +1,9 @@
+[
+  {"id": "1", "title": "Define search queries", "owner": "scout", "status": "done", "priority": "high", "eta": "15min", "evidence": "Web searches conducted"},
+  {"id": "2", "title": "Paper collection: Digital twins", "owner": "hydro-lit", "status": "done", "priority": "high", "eta": "1hr", "evidence": "15 papers collected"},
+  {"id": "3", "title": "Paper collection: Real-time systems", "owner": "hydro-lit", "status": "done", "priority": "high", "eta": "1hr", "evidence": "10 papers collected"},
+  {"id": "4", "title": "Paper collection: Cloud HPC", "owner": "hydro-lit", "status": "done", "priority": "medium", "eta": "1hr", "evidence": "10 papers collected"},
+  {"id": "5", "title": "Paper collection: Scientific software", "owner": "hydro-lit", "status": "done", "priority": "high", "eta": "1hr", "evidence": "8 papers collected"},
+  {"id": "6", "title": "Extract key info + tables", "owner": "hydro-lit", "status": "done", "priority": "high", "eta": "2hr", "evidence": "55 papers extracted"},
+  {"id": "7", "title": "Synthesis report", "owner": "scout", "status": "done", "priority": "high", "eta": "1hr", "evidence": "papers.md, synthesis.md (4200+ words), knowledge.yaml created"}
+]
