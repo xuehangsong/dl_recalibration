@@ -1,0 +1,24 @@
+Method,Paper_ID,Title,Application_Domain,Key_Technique,Uncertainty_Quantification,Surrogate_Modeling,Drift_Detection,Model_Monitoring,Active_Learning,Continual_Learning,Recalibration_Trigger,Notes
+DDM,P001,Learning with Drift Detection,Data streams,Drift Detection Method,No,No,Yes,No,No,No,No,Foundational method - monitors error rate
+ADWIN,P002,Learning from Time-Changing Data with Adaptive Windowing,Data streams,Adaptive Windowing,No,No,Yes,No,No,No,No,Automatically adjusts window size
+EDDM,P003,Early Drift Detection Method,Data streams,Distance between errors,No,No,Yes,No,No,No,No,Faster for gradual drifts
+HDDM,P004,McDiarmid Drift Detection Methods,Data streams,McDiarmid inequality,No,No,Yes,No,No,No,No,Theoretical guarantees
+RDDM,P005,Reactive drift detection method,Data streams,Reactive mechanism,No,No,Yes,No,No,No,No,Improved DDM variant
+Unsupervised,P006,Overview of unsupervised drift detection,Data streams,Distribution-based,Yes,No,Yes,No,No,No,No,No labels required
+ML Monitoring,P007,Monitoring ML models - A categorization,ScienceDirect,Taxonomy of challenges,Yes,No,No,Yes,No,No,No,Comprehensive framework
+PSI,P008,Quantifying Data Distribution Shifts,ML Production,Population Stability Index,Yes,No,No,Yes,No,No,No,Industry standard metric
+AWS Monitor,P009,SageMaker Model Monitor,Cloud ML,Automated monitoring,Yes,No,No,Yes,No,No,No,Production best practices
+NVIDIA Monitor,P010,Monitoring ML Models in Production,ML Production,Statistical tests,Yes,No,No,Yes,No,No,No,Technical implementation
+Active Learning,P011,Active Learning Literature Survey,ML,Query strategies,No,No,No,No,Yes,No,No,Classic survey
+DAL Survey,P012,Deep Active Learning Survey,Deep Learning,Deep AL methods,No,No,No,No,Yes,No,No,Modern approaches
+Retrain When,P013,When to retrain a ML model,ML Production,Uncertainty estimation,Yes,No,No,No,Yes,No,No,Practical thresholds
+EWC,P014,Continual Learning - Overcoming Catastrophic Forgetting,Continual Learning,Elastic Weight Consolidation,Yes,No,No,No,No,Yes,No,Prevents forgetting
+Progressive NN,P015,Progressive Neural Networks,Continual Learning,Architecture expansion,No,No,No,No,No,Yes,No,Grow network for new tasks
+Rehearsal,P16,Experience Replay in Continual Learning,Continual Learning,Memory replay,No,No,No,No,No,Yes,No,Store past examples
+Generative Replay,P17,Generative Replay for Continual Learning,Continual Learning,Synthetic data,Yes,No,No,No,No,Yes,No,Generate past samples
+Transfer Learn,P18,Survey of Transfer Learning,Transfer Learning,Domain adaptation,No,No,No,No,No,Yes,No,Classic survey
+Domain Adapt,P19,Unsupervised Deep Domain Adaptation,Deep Learning,Feature alignment,No,No,No,No,No,Yes,No,Deep DA methods
+Hydrology ML,P20,UQ of ML for streamflow prediction,Hydrology,Uncertainty quantification,Yes,Yes,No,No,No,No,Yes,Environmental application
+Climate ML,P21,ML for hydrological changes,Climate,Climate adaptation,No,Yes,No,No,No,No,Yes,Climate change impacts
+Drift Adaptation,P22,Concept Drift Adaptation Survey,Data streams,Adaptive methods,No,No,Yes,Yes,No,No,No,Comprehensive adaptation
+Ensemble Drift,P23,Ensemble methods for drift,Data streams,Weighted ensembles,Yes,No,Yes,No,No,No,No,Robust to drift
