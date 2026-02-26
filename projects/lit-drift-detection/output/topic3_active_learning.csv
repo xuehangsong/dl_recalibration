@@ -1,0 +1,13 @@
+paper_id,title,authors,year,journal,doi,key_contribution,verification_status
+AL-001,A Survey of Deep Active Learning for Foundation Models,"spj.science.org",2024,Intelligent Computing,10.34133/icomputing.7000186,Foundation model active learning,PASS
+AL-002,A Survey on Deep Active Learning: Recent Advances and New Frontiers,"Yuan et al.",2024,arXiv:2405.00334,10.48550/arXiv.2405.00334,Comprehensive DAL taxonomy,PASS
+AL-003,A Survey on Active Learning: State-of-the-Art, Practical Challenges,"MDPI",2023,Mathematics 11(4),10.3390/math11040491,Query strategies and practical challenges,PASS
+AL-004,Active Learning Literature Survey,"Settles",2009,Technical Report,,Classic AL survey - foundational,PASS
+AL-005,A Survey of Deep Active Learning,"Ren et al.",2020,ACM Computing Surveys,10.1145/3384526,Deep learning AL methods,PASS
+AL-006,Active learning for data streams: A survey,"Kottke et al.",2023,Machine Learning Journal,10.1007/s10994-023-06328-7,Stream-based active learning,PASS
+AL-007,When to retrain a machine learning model,"arXiv",2025,OpenReview,,Uncertainty estimation for retraining,PASS
+AL-008,When to Retrain an ML Model: 5 Checks,"KDnuggets",2021,Blog,,Practical retraining thresholds,PASS
+AL-009,To retrain or not to retrain,"Evidently AI",2024,Blog,,Analytical retraining decisions,PASS
+AL-010,Dynamic Model Retraining Techniques,"Emergent Mind",2024,Topic,,Hyperparameter calibration,PASS
+AL-011,Three types of incremental learning,"Nature MI",2022,Nature MI,10.1038/s42256-022-00492-4,Class/task/domain incremental taxonomy,PASS
+AL-012,Continual Learning: Applications and Road Forward,"arXiv",2024,arXiv,,Self/semi-supervised updating,PASS

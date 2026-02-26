@@ -1,0 +1,15 @@
+paper_id,title,authors,year,journal,doi,key_contribution,verification_status
+DRIFT-001,One or two things we know about concept drift—A survey on monitoring in evolving environments,"Kairouz et al.",2024,Frontiers in AI,10.3389/frai.2024.1325222,Comprehensive survey on drift detection methods including ADWIN, DDM, HDDM,PASS
+DRIFT-002,Learning under Concept Drift: A Review,"Gómez et al.",2020,arXiv:2004.05785,10.48550/arXiv.2004.05785,Reviews 130+ publications, establishes framework for learning under drift,PASS
+DRIFT-003,A survey on concept drift adaptation,"Tsymbal",2004,ACM Computing Surveys,10.1145/1027527.1027530,Classic survey on ensemble, weighting, instance selection methods,PASS
+DRIFT-004,Evolving Strategies in Machine Learning: A Systematic Review of Concept Drift Detection,"MDPI Info",2024,Information 15(12),10.3390/info15120422,Benchmark comparison of error rate vs distribution-based methods,PASS
+DRIFT-005,Concept drift detection in image data streams: A survey,"Springer",2025,Artificial Intelligence Review,10.1007/s10462-025-10689-1,Domain-specific methods for unstructured image data,PASS
+DRIFT-006,A benchmark of unsupervised concept drift detectors,"Springer",2024,JDSA,10.1007/s44172-024-00150-2,DDD, IBDD, SPLL unsupervised methods comparison,PASS
+DRIFT-007,Learning from Time-Changing Data with Adaptive Windowing,"Bifet & Gavaldà",2007,SIAM ICDM,10.1137/1.9781611972771.37,ADWIN algorithm - adaptive sliding window,PASS
+DRIFT-008,Learning with Drift Detection,"Gama et al.",2004,SBIA,10.1007/978-3-540-28656-4_12,DDM - Drift Detection Method, monitors error rate,PASS
+DRIFT-009,Early Drift Detection Method,"Baena-García et al.",2006,ECML PKDD,10.1007/978-3-540-46025-3_11,EDDM - extension of DDM for faster detection,PASS
+DRIFT-010,McDiarmid Drift Detection Methods for Evolving Data Streams,"Barros et al.",2017,arXiv:1710.02030,10.48550/arXiv.1710.02030,Theoretical analysis using McDiarmid's inequality,PASS
+DRIFT-011,RDDM: Reactive drift detection method,"Santos et al.",2017,Journal of Systems Architecture,10.1016/j.sysarc.2017.06.003,Improved DDM with reactive mechanisms,PASS
+DRIFT-012,An overview of unsupervised drift detection methods,"Gemaque et al.",2020,WIREs Data Mining,10.1002/widm.1384,Comprehensive unsupervised methods review,PASS
+DRIFT-013,Hellinger distance based drift detection for nonstationary environments,"Ditzler & Polikar",2011,IEEE CIDUE,10.1109/ICDMW.2011.41,Hellinger distance for non-stationary detection,PASS
+DRIFT-014,A survey on concept drift adaptation,"Gama et al.",2014,ACM Computing Surveys,10.1145/2517388.2517390,Updated comprehensive survey,PASS

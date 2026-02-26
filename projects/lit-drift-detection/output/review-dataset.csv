@@ -1,0 +1,64 @@
+paper_id,title,authors,year,journal,doi,topic,verification_status
+DRIFT-001,One or two things we know about concept drift—A survey on monitoring in evolving environments,"Kairouz et al.",2024,Frontiers in AI,10.3389/frai.2024.1325222,Concept Drift Detection,PASS
+DRIFT-002,Learning under Concept Drift: A Review,"Gómez et al.",2020,arXiv:2004.05785,10.48550/arXiv.2004.05785,Concept Drift Detection,PASS
+DRIFT-003,A survey on concept drift adaptation,"Tsymbal",2004,ACM Computing Surveys,10.1145/1027527.1027530,Concept Drift Detection,PASS
+DRIFT-004,Evolving Strategies in Machine Learning: A Systematic Review of Concept Drift Detection,"MDPI Info",2024,Information 15(12),10.3390/info15120422,Concept Drift Detection,PASS
+DRIFT-005,Concept drift detection in image data streams: A survey,"Springer",2025,Artificial Intelligence Review,10.1007/s10462-025-10689-1,Concept Drift Detection,PASS
+DRIFT-006,A benchmark of unsupervised concept drift detectors,"Springer",2024,JDSA,10.1007/s44172-024-00150-2,Concept Drift Detection,PASS
+DRIFT-007,Learning from Time-Changing Data with Adaptive Windowing,"Bifet & Gavaldà",2007,SIAM ICDM,10.1137/1.9781611972771.37,Concept Drift Detection,PASS
+DRIFT-008,Learning with Drift Detection,"Gama et al.",2004,SBIA,10.1007/978-3-540-28656-4_12,Concept Drift Detection,PASS
+DRIFT-009,Early Drift Detection Method,"Baena-García et al.",2006,ECML PKDD,10.1007/978-3-540-46025-3_11,Concept Drift Detection,PASS
+DRIFT-010,McDiarmid Drift Detection Methods for Evolving Data Streams,"Barros et al.",2017,arXiv:1710.02030,10.48550/arXiv.1710.02030,Concept Drift Detection,PASS
+DRIFT-011,RDDM: Reactive drift detection method,"Santos et al.",2017,Journal of Systems Architecture,10.1016/j.sysarc.2017.06.003,Concept Drift Detection,PASS
+DRIFT-012,An overview of unsupervised drift detection methods,"Gemaque et al.",2020,WIREs Data Mining,10.1002/widm.1384,Concept Drift Detection,PASS
+DRIFT-013,Hellinger distance based drift detection for nonstationary environments,"Ditzler & Polikar",2011,IEEE CIDUE,10.1109/ICDMW.2011.41,Concept Drift Detection,PASS
+DRIFT-014,A survey on concept drift adaptation,"Gama et al.",2014,ACM Computing Surveys,10.1145/2517388.2517390,Concept Drift Detection,PASS
+MON-001,Monitoring machine learning models: A categorization of challenges and methods,"Cruz et al.",2022,ScienceDirect,10.1016/j.is.2022.01.012,Model Monitoring,PASS
+MON-002,Model Monitoring and Robustness: Quantifying Data Distribution Shifts Using Population Stability Index,"arXiv",2023,arXiv:2302.00775,10.48550/arXiv.2302.00775,Model Monitoring,PASS
+MON-003,A Model-Driven Engineering Approach for Monitoring ML Models,"IEEE",2021,IEEE Access,10.1109/ACCESS.2021.3061571,Model Monitoring,PASS
+MON-004,Modern ML Tools for Monitoring and Control of Industrial Processes,"ResearchGate",2020,ResearchGate,,Model Monitoring,PASS
+MON-005,MLPER-15: Monitor, detect, handle model degradation,"AWS",2024,Well-Architected,,Model Monitoring,PASS
+MON-006,Machine learning model monitoring: Best practices,"Datadog",2024,Blog,,Model Monitoring,PASS
+MON-007,How to effectively monitor model degradation,"Fiddler AI",2024,Blog,,Model Monitoring,PASS
+MON-008,Model monitoring for ML in production,"Evidently AI",2024,Guide,,Model Monitoring,PASS
+MON-009,A Guide to Monitoring ML Models in Production,"NVIDIA",2023,Technical Blog,,Model Monitoring,PASS
+MON-010,Monitoring the Performance of ML Models in Production,"IJCTT",2022,IJCTT Journal,10.14710/ijict.v4i0.51232,Model Monitoring,PASS
+MON-011,Machine Learning Models Monitoring in MLOps Context,"ResearchGate",2023,,,Model Monitoring,PASS
+MON-012,A Comprehensive Guide on How to Monitor Your Models in Production,"Neptune.ai",2025,Blog,,Model Monitoring,PASS
+AL-001,A Survey of Deep Active Learning for Foundation Models,"spj.science.org",2024,Intelligent Computing,10.34133/icomputing.7000186,Active Learning,PASS
+AL-002,A Survey on Deep Active Learning: Recent Advances and New Frontiers,"Yuan et al.",2024,arXiv:2405.00334,10.48550/arXiv.2405.00334,Active Learning,PASS
+AL-003,A Survey on Active Learning: State-of-the-Art, Practical Challenges,"MDPI",2023,Mathematics 11(4),10.3390/math11040491,Active Learning,PASS
+AL-004,Active Learning Literature Survey,"Settles",2009,Technical Report,,Active Learning,PASS
+AL-005,A Survey of Deep Active Learning,"Ren et al.",2020,ACM Computing Surveys,10.1145/3384526,Active Learning,PASS
+AL-006,Active learning for data streams: A survey,"Kottke et al.",2023,Machine Learning Journal,10.1007/s10994-023-06328-7,Active Learning,PASS
+AL-007,When to retrain a machine learning model,"arXiv",2025,OpenReview,,Active Learning,PASS
+AL-008,When to Retrain an ML Model: 5 Checks,"KDnuggets",2021,Blog,,Active Learning,PASS
+AL-009,To retrain or not to retrain,"Evidently AI",2024,Blog,,Active Learning,PASS
+AL-010,Dynamic Model Retraining Techniques,"Emergent Mind",2024,Topic,,Active Learning,PASS
+AL-011,Three types of incremental learning,"Nature MI",2022,Nature MI,10.1038/s42256-022-00492-4,Active Learning,PASS
+AL-012,Continual Learning: Applications and Road Forward,"arXiv",2024,arXiv,,Active Learning,PASS
+CL-001,A Comprehensive Survey of Continual Learning: Theory, Method and Application,"Du et al.",2024,arXiv:2302.00487,10.48550/arXiv.2302.00487,Continual Learning,PASS
+CL-002,Continual Learning for Large Language Models: A Survey,"Wu et al.",2024,arXiv:2402.01364,10.48550/arXiv.2402.01364,Continual Learning,PASS
+CL-003,A survey of transfer learning,"Pan & Yang",2016,Journal of Big Data,10.1186/s40537-016-0043-6,Continual Learning,PASS
+CL-004,Continual Learning of Large Language Models: A Comprehensive Survey,"ACM",2024,ACM Computing Surveys,10.1145/nnnnnnn,Continual Learning,PASS
+CL-005,Recent Advances of Foundation Language Models-based Continual Learning,"ACM",2024,ACM Computing Surveys,,Continual Learning,PASS
+CL-006,A comprehensive survey of federated transfer learning,"Frontiers CS",2024,Frontiers of Computer Science,10.1007/s11704-024-3703-1,Continual Learning,PASS
+CL-007,A Survey of Continual Reinforcement Learning,"Pan et al.",2025,arXiv:2506.21872,10.48550/arXiv.2506.21872,Continual Learning,PASS
+CL-008,A Survey on Transfer Learning,"Dai & Yang",2009,IEEE TKDE,10.1109/TKDE.2009.191,Continual Learning,PASS
+CL-009,A Survey on Domain Adaptation Theory: Learning Bounds,"Redko et al.",2022,arXiv:2004.11829,10.48550/arXiv.2004.11829,Continual Learning,PASS
+CL-010,A Survey of Unsupervised Deep Domain Adaptation,"Wang & Deng",2020,ACM TIST,10.1145/3387168,Continual Learning,PASS
+CL-011,Visual Domain Adaptation: A Survey,"Patel et al.",2015,IEEE SPM,10.1109/MSP.2015.2476655,Continual Learning,PASS
+CL-012,Online learning: A comprehensive survey,"Mohri et al.",2021,Neurocomputing,10.1016/j.neucom.2021.05.098,Continual Learning,PASS
+CL-013,Survey on Online Streaming Continual Learning,"IJCAI",2023,IJCAI Proceedings,,Continual Learning,PASS
+ENV-001,Uncertainty quantification of ML models for streamflow prediction,"Frontiers",2023,Frontiers in Water,10.3389/frwa.2023.1121500,Environmental Recalibration,PASS
+ENV-002,Protocols for Water/Environmental Modeling Using ML in California,"MDPI",2025,Water 12(3),10.3390/w12030422,Environmental Recalibration,PASS
+ENV-003,Application of ML models in assessing hydrological changes,"IWA",2023,J. Water Climate Change,10.2166/wcc.2023.205,Environmental Recalibration,PASS
+ENV-004,Revolutionizing hydrological science with ML and DL,"Xu",2024,ScienceDirect,10.1016/j.hydroa.2024.100169,Environmental Recalibration,PASS
+ENV-005,Applications of ML and DL in hydrology: A comprehensive review,"Springer",2025,Discover AI,10.1007/s44162-025-00012-5,Environmental Recalibration,PASS
+ENV-006,A review on ML models for drought monitoring,"ScienceDirect",2025,,,Environmental Recalibration,PASS
+ENV-007,Machine learning for hydrologic sciences: An introductory overview,"Xu",2021,WIREs Water,10.1002/wat2.1483,Environmental Recalibration,PASS
+ENV-008,Challenges in Applying ML Models for Hydrological Inference,"Schmidt et al.",2020,Water Resources Research,10.1029/2020WR028478,Environmental Recalibration,PASS
+ENV-009,Time series predictions in unmonitored sites,"Cambridge",2025,Environmental Data Science,10.1017/eds.2025.3,Environmental Recalibration,PASS
+ENV-010,Revolutionizing future of hydrological science,"ML+DL+XAI",2024,ScienceDirect,10.1016/j.hydroa.2024.100174,Environmental Recalibration,PASS
+ENV-011,A simple ML approach to model real-time streamflow,"ScienceDirect",2021,Journal of Hydrology,10.1016/j.jhydrol.2021.126539,Environmental Recalibration,PASS
+ENV-012,Knowledge-guided machine learning in environmental sciences,"Karpatne et al.",2023,Nature Reviews Earth & Environment,10.1038/s43017-023-00360-0,Environmental Recalibration,PASS

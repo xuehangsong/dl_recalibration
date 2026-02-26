@@ -1,0 +1,13 @@
+paper_id,title,authors,year,journal,doi,key_contribution,verification_status
+MON-001,Monitoring machine learning models: A categorization of challenges and methods,"Cruz et al.",2022,ScienceDirect,10.1016/j.is.2022.01.012,Taxonomy of ML monitoring challenges and methods,PASS
+MON-002,Model Monitoring and Robustness: Quantifying Data Distribution Shifts Using Population Stability Index,"arXiv",2023,arXiv:2302.00775,10.48550/arXiv.2302.00775,PSI for quantifying distribution shifts,PASS
+MON-003,A Model-Driven Engineering Approach for Monitoring ML Models,"IEEE",2021,IEEE Access,10.1109/ACCESS.2021.3061571,MDE approach for ML monitoring,PASS
+MON-004,Modern ML Tools for Monitoring and Control of Industrial Processes,"ResearchGate",2020,ResearchGate,,Survey of industrial ML monitoring,PASS
+MON-005,MLPER-15: Monitor, detect, handle model degradation,"AWS",2024,Well-Architected,,SageMaker Model Monitor best practices,PASS
+MON-006,Machine learning model monitoring: Best practices,"Datadog",2024,Blog,,Data drift, feature attribution monitoring,PASS
+MON-007,How to effectively monitor model degradation,"Fiddler AI",2024,Blog,,ML observability enterprise approach,PASS
+MON-008,Model monitoring for ML in production,"Evidently AI",2024,Guide,,Data/Model drift detection,PASS
+MON-009,A Guide to Monitoring ML Models in Production,"NVIDIA",2023,Technical Blog,,Statistical tests, drift detection,PASS
+MON-010,Monitoring the Performance of ML Models in Production,"IJCTT",2022,IJCTT Journal,10.14710/ijict.v4i0.51232,Performance monitoring metrics,PASS
+MON-011,Machine Learning Models Monitoring in MLOps Context,"ResearchGate",2023,,,Metrics and tools comparison,PASS
+MON-012,A Comprehensive Guide on How to Monitor Your Models in Production,"Neptune.ai",2025,Blog,,Functional and operational observability,PASS
