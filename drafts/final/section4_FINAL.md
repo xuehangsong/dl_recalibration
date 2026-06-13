@@ -1,125 +1,147 @@
 # 4. Implementation Roadmap
 
-This section describes how the three-pillar framework (Section 2.1) and seven-step workflow (Section 2.2) translate into an operational system. Rather than prescribing specific software architecture, this section outlines the capabilities required, the methods that support them (drawing from Section 3), and a phased development approach appropriate for DOE environmental management applications.
+This section describes how the three-pillar framework (Section 2.1) and seven-step workflow (Section 2.2) translate into an operational system. Rather than prescribing specific software tools or platforms, we focus on what capabilities are needed and how they should be developed over time. The goal is to provide a roadmap that can guide implementation while remaining flexible to site-specific constraints and evolving technology.
 
-The implementation must satisfy two demands: first, support the scientific workflow of monitoring, detecting drift, and executing recalibration; and second, meet DOE governance requirements for traceability, reproducibility, and quality assurance.
+The implementation must satisfy two sometimes competing demands. First, it must support the scientific workflow of monitoring, detecting drift, and executing recalibration when needed. Second, it must meet DOE governance requirements for traceability, reproducibility, and quality assurance. The design outlined here attempts to balance both demands while maintaining consistency with the framework architecture established in Section 2.
 
-## 4.1 Framework Design Principles
+## 4.1 System Requirements
 
-### 4.1.1 Guiding Principles
+### 4.1.1 Operational Modes
 
-The implementation follows three guiding principles derived from the framework. The first principle is workflow-centric organization, where operational capabilities map directly to the two workflow phases (Continuous Monitoring and Triggered Response), ensuring that implementation supports the recalibration cycle defined in Section 2.2. The second principle is pillar awareness, where each capability draws on one or more management domains—Pillar A (Governance), Pillar B (Modeling Engines), or Pillar C (Recalibration Mechanisms)—as defined in Section 2.1. The third principle is governance integration, where Pillar A requirements including audit trails, acceptance criteria, and human decision points are embedded throughout the workflow rather than isolated as a separate concern.
+The system operates in two distinct modes that place different demands on the architecture and reflect different phases of the surrogate lifecycle.
 
-### 4.1.2 Relationship to Section 3 Methods
+Offline mode encompasses initial surrogate development: generating training ensembles with the physics model, training the surrogate, calibrating uncertainty estimates, and validating against held-out data. This phase is computationally intensive, potentially requiring thousands of physics runs and GPU-hours of training, but is not time-critical. Offline work typically occurs on HPC resources with batch scheduling. In terms of the framework, offline mode establishes the initial Pillar B modeling engines before operational deployment. The methods described in Section 3.2 (physics-based models and surrogate architectures) and Section 3.3.1 (uncertainty quantification) are applied during this phase to produce a validated surrogate ready for deployment.
 
-The methods detailed in Section 3 provide the technical foundation for implementation. Table 4.1 summarizes the mapping between workflow phases, required capabilities, and the Section 3 methods that support them.
+Online mode is the operational phase where the trained surrogate supports decision-making. The surrogate generates predictions on demand, the monitoring system tracks performance through the seven-step workflow, and recalibration is triggered when needed. Online operations require faster turnaround—predictions in seconds to minutes, diagnostic updates on a regular schedule such as daily or weekly, and recalibration decisions on a governed timeline such as quarterly review. Online components may run on more modest computing resources, though recalibration itself may require temporary access to HPC for new physics runs. The methods from Section 3.3.2 (trigger logic) and Section 3.1 (governance) are continuously active during online operations.
 
-**Table 4.1: Workflow Capabilities and Supporting Methods**
+The architecture must support smooth transitions between modes. A surrogate developed offline must be deployable online without modification. Data collected during online operations must feed back into offline analysis when full retraining is needed. This bidirectional flow ensures that operational experience improves subsequent surrogate generations.
 
-| Workflow Phase | Capability Needed | Section 3 Methods |
-|----------------|-------------------|-------------------|
-| Phase 1: Monitoring | Uncertainty quantification | MC-Dropout, deep ensembles, conformal prediction (3.3.1) |
-| Phase 1: Detection | Drift identification | KS test, composite drift index, resilience metrics (3.3.2) |
-| Phase 1: Decision | Governance thresholds | Acceptance criteria, trigger policies (3.1.3) |
-| Phase 2: Preparation | Scenario selection | Uncertainty sampling, error-based sampling (3.3.4) |
-| Phase 2: Update | Model fine-tuning | EWC, replay buffers, layer freezing (3.3.3) |
-| Phase 2: Calibration | UQ adjustment | Coverage evaluation, interval calibration (3.3.1) |
-| Phase 2: Deployment | Version control | Configuration management, audit trails (3.1.5) |
+### 4.1.2 Pillar-Based Capabilities
 
-## 4.2 Phase 1 Capabilities: Continuous Monitoring (Steps 1-3)
+Each pillar of the framework requires specific capabilities for implementation. Understanding these requirements helps ensure that the system architecture supports all aspects of the recalibration framework.
 
-Phase 1 runs continuously during site operations, implementing Steps 1-3 of the workflow (MONITOR → DETECT → DECIDE). These capabilities serve primarily Pillar C for technical diagnostics and Pillar A for governance oversight.
+Pillar A (Governance) requires infrastructure for configuration management that tracks all surrogate versions with their training data, assumptions, and validation results. The system must maintain audit logging for all decisions, particularly at the DECIDE step where human judgment authorizes recalibration. Documentation generation capabilities must produce regulatory-compliant records that satisfy DOE quality assurance requirements. Human review interfaces must present diagnostic evidence clearly so that decision-makers can evaluate whether recalibration is warranted. The governance methods detailed in Section 3.1—including regulatory framework alignment, acceptance criteria, monitoring schedules, and configuration control—define what this infrastructure must support.
 
-### 4.2.1 Performance Monitoring (Step 1: MONITOR)
+Pillar B (Modeling Engines) requires a physics model interface capable of communicating with high-fidelity simulators such as PFLOTRAN, MODFLOW, STOMP, or TOUGH2. This interface handles input file generation, job submission including HPC scheduling where needed, output parsing, and result archiving. The system must also provide surrogate training and inference infrastructure that can train neural network architectures (such as those described in Section 3.2.3), store trained models with version control, and generate predictions efficiently during operations. Data management capabilities must handle both simulation outputs and field observations, maintaining provenance for all data used in training or validation.
 
-The purpose of performance monitoring is to continuously compare surrogate predictions against monitoring data to track accuracy and uncertainty. Required capabilities include computing prediction-observation residuals at monitoring wells and compliance points, tracking spatial and temporal patterns in residuals, maintaining rolling statistics (such as 30-day and 90-day windows) for baseline comparison, and ingesting and validating new observations from field sensors and laboratory results.
+Pillar C (Recalibration Mechanisms) requires infrastructure for uncertainty quantification computation using the methods described in Section 3.3.1, including MC-Dropout, deep ensembles, or conformal prediction. Drift detection and monitoring capabilities must implement the trigger logic from Section 3.3.2, tracking performance metrics and evaluating drift indicators against governance-defined thresholds. When recalibration is triggered, the system must support active learning for scenario selection (Section 3.3.4) and continual learning for model updates (Section 3.3.3). Multi-fidelity data fusion (Section 3.3.5) and full retraining (Section 3.3.6) capabilities complete the recalibration toolkit.
 
-Section 3 methods applied include UQ computation using MC-Dropout or deep ensembles (Section 3.3.1) to generate predictive uncertainty estimates, and calibration tracking to verify that stated uncertainty intervals match empirical coverage (for example, 95% intervals should contain true values approximately 95% of the time).
+### 4.1.3 Workflow Support
 
-Governance integration under Pillar A requires that all metrics be stored with full provenance for audit trails, and that summary reports be generated for periodic governance review per Section 3.1.4 monitoring schedule.
+The implementation must support both phases of the seven-step workflow defined in Section 2.2.
 
-### 4.2.2 Drift Detection (Step 2: DETECT)
+Phase 1 (Continuous Monitoring) implements Steps 1 through 3 of the workflow. The MONITOR step requires automated comparison of surrogate predictions against field observations, computing residuals and tracking uncertainty metrics over time. The DETECT step evaluates drift indicators against predefined thresholds, distinguishing transient anomalies from persistent degradation using the persistence filtering described in Section 3.3.2. The DECIDE step packages diagnostic evidence for governance review and records the authorization decision. Throughout Phase 1, the system maintains the trigger state logic—OK, WARNING, UPDATE, or ESCALATE—that guides operational decisions.
 
-The purpose of drift detection is to identify when surrogate performance has degraded sufficiently to warrant recalibration. Required capabilities include evaluating multiple drift indicators against predefined thresholds, integrating signals into composite assessment, and distinguishing transient anomalies from persistent degradation.
+Phase 2 (Triggered Response) activates only when the DECIDE step authorizes an update, implementing Steps 4 through 7. The PREPARE step assembles training data, potentially using active learning to select high-value scenarios for new physics simulations. The UPDATE step fine-tunes surrogate weights using continual learning techniques that preserve previously learned knowledge. The CALIBRATE step ensures that uncertainty estimates remain well-calibrated after the update. The DEPLOY step validates the updated surrogate against acceptance criteria and, if successful, deploys it with full documentation. If validation fails, the system supports rollback procedures as defined in Section 3.1.5.
 
-Section 3 methods applied from Section 3.3.2 Trigger Logic include performance-based metrics (RMSE, bias, threshold exceedance with residuals exceeding 2× rolling standard deviation), uncertainty-based metrics (predictive variance inflation exceeding 150% of baseline), distributional metrics (Kolmogorov-Smirnov test with p-value below 0.01 indicating significant drift), resilience metrics (rolling variance and lag-1 autocorrelation showing sustained increase over 60-90 days), and composite metrics (drift index aggregation using Boolean or score-based gating).
+The methods detailed in Section 3 provide the technical foundation for all workflow steps. Rather than re-explaining these methods here, the implementation draws on them as needed: Section 3.3.1 for uncertainty quantification, Section 3.3.2 for trigger logic, Section 3.3.3 for continual learning, Section 3.3.4 for active learning, Section 3.3.5 for multi-fidelity fusion, and Section 3.3.6 for full retraining when incremental updates are insufficient.
 
-Persistence filtering per Section 3.3.2 requires that drift signals persist for a minimum duration (typically 60-90 days) before triggering action, reducing false positives from transient anomalies.
+## 4.2 Human Decision Points
 
-### 4.2.3 Governance Decision (Step 3: DECIDE)
+Not everything should be automated. The framework includes explicit decision points where human judgment is required, reflecting Pillar A's emphasis on governance and accountability. The software architecture should make these decision points visible and provide the information needed to make them well.
 
-The purpose of the governance decision step is to present evidence for human review and obtain authorization before proceeding to Phase 2. Required capabilities include synthesizing diagnostic results into actionable summary, presenting historical context (previous recalibration events and outcomes), and documenting decision rationale for regulatory transparency.
+### 4.2.1 Recalibration Approval
 
-Governance integration under Pillar A establishes that the DECIDE step requires explicit human authorization before triggering Phase 2. This aligns with DOE quality assurance requirements (Section 3.1) that surrogate updates be justified, proportional, and documented. Decision options include approving the update, deferring pending additional evidence, or rejecting with justification.
+The most important decision point occurs at Step 3 (DECIDE) of the workflow. Even when automated diagnostics indicate drift, the decision to update a surrogate should involve human review. This is both a governance requirement under DOE quality assurance standards and a practical safeguard against false alarms. The monitoring system provides the evidence—drift metrics, historical trends, uncertainty inflation, and comparison to acceptance criteria—but humans make the call on whether to proceed with recalibration.
 
-The framework maintains operational state through trigger state logic to guide decisions. The OK state indicates the surrogate meets acceptance criteria and normal monitoring continues. The WARNING state indicates drift has been detected, monitoring should intensify, and evidence should accumulate. The UPDATE state indicates governance has approved proceeding to Phase 2. The ESCALATE state indicates the update failed validation, the surrogate is withdrawn, and operations revert to physics-only mode.
+The decision options at this point include approving the update and proceeding to Phase 2, deferring pending additional evidence while continuing intensified monitoring, or rejecting with documented justification if the evidence is insufficient or the timing is inappropriate. Each decision must be recorded with rationale for regulatory transparency.
 
-## 4.3 Phase 2 Capabilities: Triggered Response (Steps 4-7)
+### 4.2.2 Acceptance Criteria Definition
 
-Phase 2 activates only when DECIDE authorizes an update, implementing Steps 4-7 of the workflow (PREPARE → UPDATE → CALIBRATE → DEPLOY). These capabilities serve primarily Pillar C and Pillar B.
+Acceptance criteria define what "good enough" means for a given application—the error thresholds, uncertainty coverage requirements, and performance metrics that determine whether a surrogate is fit for purpose. Setting these criteria requires domain expertise that cannot be automated. Humans must understand site-specific risks, regulatory context, and the consequences of prediction errors to define appropriate thresholds.
 
-### 4.3.1 Data Preparation (Step 4: PREPARE)
+The system evaluates surrogate performance against these criteria, but the criteria themselves emerge from human judgment informed by site characterization, regulatory requirements, and operational experience. Section 3.1.3 describes the types of acceptance criteria (accuracy metrics, uncertainty coverage, spatial and temporal consistency) but the specific threshold values must be determined by qualified personnel for each application.
 
-The purpose of data preparation is to assemble training data for surrogate update, potentially including new physics simulations. Two pathways exist per Section 2.2: the observation-driven pathway proceeds directly to UPDATE when new field data alone is sufficient, while the simulation-driven pathway uses active learning to select scenarios when new physics runs are needed.
+### 4.2.3 Rollback Decisions
 
-Section 3 methods applied from Section 3.3.4 Active Learning include uncertainty sampling to prioritize scenarios where the surrogate has high predictive variance, error-based sampling to target regions with large or persistent residuals, diversity constraints to ensure selected scenarios span hydraulic gradients, hydrostratigraphic units, and forcing conditions, and batch sizing to select 6-10 high-value simulations per update cycle.
+When an updated surrogate fails validation at Step 7 (DEPLOY), a rollback decision is required. As defined in Section 3.1.5, rollback means withdrawing the surrogate from operational use and reverting to physics-only analysis—not reverting to a previous surrogate version, since that version has already been flagged as degraded. This is a significant operational change that requires human authorization and documentation.
 
-The physics model interface under Pillar B executes targeted simulations using site physics models (PFLOTRAN, MODFLOW, STOMP, or similar) and archives outputs with full provenance for reproducibility.
+The decision to rollback acknowledges that the recalibration attempt was unsuccessful and that the surrogate cannot currently meet acceptance criteria. This triggers the ESCALATE state, which may lead to full retraining or, in some cases, a fundamental reassessment of whether a surrogate approach is appropriate for the application.
 
-### 4.3.2 Model Update (Step 5: UPDATE)
+### 4.2.4 Full Retraining Triggers
 
-The purpose of model update is to fine-tune surrogate weights using new data while preserving previously learned knowledge. Section 3 methods applied from Section 3.3.3 Continual Learning include replay buffers to prevent catastrophic forgetting by including 70-75% historical samples in training batches, EWC regularization to protect important weights by penalizing deviations from weights influential in previous training, layer freezing to preserve structural representations by freezing early encoder layers while updating later layers with small learning rate, and early stopping to prevent overfitting by stopping when validation performance plateaus.
+The most consequential decision point arises when incremental updates repeatedly fail or when site conditions change fundamentally. The decision to abandon the current surrogate and retrain from scratch involves judgment about whether the surrogate's foundational assumptions remain valid. Perhaps the training distribution no longer represents current site conditions, or perhaps the surrogate architecture is inadequate for the prediction task.
 
-Multi-fidelity integration from Section 3.3.5 combines low-fidelity simulations (broad coverage) with high-fidelity runs (local accuracy) using co-Kriging or neural discrepancy models when available.
+Full retraining has major resource implications—potentially thousands of new physics simulations and significant computational effort—and should not be automated. Section 3.3.6 describes the technical process for full retraining, but the decision to initiate it requires human assessment of whether the investment is justified and whether the underlying approach remains sound.
 
-### 4.3.3 Uncertainty Recalibration (Step 6: CALIBRATE)
+## 4.3 Development Phases
 
-The purpose of uncertainty recalibration is to ensure the updated surrogate's uncertainty estimates remain well-calibrated. Section 3 methods applied from Section 3.3.1 UQ include coverage evaluation to test whether uncertainty intervals achieve target coverage on held-out data, and calibration adjustment to modify scaling factors if intervals are too narrow (under-coverage) or too wide (over-coverage).
+Implementing the full framework is a multi-year effort. A phased approach delivers value incrementally while building toward the complete vision. Each phase builds on the previous one, with lessons learned informing subsequent development.
 
-Method-specific procedures include adjusting dropout rate or number of forward passes for MC-Dropout, retraining ensemble members on updated data for deep ensembles, and recomputing nonconformity scores on calibration set for conformal prediction. The validation requirement specifies that calibrated uncertainty must meet acceptance criteria (Section 3.1.3) before proceeding to deployment.
+### 4.3.1 Phase 1: Prototype Demonstration
 
-### 4.3.4 Deployment and Governance (Step 7: DEPLOY)
+The immediate objective is to demonstrate that the recalibration concept works by completing one full cycle on a synthetic or simplified test case.
 
-The purpose of deployment is to validate the updated surrogate against acceptance criteria and deploy with full documentation. Required capabilities include verifying acceptance criteria from Section 3.1.3 (accuracy metrics, uncertainty coverage, spatial/temporal consistency), maintaining version control for surrogate models, generating governance documentation package, and handling failed validations through rollback procedures.
+The scope of Phase 1 includes developing a single surrogate architecture—such as U-FNO for 2D cross-section transport or U-Net for pump-and-treat plume prediction—trained on synthetic physics model outputs. Basic uncertainty quantification using MC-Dropout or deep ensembles provides predictive uncertainty estimates. Simple threshold-based drift detection identifies when performance has degraded. The recalibration workflow is executed manually: a researcher runs diagnostics, decides an update is needed, generates new training data through targeted physics simulations, fine-tunes the model using continual learning techniques, recalibrates uncertainty estimates, and validates results against acceptance criteria. The work is documented in Jupyter notebooks or Python scripts that capture each step.
 
-Governance integration under Pillar A from Section 3.1.5 includes configuration control to track all surrogate versions with training data, assumptions, and validation results, and audit trail documentation of trigger rationale, data sources, evaluation results, and verification outcomes. Rollback definition per Section 3.1.5 specifies that rollback means withdrawal of surrogate from operational use and escalation to full retraining—not reversion to a previous version, since the prior version has already been flagged as degraded.
+The key deliverable is a working demonstration showing before-and-after performance when the surrogate is updated in response to simulated drift. This demonstration proves that the seven-step workflow can improve surrogate performance and that the methods from Section 3 work together as intended.
 
-## 4.4 Infrastructure Considerations
+Success is measured by completing the full MONITOR → DETECT → DECIDE → PREPARE → UPDATE → CALIBRATE → DEPLOY cycle with documented performance improvement. At this phase, there is no persistent software system—just reproducible code that proves the concept.
 
-### 4.4.1 Data Management
+### 4.3.2 Phase 2: Integrated Framework
 
-The framework requires data management capabilities that support all three pillars. These include observations (field measurements, laboratory results, sensor data), simulations (physics model inputs and outputs with full provenance), models (surrogate weights, training configurations, validation results), and governance (decision logs, audit trails, acceptance criteria records).
+Building on the prototype, the objective of Phase 2 is to create reusable software components that can operate on realistic site data with governance-compliant documentation.
 
-### 4.4.2 Computational Resources
+The scope expands to include modular Python packages for each core capability, with documented interfaces and test coverage. These packages can be installed and used independently or together. Automated drift detection runs on a schedule and generates diagnostic reports without manual intervention. A scripted recalibration workflow executes the necessary steps with minimal manual effort once a decision to update has been made. Configuration management tracks model versions, training data provenance, and parameter settings. Multiple surrogate architecture options are supported, allowing comparison of different approaches for a given prediction task.
 
-Surrogate inference typically runs on standard computing resources (CPU or single GPU). Physics simulations may require HPC resources depending on model complexity. Training and fine-tuning benefit from GPU resources but do not always require them for incremental updates.
+Deliverables include installable packages that implement the framework components, automated diagnostic reports that summarize surrogate performance and drift indicators, and a governance dashboard prototype that presents decision-relevant information for human review. The system produces documentation that meets DOE quality assurance requirements for traceability and reproducibility.
 
-### 4.4.3 Interoperability
+Success is measured by the framework operating on representative site data—either from an actual EM site or from realistic synthetic scenarios—with all governance requirements satisfied. At this phase, the system still requires a technically skilled operator comfortable with Python and command-line tools, but routine operations are largely automated. The operator's role shifts from executing steps to reviewing outputs and making decisions.
 
-The framework should interface with existing site physics models (PFLOTRAN, MODFLOW, STOMP, TOUGH2, and similar), site monitoring databases and sensor networks, and DOE quality assurance and configuration management systems.
+### 4.3.3 Phase 3: Operational System
 
-## 4.5 Development Phases
+The full vision is a system that can be deployed at an EM site and operated by staff who are not ML specialists. The objective is acceptance for operational use under DOE quality assurance requirements.
 
-Implementation proceeds through three phases, progressively building capability and confidence.
+The scope includes a persistent monitoring service that runs continuously, ingests new observations as they arrive, and maintains an up-to-date picture of surrogate performance. A user interface—likely web-based—presents diagnostics, alerts, and decision options in an accessible format so that analysts can review model status, examine historical performance, and initiate recalibration workflows without writing code. The system supports multiple surrogates for different prediction tasks with coordinated monitoring and updating. Integration with site data systems allows observations to flow automatically from field sensors and laboratory results into the monitoring pipeline.
 
-### 4.5.1 Phase 1: Prototype Demonstration
+Deliverables include a production-quality implementation meeting all DOE software quality requirements, training materials for site operators, and maintenance and support procedures. Full regulatory documentation demonstrates compliance with DOE O 414.1D and NQA-1 requirements.
 
-The objective of Phase 1 is to demonstrate one complete recalibration cycle on a synthetic or simplified test case. The scope includes a single surrogate architecture (such as U-Net or U-FNO from Section 5), basic UQ using MC-Dropout or deep ensembles, simple drift detection (threshold-based), manual governance decisions, and documented recalibration event. Success criteria require completing the full MONITOR → DETECT → DECIDE → PREPARE → UPDATE → CALIBRATE → DEPLOY cycle with documented performance improvement.
+Success is measured by the framework being accepted for operational use at one or more DOE EM sites, with site staff able to operate the system for routine monitoring and governance personnel able to make informed recalibration decisions based on system outputs. This phase requires significant software engineering effort and should be informed by experience from earlier phases. Specific technology choices should be deferred until requirements are better understood through operational experience.
 
-### 4.5.2 Phase 2: Integrated Framework
+## 4.4 Technical Considerations
 
-The objective of Phase 2 is to integrate all framework components with realistic site data. The scope includes multiple surrogate options, full trigger logic from Section 3.3.2 (composite drift index), continual learning with replay buffers and EWC, active learning for scenario selection, governance dashboard for decision support, and automated monitoring with human-in-the-loop decisions. Success criteria require the framework to operate on representative site data with governance-compliant documentation.
+### 4.4.1 Computational Requirements
 
-### 4.5.3 Phase 3: Operational System
+The framework spans a wide range of computational demands that must be accommodated by the implementation architecture.
 
-The objective of Phase 3 is to deploy the framework for operational use at DOE EM sites. The scope includes production-quality implementation, integration with site monitoring systems, full regulatory documentation, training materials for site operators, and maintenance and support procedures. Success criteria require the framework to be accepted for operational use under DOE quality assurance requirements.
+Physics simulations are the most expensive component. A single PFLOTRAN run for a 2D cross-section case takes minutes; a full 3D site model may take hours. Generating training ensembles of hundreds to thousands of runs requires HPC access with batch scheduling. Recalibration updates need fewer runs—typically tens selected by active learning—but still benefit from parallel execution.
 
-## 4.6 Open Design Questions
+Surrogate training requires GPU resources for efficient execution. Initial training of a U-FNO or U-Net model may take hours on a modern GPU. Fine-tuning for recalibration is faster, typically minutes to an hour, but still benefits from GPU acceleration. Training can occur on HPC GPU nodes, cloud resources, or dedicated workstations depending on availability.
 
-Several design decisions remain for site-specific implementation. Surrogate architecture selection must determine which architecture(s) best fit site-specific prediction needs (see Section 3.2 for options). UQ method selection involves tradeoffs between MC-Dropout, deep ensembles, and conformal prediction regarding computational cost and calibration quality. Trigger threshold calibration requires site-specific thresholds for drift detection metrics based on historical variability. Update frequency must balance responsiveness (frequent updates) against stability (conservative updates). Multi-fidelity integration decisions determine when and how to incorporate low-fidelity simulations alongside high-fidelity runs. Governance workflow must address site-specific approval processes and documentation requirements. These questions will be addressed during Phase 1 prototyping and refined through operational experience.
+Inference and monitoring are lightweight by comparison. A trained surrogate generates predictions in milliseconds. Diagnostic calculations—residuals, uncertainty metrics, drift statistics—are similarly fast. These operations can run on standard computing resources without specialized hardware.
 
-## 4.7 Summary
+The architecture should not assume that all components run on the same hardware. Physics simulations may run on one HPC system, training on another, and monitoring on a third. Data must flow between these environments reliably, with appropriate handling of different file systems, network configurations, and security boundaries.
 
-This implementation roadmap translates the three-pillar framework and seven-step workflow into operational capabilities. The design follows workflow-centric organization, with capabilities organized around the two workflow phases (Continuous Monitoring and Triggered Response). All technical capabilities draw from methods detailed in Section 3, including UQ, trigger logic, continual learning, active learning, and multi-fidelity approaches. Pillar A governance requirements are embedded throughout, with explicit human decision points at the DECIDE step. The phased development approach provides progressive build-up from prototype demonstration to operational system. The framework accommodates site-specific choices while maintaining consistent workflow and governance structure.
+### 4.4.2 Interoperability
 
-The framework enables adaptive surrogate management that maintains prediction accuracy over multi-year remediation timelines while meeting DOE quality assurance and regulatory requirements.
+Simulator coupling presents a practical challenge because physics simulators were not designed with ML workflows in mind. The framework must work with simulators as they are, typically through file-based interfaces: generate input files according to simulator specifications, run the simulator as a subprocess or batch job, and parse output files to extract results. This approach is less elegant than API-based coupling but far more practical given the diversity of simulators in use across EM sites. The Physics Model Interface component must accommodate different simulators—PFLOTRAN, MODFLOW, STOMP, TOUGH2, and others—without requiring changes to downstream components.
+
+Data formats should follow existing conventions where possible. Simulation outputs are often in domain-specific formats such as PFLOTRAN HDF5 or MODFLOW binary files. The framework should read these directly rather than requiring format conversion that could introduce errors or lose information. For internal data—trained models, diagnostic logs, configuration files—standard formats such as JSON, YAML, and PyTorch checkpoints provide adequate interoperability.
+
+Reproducibility requires that every result can be regenerated from archived inputs. This means versioning not just code but also training data, model weights, configuration files, and random seeds. The data management layer must support this requirement without imposing excessive overhead on routine operations. Every prediction should be traceable to the specific surrogate version, training data, and configuration that produced it.
+
+### 4.4.3 Quality Assurance Alignment
+
+DOE quality assurance requirements—including DOE O 414.1D and NQA-1—apply to software used in decision support for environmental management. These requirements do not dictate specific technologies but do constrain how the software is developed and operated. The architecture should make compliance straightforward rather than burdensome.
+
+Configuration control requires that every deployed component have a defined version, that changes be documented and reviewed before deployment, and that the system be able to report exactly what software versions produced a given result. This applies to surrogate models, monitoring algorithms, and the framework software itself.
+
+Verification and validation require that each component be tested against defined acceptance criteria before deployment, with test results documented and retained. For surrogate models, this means validation against held-out data and comparison to physics model predictions. For software components, this means unit tests, integration tests, and documented test coverage.
+
+Traceability requires that audit logs record what data was used, what computations were performed, and what results were produced. These logs must be retained for the project lifetime—potentially decades for long-term remediation sites. The data management layer must support efficient storage and retrieval of audit information.
+
+Corrective action procedures must define how problems are diagnosed, how fixes are implemented, and how fix effectiveness is verified. When a surrogate fails validation or produces unexpected results, the system must support root cause analysis and documented resolution.
+
+## 4.5 Summary
+
+This implementation roadmap translates the three-pillar framework and seven-step workflow into operational capabilities through a structured development approach.
+
+The system requirements are organized around what each pillar needs for implementation, with clear distinction between offline development and online operations. Pillar A requires governance infrastructure for configuration management, audit logging, and human review interfaces. Pillar B requires physics model interfaces and surrogate training infrastructure. Pillar C requires monitoring, drift detection, and recalibration capabilities. The workflow support ensures that both continuous monitoring (Steps 1-3) and triggered response (Steps 4-7) phases can be executed with appropriate automation and human oversight.
+
+Four explicit human decision points preserve governance accountability: recalibration approval at the DECIDE step, acceptance criteria definition, rollback decisions when validation fails, and full retraining triggers when incremental updates are insufficient. These decision points ensure that human judgment remains central to surrogate management despite automation of routine operations.
+
+The phased development approach—from prototype demonstration through integrated framework to operational system—provides progressive capability building with lessons learned informing each subsequent phase. This approach manages risk while delivering value incrementally.
+
+Technical considerations address computational requirements spanning HPC physics simulations to lightweight inference, interoperability with existing simulators and data systems, and alignment with DOE quality assurance requirements. The architecture accommodates site-specific constraints while maintaining consistent workflow and governance structure.
+
+The framework enables adaptive surrogate management that maintains prediction accuracy over multi-year remediation timelines while meeting DOE quality assurance and regulatory requirements. By combining automated monitoring with human decision points, the implementation balances operational efficiency with the accountability required for environmental management applications.
