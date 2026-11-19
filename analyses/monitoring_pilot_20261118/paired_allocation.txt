@@ -1,0 +1,29 @@
+JobId=1595535 JobName=snapshot3-error
+   UserId=song884(4031) GroupId=users(100) MCS_label=N/A
+   Priority=1296 Nice=0 Account=optimize_pt QOS=paygo
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2026-11-18T21:39:48 EligibleTime=2026-11-18T21:39:49
+   AccrueTime=2026-11-18T21:39:49
+   StartTime=2026-11-18T21:39:51 EndTime=2026-11-18T22:39:51 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-18T21:39:51 Scheduler=Backfill
+   Partition=short AllocNode:Sid=deception02.local:1469032
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=dc001
+   BatchHost=dc001
+   NumNodes=1 NumCPUs=64 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=8,mem=20G,node=1,billing=8
+   AllocTRES=cpu=64,node=1,billing=64
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=8 MinMemoryNode=20G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/qfs/people/song884/dl_recalibration_runs/snapshot3_bZhyCS/paired.sbatch
+   WorkDir=/qfs/people/song884/dl_recalibration_runs/snapshot3_bZhyCS
+   StdErr=/qfs/people/song884/dl_recalibration_runs/snapshot3_bZhyCS/slurm-1595535.out
+   StdIn=/dev/null
+   StdOut=/qfs/people/song884/dl_recalibration_runs/snapshot3_bZhyCS/slurm-1595535.out
+   TresPerTask=cpu=8
+   
+

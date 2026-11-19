@@ -1,0 +1,50 @@
+{
+  "reference_n": 758,
+  "evaluation_n": 733,
+  "high_error_n": 45,
+  "cutoff": 1.163652320783776,
+  "other_training_snapshot_evaluation": 716,
+  "rules": {
+    "Original 16 sites": {
+      "No alarm": {
+        "n": 694,
+        "median": 0.5589600930881238,
+        "high": 44
+      },
+      "Alarm": {
+        "n": 39,
+        "median": 0.5157454289144859,
+        "high": 1
+      },
+      "contractions_detected": 0
+    },
+    "Central 16 sites": {
+      "No alarm": {
+        "n": 672,
+        "median": 0.5490805124946347,
+        "high": 34
+      },
+      "Alarm": {
+        "n": 61,
+        "median": 0.6068062679785845,
+        "high": 11
+      },
+      "contractions_detected": 21
+    },
+    "Full-field footprint": {
+      "No alarm": {
+        "n": 678,
+        "median": 0.5495006212461603,
+        "high": 35
+      },
+      "Alarm": {
+        "n": 55,
+        "median": 0.593188588042778,
+        "high": 10
+      },
+      "contractions_detected": 23
+    }
+  },
+  "contraction_n": 24,
+  "both_outcomes_n": 6
+}

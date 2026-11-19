@@ -1,16 +1,16 @@
-# Monitoring pilot for the November 19 discussion
+# November 19 research discussion
 
-**Can concentration changes at a small set of monitoring locations flag impending plume change?** We tested a fixed 4 × 4 grid of ideal monitoring locations in 10,000 archived eSTOMP pump-and-treat trajectories. We set thresholds on 5,000 reference cases and evaluated the other 5,000. Each alarm used information through snapshot 2 to flag a large change from snapshot 2 to 3 in the area enclosing 90% of plume mass.
+**Does plume contraction tell us when the U-Net needs attention?** On 733 evaluation cases with an archived snapshot-3 forecast, the full-field alarm detected 23 of 24 large plume contractions and 10 of 45 high forecast errors. Only six cases met both outcome definitions. The alarm identified a group with a higher error risk, but missed 35 of the 45 high-error cases. Use the [paired comparison figure](alarm_and_forecast_error.pdf) to open the discussion.
 
-| Rule | Events detected / 142 | False alarms / 4,858 non-events | Events per alarm |
-|---|---:|---:|---:|
-| Large concentration change across 16 locations | 0 / 142 | 229 / 4,858 (4.7%) | 0 / 229 |
-| Large previous full-field footprint change | 140 / 142 (98.6%) | 230 / 4,858 (4.7%) | 140 / 370 (37.8%) |
+| Snapshot-2 full-field rule | High error at snapshot 3 | Median spatial RMSE |
+|---|---:|---:|
+| Alarm | 10 / 55 (18.2%) | 0.59 µg/L |
+| No alarm | 35 / 678 (5.2%) | 0.55 µg/L |
 
-All 142 large changes were contractions. Median RMS concentration change at the monitoring locations was 15.1 archive concentration units in those cases and 27.5 in the other cases. A rule looking for a large increase in this score missed the events. The full-field comparator benefited from persistence in the same footprint metric used to define the event. It also required complete plume maps and raised more false alarms than true alarms.
+High error means at least 1.164 µg/L spatial RMSE, the 95th percentile over the 758 paired reference forecasts. The original 16-site high-RMS rule caught one of the 45 high-error cases and issued 39 alerts. All thresholds were determined on reference data. The earlier U-Net study split model data by snapshot. In the paired evaluation, 716 of the 733 trajectories had another snapshot in training. The analysis covers one synthetic case family, one forecast interval and ideal observations.
 
-**Decision for the demonstration.** Leave the high-RMS alarm out of the proposed recalibration trigger for this case. Use the full-field rule as a simulation benchmark. A sparse rule still needs to show which alerts correspond to consequential U-Net errors on paired cases. The experiment covers one interval, one layout, and noise-free simulated observations.
+**What did placement change?** Across all 5,000 pilot evaluation trajectories, the original layout caught 0 of 142 contractions and raised 229 false alarms. The central layout caught 105 and raised 261 false alarms using the same 16-site RMS rule. The perimeter layout never fired. On the 733 paired forecasts, the central rule caught 11 of 45 high errors and issued 61 alarms. The alternative layouts were chosen after inspecting the ensemble and evaluated on the same split. The [footprint ensemble](ensemble_footprint_occupancy.pdf) shows where the 90%-mass footprints contracted.
 
-**Meaningful image for discussion.** The companion ensemble footprint plot shows the cell-wise fraction of event and non-event trajectories inside the Mass90 footprint at snapshots 2 and 3. Event cases contract from an average of 572 to 353 cells, while other cases contract from 914 to 782 cells. This makes the event definition visible and shows why the full-field benchmark has signal. It is a retrospective footprint summary, not a calibrated ensemble prediction or U-Net uncertainty plot.
+**What can we conclude about recalibration?** The full-field signal could prioritize a small set of forecasts for review. Its low coverage of high-error cases leaves a substantial gap for a recalibration trigger. A useful next demonstration would compare a frozen update policy with a no-update baseline on completely held-out trajectories and measure both future error and historical retention. Yilin’s separate replay study illustrates the tradeoff. Fixed replay reduced rare-regime RMSE from 10.04 to 1.21 µg/L, while historical RMSE rose from 0.58 to 1.03 µg/L. Those are outcomes of a separate update experiment.
 
-**Prior update evidence.** In Yilin's separate Figure 4 comparison, fixed replay reduced rare-regime RMSE from 10.04 to 1.21 µg/L and raised historical RMSE from 0.58 to 1.03 µg/L. These are measured update outcomes from the earlier study. The new pilot does not establish how those outcomes would have changed under either warning rule.
+[Offline brief](index.html) · [Methods, per-case data and execution records](../../analyses/monitoring_pilot_20261118/README.md)

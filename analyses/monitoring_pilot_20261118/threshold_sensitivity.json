@@ -1,0 +1,102 @@
+{
+  "sensor_rms": [
+    {
+      "quantile": 0.9,
+      "threshold": 32.481353429323015,
+      "tp": 0,
+      "fp": 444,
+      "fn": 142,
+      "tn": 4414,
+      "sensitivity": 0.0,
+      "false_alarm_rate": 0.09139563606422396,
+      "precision": 0.0,
+      "alerts": 444
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 34.10210697009943,
+      "tp": 0,
+      "fp": 229,
+      "fn": 142,
+      "tn": 4629,
+      "sensitivity": 0.0,
+      "false_alarm_rate": 0.04713874022231371,
+      "precision": 0.0,
+      "alerts": 229
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 36.89758522529936,
+      "tp": 0,
+      "fp": 131,
+      "fn": 142,
+      "tn": 4727,
+      "sensitivity": 0.0,
+      "false_alarm_rate": 0.026965829559489504,
+      "precision": 0.0,
+      "alerts": 131
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 42.7002440824515,
+      "tp": 0,
+      "fp": 49,
+      "fn": 142,
+      "tn": 4809,
+      "sensitivity": 0.0,
+      "false_alarm_rate": 0.010086455331412104,
+      "precision": 0.0,
+      "alerts": 49
+    }
+  ],
+  "previous_change": [
+    {
+      "quantile": 0.9,
+      "threshold": 0.25427501358379256,
+      "tp": 142,
+      "fp": 511,
+      "fn": 0,
+      "tn": 4347,
+      "sensitivity": 1.0,
+      "false_alarm_rate": 0.10518731988472622,
+      "precision": 0.21745788667687596,
+      "alerts": 653
+    },
+    {
+      "quantile": 0.95,
+      "threshold": 0.28427329677605556,
+      "tp": 140,
+      "fp": 230,
+      "fn": 2,
+      "tn": 4628,
+      "sensitivity": 0.9859154929577465,
+      "false_alarm_rate": 0.047344586249485385,
+      "precision": 0.3783783783783784,
+      "alerts": 370
+    },
+    {
+      "quantile": 0.975,
+      "threshold": 0.3065428176948549,
+      "tp": 126,
+      "fp": 111,
+      "fn": 16,
+      "tn": 4747,
+      "sensitivity": 0.8873239436619719,
+      "false_alarm_rate": 0.02284890901605599,
+      "precision": 0.5316455696202531,
+      "alerts": 237
+    },
+    {
+      "quantile": 0.99,
+      "threshold": 0.33431528649524206,
+      "tp": 93,
+      "fp": 36,
+      "fn": 49,
+      "tn": 4822,
+      "sensitivity": 0.6549295774647887,
+      "false_alarm_rate": 0.007410456978180321,
+      "precision": 0.7209302325581395,
+      "alerts": 129
+    }
+  ]
+}

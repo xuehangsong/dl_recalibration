@@ -10,6 +10,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import rankdata
+from build_error_plot import main as build_error_plot
 
 OUT = Path(__file__).resolve().parent
 REPO = OUT.parents[1]
@@ -84,7 +85,20 @@ def main():
     with (OLD/'sources/figure4_metric_values.csv').open() as f:
         rows={r['method']:r for r in csv.DictReader(f)}
     assert [(rows[k]['historical_rmse'],rows[k]['rare_rmse']) for k in ('Baseline','Fixed_replay')]==[('0.58','10.04'),('1.03','1.21')]
-    template=(OUT/'template.html').read_text()
+    build_error_plot()
+    errors = json.loads((PILOT/'error_by_alarm.json').read_text())
+    assert (errors['reference_n'], errors['evaluation_n'], errors['high_error_n'],
+            errors['contraction_n'], errors['both_outcomes_n'], errors['other_training_snapshot_evaluation']) == (758,733,45,24,6,716)
+    assert round(errors['cutoff'], 3) == 1.164
+    summary = []
+    for label, groups in errors['rules'].items():
+        a, b = groups['Alarm'], groups['No alarm']
+        summary.append(f"<tr><th>{label}</th><td>{a['high']} / {a['n']}</td><td>{b['high']} / {b['n']}</td>"
+                       f"<td>{a['median']:.2f}</td><td>{b['median']:.2f}</td></tr>")
+    table = ('<div class="scroll"><table><thead><tr><th>Snapshot-2 rule</th><th>High error / alarm</th>'
+             '<th>High error / no alarm</th><th>Median RMSE, alarm (µg/L)</th>'
+             '<th>Median RMSE, no alarm (µg/L)</th></tr></thead><tbody>' + ''.join(summary) + '</tbody></table></div>')
+    template=(OUT/'template.html').read_text().replace('{{error}}', embed(OUT/'alarm_and_forecast_error.png')).replace('{{error_table}}', table)
     page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png')).replace('{{ensemble}}',embed(OUT/'ensemble_footprint_occupancy.png'))
     assert '{{' not in page
     (OUT/'index.html').write_text(page)
