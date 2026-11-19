@@ -8,6 +8,8 @@ The frozen data source is `/rcfs/projects/optimize_pt/ml_test/dataset_6/snap_out
 
 The monitoring locations are zero-based (x,y) indices on the 128 × 100 grid, the Cartesian product of x = 16, 48, 80, 112 and y = 12, 37, 62, 87. Observations are exact cell concentrations with no added noise. The primary score is the RMS of the 16 local changes. The full-field comparator uses the absolute relative change in the smallest number of grid cells enclosing 90% of the concentration sum. The future event uses the same footprint definition over the next interval. This common definition favors detection of persistent footprint dynamics by the comparator.
 
+The companion `ensemble_footprints.npz` file aggregates the fraction of cases containing each cell in that 90%-mass footprint. For the 142 event cases, the mean footprint contracts from 572 to 353 cells, or 38.3%. For the other 4,858 evaluation cases, it contracts from 914 to 782 cells, or 14.4%. The plotted occupancy maps are retrospective group summaries. They explain the event label and are not spatial uncertainty intervals for the U-Net.
+
 ## Frozen pilot design
 
 A seeded permutation of case IDs splits 10,000 trajectories equally between reference and evaluation. The reference set's 97th percentile of future change defines the event cutoff for this interval (0.3429973). Each rule raises an alarm when its score exceeds the reference non-event 95th percentile. Signal direction, sites, time window, and thresholds were specified by the same script before submission. The evaluation subset was used once for this pilot. Afterward, event direction and median sensor scores were inspected to interpret the result. A revised signal or layout would need a fresh evaluation.

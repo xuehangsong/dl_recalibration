@@ -85,7 +85,7 @@ def main():
         rows={r['method']:r for r in csv.DictReader(f)}
     assert [(rows[k]['historical_rmse'],rows[k]['rare_rmse']) for k in ('Baseline','Fixed_replay')]==[('0.58','10.04'),('1.03','1.21')]
     template=(OUT/'template.html').read_text()
-    page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png'))
+    page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png')).replace('{{ensemble}}',embed(OUT/'ensemble_footprint_occupancy.png'))
     assert '{{' not in page
     (OUT/'index.html').write_text(page)
 

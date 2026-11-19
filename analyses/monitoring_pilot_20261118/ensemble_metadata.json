@@ -1,0 +1,22 @@
+{
+  "event_t2": {
+    "cases": 142,
+    "mean_cells": 572.4577464788732,
+    "cases_with_partial_boundary_ties": 0
+  },
+  "event_t3": {
+    "cases": 142,
+    "mean_cells": 353.09154929577466,
+    "cases_with_partial_boundary_ties": 0
+  },
+  "other_t2": {
+    "cases": 4858,
+    "mean_cells": 913.9217785096747,
+    "cases_with_partial_boundary_ties": 0
+  },
+  "other_t3": {
+    "cases": 4858,
+    "mean_cells": 781.9960889254837,
+    "cases_with_partial_boundary_ties": 0
+  }
+}
