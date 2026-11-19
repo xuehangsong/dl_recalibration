@@ -14,7 +14,7 @@ PILOT = ROOT.parents[1] / "analyses/monitoring_pilot_20261118"
 
 def main():
     sensor_x, sensor_y = np.meshgrid([16, 48, 80, 112], [12, 37, 62, 87])
-    groups = [("event", "Large changes", 142), ("other", "Other cases", 4858)]
+    groups = [("event", "Large shrinkages", 142), ("other", "Other cases", 4858)]
     fig = plt.figure(figsize=(11.0, 6.8), layout="constrained")
     grid = fig.add_gridspec(3, 3, height_ratios=[1, 1, .055])
     with np.load(PILOT / "ensemble_footprints.npz") as data:
@@ -36,16 +36,16 @@ def main():
                 ax.set_xticks([0, 32, 64, 96, 127])
                 ax.set_yticks([0, 25, 50, 75, 99])
                 if row == 0:
-                    ax.set_title(["Snapshot 2 · alarm time", "Snapshot 3 · outcome", "Change in occupancy"][col], fontsize=12)
+                    ax.set_title(["When the warning is issued", "Next saved time", "Difference between maps"][col], fontsize=12)
                     ax.tick_params(labelbottom=False)
                 else:
-                    ax.set_xlabel("x cell index")
+                    ax.set_xlabel("Grid column")
                 if col == 0:
-                    ax.set_ylabel(f"{label}  (n = {count:,})\ny cell index")
+                    ax.set_ylabel(f"{label}  (n = {count:,})\nGrid row")
                 else:
                     ax.tick_params(labelleft=False)
     cb = fig.colorbar(occupancy_map, cax=fig.add_subplot(grid[2, :2]), orientation="horizontal")
-    cb.set_label("Cases with cell inside the 90%-mass footprint (%)")
+    cb.set_label("Cases with this cell in the plume footprint (%)")
     cb = fig.colorbar(difference_map, cax=fig.add_subplot(grid[2, 2]), orientation="horizontal", ticks=[-60,-30,0,30,60])
     cb.set_label("Change (percentage points)")
     for fmt in ("pdf", "png"):

@@ -9,6 +9,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.ticker import PercentFormatter
 from scipy.stats import rankdata
 from build_error_plot import main as build_error_plot
 from build_layout_plot import main as build_layout_plot
@@ -17,8 +18,8 @@ OUT = Path(__file__).resolve().parent
 REPO = OUT.parents[1]
 PILOT = REPO / 'analyses/monitoring_pilot_20261118'
 OLD = REPO / 'deliverables/results_slides_20261029'
-METHODS = [('sparse_rms', 'sensor_rms', '16-location concentration change', '#b75b22'),
-           ('previous_full_field_mass90_change', 'previous_change', 'Full-field footprint change', '#17677a')]
+METHODS = [('sparse_rms', 'sensor_rms', '16 spread-out sites', '#b75b22'),
+           ('previous_full_field_mass90_change', 'previous_change', 'Entire plume map', '#17677a')]
 
 
 def embed(path):
@@ -63,16 +64,19 @@ def main():
                 color=color,linewidth=2,label=label)
         ax.scatter(row['false_alarm_rate'],row['sensitivity'],s=42,color=color,edgecolor='black',linewidth=.6,zorder=4,clip_on=False)
     ax.plot([0,1],[0,1],color='.6',linestyle=':',zorder=0)
-    ax.set(xlabel='False-positive rate',ylabel='Sensitivity',xlim=(-.015,1.015),ylim=(-.025,1.025))
-    ax.legend(fontsize=8,frameon=False,loc='center',bbox_to_anchor=(.52,.47))
+    ax.xaxis.set_major_formatter(PercentFormatter(1, decimals=0))
+    ax.yaxis.set_major_formatter(PercentFormatter(1, decimals=0))
+    ax.set(xlabel='Other cases with a false alarm',ylabel='Large shrinkages detected',xlim=(-.015,1.015),ylim=(-.025,1.025))
+    ax.legend(fontsize=8,frameon=False,loc='upper left',bbox_to_anchor=(.10,.92))
     bins=np.arange(0, 1.025, .025)
-    for mask,color,label in [(~truth,'#72838c','Other trajectories'),(truth,'#17677a','Large next change')]:
+    for mask,color,label in [(~truth,'#72838c','Other cases'),(truth,'#17677a','Footprint later shrank sharply')]:
         values=test['previous_change'][mask]
         assert values.max() <= bins[-1]
         bx.stairs(np.histogram(values,bins)[0]*100/len(values),bins,label=label,color=color,linewidth=2)
     bx.axvline(metrics[METHODS[1][0]]['alarm_threshold'],color='.35',ls='--',lw=1,label='Alarm threshold')
-    bx.set(xlabel='Previous relative footprint change',ylabel='Trajectories in group (%)',xlim=(0,.62))
-    bx.legend(frameon=False,fontsize=8)
+    bx.xaxis.set_major_formatter(PercentFormatter(1, decimals=0))
+    bx.set(xlabel='Earlier change in footprint size',ylabel='Cases in group (%)',xlim=(0,.62))
+    bx.legend(frameon=False,fontsize=8,loc='upper center',bbox_to_anchor=(.50,1.25),ncol=2)
     for axis, letter in [(ax,'a'),(bx,'b')]:
         axis.text(-.12,1.03,letter,transform=axis.transAxes,fontweight='bold')
         axis.spines[['top','right']].set_visible(False)
@@ -93,13 +97,15 @@ def main():
             errors['contraction_n'], errors['both_outcomes_n'], errors['other_training_snapshot_evaluation']) == (758,733,45,24,6,716)
     assert round(errors['cutoff'], 3) == 1.164
     summary = []
+    labels = {'Original 16 sites': '16 spread-out sites', 'Central 16 sites': '16 central sites',
+              'Full-field footprint': 'Entire plume map'}
     for label, groups in errors['rules'].items():
         a, b = groups['Alarm'], groups['No alarm']
-        summary.append(f"<tr><th>{label}</th><td>{a['high']} / {a['n']}</td><td>{b['high']} / {b['n']}</td>"
+        summary.append(f"<tr><th>{labels[label]}</th><td>{a['high']} / {a['n']}</td><td>{b['high']} / {b['n']}</td>"
                        f"<td>{a['median']:.2f}</td><td>{b['median']:.2f}</td></tr>")
-    table = ('<div class="scroll"><table><thead><tr><th>Snapshot-2 rule</th><th>High error / alarm</th>'
-             '<th>High error / no alarm</th><th>Median RMSE, alarm (µg/L)</th>'
-             '<th>Median RMSE, no alarm (µg/L)</th></tr></thead><tbody>' + ''.join(summary) + '</tbody></table></div>')
+    table = ('<div class="scroll"><table><thead><tr><th>Warning based on</th><th>Large errors / cases with alarm</th>'
+             '<th>Large errors / cases without alarm</th><th>Median error with alarm (µg/L)</th>'
+             '<th>Median error without alarm (µg/L)</th></tr></thead><tbody>' + ''.join(summary) + '</tbody></table></div>')
     template=(OUT/'template.html').read_text().replace('{{error}}', embed(OUT/'alarm_and_forecast_error.png')).replace('{{error_table}}', table)
     page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png')).replace('{{ensemble}}',embed(OUT/'ensemble_footprint_occupancy.png')).replace('{{layout}}',embed(OUT/'sensor_layout_comparison.png'))
     assert '{{' not in page

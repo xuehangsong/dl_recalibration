@@ -56,20 +56,20 @@ def main():
                         color=color, lw=2, label=f"{group} (n = {len(values)})")
         groups["contractions_detected"] = int((contraction & selected).sum())
         stats["rules"][label] = groups
-        for mask, shift, color, marker, outcome in ((contraction, -.15, "#17677a", "o", "Contraction"),
-                                                   (ev & high, .15, "#ad5024", "D", "High RMSE")):
+        for mask, shift, color, marker, outcome in ((contraction, -.15, "#17677a", "o", "Shrinking footprint"),
+                                                   (ev & high, .15, "#ad5024", "D", "Large forecast error")):
             caught, total = int((mask & selected).sum()), int(mask.sum())
             pct = 100 * caught / total
             detection.scatter(pct, row + shift, c=color, marker=marker, s=32, label=outcome if row == 0 else None)
             detection.annotate(f"{caught}/{total}", (pct, row+shift), xytext=(6,0),
                                textcoords="offset points", va="center", fontsize=8)
     detection.set(xlim=(-5, 118), ylim=(2.6, -.65), xticks=[0,25,50,75,100],
-                  yticks=range(len(rules)), yticklabels=[r[0] for r in rules], xlabel="Cases detected (%)")
+                  yticks=range(len(rules)), yticklabels=["16 spread-out sites", "16 central sites", "Entire plume map"], xlabel="Cases detected (%)")
     detection.legend(loc="upper center", bbox_to_anchor=(.50, 1.01), ncol=2, frameon=False, fontsize=8)
     ax.axvline(cutoff, color="#343a3d", lw=1, ls="--", zorder=0, label="High-error cutoff")
-    ax.set(xlabel="Snapshot-3 RMSE (µg/L)", ylabel="Cumulative share of group (%)",
+    ax.set(xlabel="Next forecast error (µg/L)", ylabel="Cases at or below this error (%)",
            xlim=(0, error[ev].max()*1.03), ylim=(-2,103))
-    ax.legend(title="Full-field footprint rule", frameon=False, fontsize=8, title_fontsize=8, loc="lower right")
+    ax.legend(title="Entire plume map", frameon=False, fontsize=8, title_fontsize=8, loc="lower right")
     for axis, letter in ((detection, "a"), (ax, "b")):
         axis.spines[["top", "right"]].set_visible(False)
         axis.set_title(letter, loc="left", fontweight="bold")
