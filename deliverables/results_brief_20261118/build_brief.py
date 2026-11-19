@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import rankdata
 from build_error_plot import main as build_error_plot
+from build_layout_plot import main as build_layout_plot
 
 OUT = Path(__file__).resolve().parent
 REPO = OUT.parents[1]
@@ -86,6 +87,7 @@ def main():
         rows={r['method']:r for r in csv.DictReader(f)}
     assert [(rows[k]['historical_rmse'],rows[k]['rare_rmse']) for k in ('Baseline','Fixed_replay')]==[('0.58','10.04'),('1.03','1.21')]
     build_error_plot()
+    build_layout_plot()
     errors = json.loads((PILOT/'error_by_alarm.json').read_text())
     assert (errors['reference_n'], errors['evaluation_n'], errors['high_error_n'],
             errors['contraction_n'], errors['both_outcomes_n'], errors['other_training_snapshot_evaluation']) == (758,733,45,24,6,716)
@@ -99,7 +101,7 @@ def main():
              '<th>High error / no alarm</th><th>Median RMSE, alarm (µg/L)</th>'
              '<th>Median RMSE, no alarm (µg/L)</th></tr></thead><tbody>' + ''.join(summary) + '</tbody></table></div>')
     template=(OUT/'template.html').read_text().replace('{{error}}', embed(OUT/'alarm_and_forecast_error.png')).replace('{{error_table}}', table)
-    page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png')).replace('{{ensemble}}',embed(OUT/'ensemble_footprint_occupancy.png'))
+    page=template.replace('{{pilot}}',embed(OUT/'monitoring_trigger.png')).replace('{{replay}}',embed(OLD/'figures/02_rmse_comparison.png')).replace('{{ensemble}}',embed(OUT/'ensemble_footprint_occupancy.png')).replace('{{layout}}',embed(OUT/'sensor_layout_comparison.png'))
     assert '{{' not in page
     (OUT/'index.html').write_text(page)
 
