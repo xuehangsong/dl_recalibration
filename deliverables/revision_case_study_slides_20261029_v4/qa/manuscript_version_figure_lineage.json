@@ -1,0 +1,2286 @@
+{
+  "audit_date": "2026-10-29",
+  "scope": "All22 nonlock DOCX files across method_manuscript and archive/20261118_superseded/method_manuscript; empirical image hashes and accepted-view Figure1\u20135 captions only. No conclusion based on filenames or modified dates.",
+  "baseline": "method_manuscript/Adaptive_Replay_Manuscript_2026_09_09.docx",
+  "baseline_figure_sha256": {
+    "3": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59",
+    "1": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0",
+    "2": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4",
+    "4": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121",
+    "5": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+  },
+  "files": [
+    {
+      "file": "method_manuscript/Adaptive_Replay_Manuscript.docx",
+      "file_sha256": "fbaab13913e2ad79cb567bca593fd6d6b9fedf24fc3b81330ab83c270a526163",
+      "media": [
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 116,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 121,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 126,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 133,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 115,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 120,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 125,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 132,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "method_manuscript/Adaptive_Replay_Manuscript_2026_09_09.docx",
+      "file_sha256": "20ad1fe864942ea089ea68a83a610af4b396e151310f5fafb55cb964576ffed7",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_PI_review_tracked_changes_comments.docx",
+      "file_sha256": "f66ed47b68b403ac97594d1ae193adae9a5c046a5cf47cf7ace9673a187bcd04",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "method_manuscript/Adaptive_Replay_Manuscript_2026_09_10_precise_native_word.docx",
+      "file_sha256": "47bd249f0946001eb2f046fb66b84434f340ff142f5d5d503831823df08c9766",
+      "media": [
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision.docx",
+      "file_sha256": "f66ed47b68b403ac97594d1ae193adae9a5c046a5cf47cf7ace9673a187bcd04",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_complete.docx",
+      "file_sha256": "43a96021e73556bb8a9b239a6791849197e93a45498bec10cc76f8eb56b418a8",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_final.docx",
+      "file_sha256": "9a53647eb8d5fe289d86a25410d4c737f946d202a1e9196610a5bd84a1170bef",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_full_comments.docx",
+      "file_sha256": "c154de1f78fc341d90e3626ce8f3eb13d2c05dee92f53256e5c00c8e9e6daea8",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_full_comments_v2.docx",
+      "file_sha256": "91188ff0cae7de0cc419ce264314d582b57845265ca83a8a23f53bea57f752ef",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_real_edits.docx",
+      "file_sha256": "c1ace046dbf72fcd3b48de923a55d6388779a9d1b3b3b575453058fd09e1f403",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_targeted_final.docx",
+      "file_sha256": "c69ec05c62f0317500b61e88bb195b5a256678139c8300886cdd04245b045999",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_targeted_green.docx",
+      "file_sha256": "73e998105f98ca4e6aa2cbc81526de8311cb1ad4148cebf720a73a917ecb3aa0",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_targeted_yellow.docx",
+      "file_sha256": "e7f7c5e9c8b57db4aba13ecc5e0233bfae123fece2911112897a9ee341e5a800",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_constructive_revision_v3.docx",
+      "file_sha256": "0a6f4bc83d3a7f5022aa78cec43eabf6ce2ef951b0ebc97f598cdd8ada2c7ae8",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_detailed_new_changes_green.docx",
+      "file_sha256": "db38c3b83a2b23cf7b39b3127dd4ea40e0278d878f28b649ec149d2b6b427ee9",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_new_targeted_review_green.docx",
+      "file_sha256": "eaf51e20648cab799f24b7d8c7571c1ce9d6c417bd15f231ea0c46ebbdb0dae5",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_precise_new_changes_green.docx",
+      "file_sha256": "a223160da0a56fbf68609a5470d8697d155c051e259f7816ffb988b9a08adca6",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_precise_new_changes_green_fixed.docx",
+      "file_sha256": "a515dec1f49b9c8e6a6a1dd77301da7d7d0663fed8e8a9ff64c33be42e26fe7b",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_precise_new_changes_green_wordonly.docx",
+      "file_sha256": "1a5e0a39158fcb622ffbbb0cb2073dbc8c51526d5c12f979e092d29ae48be784",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/Adaptive_Replay_Manuscript_2026_09_09_precise_new_changes_green_wordopen.docx",
+      "file_sha256": "a42416c2eadd66a003b2caf24810586a8222da4423837f1714fa50b0d67a3041",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/test_no_new_comments.docx",
+      "file_sha256": "18879afb797b8a070e1e401fd77b8a933a13b819325a14d468c2663a23931617",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    },
+    {
+      "file": "archive/20261118_superseded/method_manuscript/test_remove_new_revs.docx",
+      "file_sha256": "fe5058b94cb02e55848bfb9068e69794ebec8ea1a4ec9f5d39e13db92def88ac",
+      "media": [
+        {
+          "member": "word/media/image3.png",
+          "bytes": 302978,
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "member": "word/media/image1.png",
+          "bytes": 195788,
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "member": "word/media/image2.png",
+          "bytes": 242564,
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "member": "word/media/image4.png",
+          "bytes": 386365,
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "member": "word/media/image5.png",
+          "bytes": 208802,
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "charts": [],
+      "accepted_figure_captions": [
+        {
+          "figure": 1,
+          "paragraph": 24,
+          "text": "Figure 1. Relative sequential 90%-mass plume-size change distribution"
+        },
+        {
+          "figure": 2,
+          "paragraph": 139,
+          "text": "Figure 2. Static baseline performance on historical and rare plume regimes. \u201cReference\u201d denotes the full-order physics model concentration field, and \u201cbaseline prediction\u201d denotes the concentration field predicted by the static U-Net surrogate."
+        },
+        {
+          "figure": 3,
+          "paragraph": 144,
+          "text": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning."
+        },
+        {
+          "figure": 4,
+          "paragraph": 149,
+          "text": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability\u2013plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration."
+        },
+        {
+          "figure": 5,
+          "paragraph": 156,
+          "text": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment."
+        }
+      ],
+      "document_image_references": [
+        {
+          "paragraph": 23,
+          "target": "word/media/image1.png",
+          "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+        },
+        {
+          "paragraph": 138,
+          "target": "word/media/image2.png",
+          "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+        },
+        {
+          "paragraph": 143,
+          "target": "word/media/image3.png",
+          "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+        },
+        {
+          "paragraph": 148,
+          "target": "word/media/image4.png",
+          "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+        },
+        {
+          "paragraph": 155,
+          "target": "word/media/image5.png",
+          "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+        }
+      ],
+      "baseline_figures_present_byte_identical": {
+        "3": true,
+        "1": true,
+        "2": true,
+        "4": true,
+        "5": true
+      },
+      "all_five_figures_byte_identical": true,
+      "extra_media_hashes": [],
+      "caption_identity": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "caption_differences": {}
+    }
+  ],
+  "summary": {
+    "files_scanned": 22,
+    "all_five_figures_identical_count": 22,
+    "files_with_different_or_missing_figures": [],
+    "files_with_caption_differences": []
+  }
+}

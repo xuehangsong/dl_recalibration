@@ -1,0 +1,5 @@
+controller,historical_degradation,rare_improvement,historical_margin_to_30,rare_margin_above_85,passes
+Fixed_replay,80.4,88.9,-50.4,3.9,NO
+Threshold_adaptive_forgetting,26.5,85.8,3.5,0.8,YES
+Loss_balanced,21.1,85.5,8.9,0.5,YES
+Loss_balanced_floor,38.1,87.3,-8.1,2.3,NO

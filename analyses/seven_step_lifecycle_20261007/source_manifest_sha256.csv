@@ -1,0 +1,7 @@
+source_role,path,sha256,notes
+authoritative_report,final report/Task 1 - Deep Learning Recalibration Preliminary Report Final.pdf,bc9c88b37d42a59d797eed49c02fe7ef5eece465aac509f885c0fdef3c9f292a,PNNL-39195 April 2026; 79 PDF pages
+Yilin_manuscript,method_manuscript/Adaptive_Replay_Manuscript_2026_09_09.docx,20ad1fe864942ea089ea68a83a610af4b396e151310f5fafb55cb964576ffed7,Source manuscript; tracked-change semantics require Word review
+revision_instructions,plans/REVISION_SYSTEM_PROMPT.md,cf91bd68b635c89ad666476f6272d917f357dc3e02001fe70b926cdf5b238a75,Report revision constraints
+report_text_extract,/tmp/dl_task1_authoritative.txt,,"pdftotext -layout; generated working extract, not source artifact"
+yilin_text_extract,/tmp/adaptive_replay.txt,,"Pandoc text extraction; generated working extract, not source artifact"
+related_unet_readme,/home/song884/github/dvz_optimization/unet_ms/readme.txt,,"Read-only contextual lineage inspection; not copied into this repository"

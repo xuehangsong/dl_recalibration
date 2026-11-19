@@ -1,0 +1,378 @@
+SOURCE: method_manuscript/Adaptive_Replay_Manuscript_2026_09_09.docx
+SHA256: 20ad1fe864942ea089ea68a83a610af4b396e151310f5fafb55cb964576ffed7
+Accepted view: w:del and w:moveFrom excluded; insertions retained. Mathematical notation linearized from OMML.
+
+
+[P0001] Adaptive Replay for U-Net Groundwater Plume Surrogates: Learning Rare Pump-and-Treat Dynamics Without Forgetting
+
+[P0003] Abstract
+
+[P0004] Deep learning surrogates are increasingly used to accelerate groundwater remediation modeling, particularly for pump-and-treat systems where repeated simulation is needed for well-placement, pumping-rate optimization, and performance assessment. Recent work has shown that a U-Net surrogate, augmented with analytical groundwater-flow preprocessing, can predict contaminant plume migration under dynamic pumping conditions with substantial computational savings relative to numerical simulation. However, such surrogates are typically trained on a historical distribution of plume behaviors. In long-term remediation systems, operational changes, revised source terms, or rare plume redistribution events may move future conditions outside the original training regime, causing performance degradation or catastrophic forgetting during model updating. This study develops a continual-learning framework for U-Net groundwater plume surrogates that learns rare pump-and-treat plume dynamics without catastrophic forgetting. Rare plume dynamics are identified using a physically interpretable mass-footprint change score based on the number of grid cells required to contain 90% of total plume mass. A baseline U-Net is trained on low-change plume mass sequences and then updated using simple fine-tuning, fixed replay, adaptive replay, and elastic weight consolidation. The proposed adaptive replay method adjusts the historical/new-regime training balance using validation-based forgetting and learning signals, increasing replay when historical degradation grows and reducing replay when the model can safely focus on rare-regime learning. Elastic weight consolidation is evaluated as a memory-efficient continual-learning baseline, preserving historical-regime through parameter regularization rather than requiring explicit replay of historical samples. The framework is assessed using concentration-field accuracy, plume-mass error, peak-concentration error, and plume-footprint metrics. Results are intended to support expert-guided deployment decisions by providing tradeoff curves and method-selection guidance rather than fixed universal thresholds. This study provides a practical surrogate lifecycle-management strategy for maintaining U-Net plume surrogates after deployment and offers a transferrable continual-learning framework for other data-driven environmental surrogates, including models augmented with physics-based features, whose reliability may degrade as system conditions move beyond the original training distribution.
+
+[P0006] STYLE=ListParagraph Introduction
+
+[P0007] STYLE=NormalWeb Pump-and-treat systems remain a widely used groundwater remediation strategy (Truex et al., 2017), but evaluating alternative well configurations and operating schedules often requires many forward model runs (Huang and Mayer, 1997; Zeynali et al., 2022). This can make optimization and uncertainty analysis computationally expensive. Song et al. (2025) introduced a U-Net-based surrogate for pump-and-treat plume prediction that integrates analytical groundwater-flow information through Thiem-equation preprocessing, converting sparse pumping-well information into spatial hydraulic-impact fields usable by the neural network. In their 2D synthetic cases, analytical preprocessing reduced RMSE from 2.76 µg/L to 0.7 µg/L, and in a 3D Hanford 200 West pump-and-treat application, the surrogate completed a 12-year simulation in approximately 600 ms on a single CPU core, yielding more than three orders of magnitude speedup relative to numerical modeling. 
+
+[P0008] STYLE=NormalWeb Although the surrogate models can provide an efficient and accurate approximation of the full-order groundwater transport model, its operational use, like that of any environmental model, requires continued evaluation as new monitoring data and pumping conditions become available (U.S. Environmental Protection Agency, 2009). This is particularly important for groundwater remediation systems, which often evolve over years or decades (U.S. Environmental Protection Agency, 2007). During long-term operation, pumping schedules may change, wells may be added or removed, plume source terms may be revised, monitoring data may reveal previously unrecognized behavior, and updated conceptual models may alter the range of plausible plume responses. Therefore, prediction accuracy alone may not fully capture whether the surrogate remains suitable for pump-and-treat decision support. Additional criteria, such as plume geometry, containment performance, mass-removal behavior, operational changes, and predictive uncertainty, may provide more meaningful indicators of when the surrogate should be recalibrated or retrained. This motivates a continued-learning workflow in which monitoring data are used to detect model degradation, trigger targeted model updates, and document the acceptance of updated surrogate models before redeployment. This need is consistent with broader literature on dataset shift and concept drift, which shows that models trained on historical system conditions can degrade as input distributions, system behavior, or operational regimes evolve. Therefore, surrogate models should not be treated as indefinitely static emulators. Instead, they require ongoing monitoring and drift detection, with recalibration or retraining performed under a documented model management process when performance thresholds are exceeded (Gama et al., 2014; Klaise et al., 2020; Quionero-Candela et al., 2009; U.S. Environmental Protection Agency, 2009).
+
+[P0009] A straightforward solution is to fine-tune the U-Net, without the need to retrain from scratch, on new plume cases when they become available. However, simple fine-tuning can improve prediction accuracy for rare or extreme-regime samples while degrading performance for historical-regime plume behavior. This reflects a broader challenge in sequential model updating: the model must learn from new plume regimes without losing its ability to represent previously learned conditions. In machine learning, this setting is commonly referred to as continual learning, and the loss of prior-regime performance is known as catastrophic forgetting (De Lange et al., 2021; Gama et al., 2014; Kirkpatrick et al., 2017). Methods such as elastic weight consolidation and experience replay have been developed to mitigate catastrophic forgetting. Elastic weight consolidation slows changes to parameters that are important for prior tasks, whereas experience replay preserves prior-regime performance by mixing historical samples into the update data (Kirkpatrick et al., 2017; Rolnick et al., 2019).
+
+[P0010] STYLE=NormalWeb Continual learning has also begun to appear in environmental modeling applications when many data-driven and physics-augmented surrogates are deployed in setting where future conditions may differ from training distribution. Recent studies have applied continual learning to environmental data reconstruction, including three-dimension ocean nitrate mapping (Yu et al., 2025), and to field prediction surrogates, cush as Fourier neural operators under changing geometries, boundary conditions, and flow regimes (Elhadidy et al., 2026). Although these methods are well established in continual learning, they have not yet been systematically adapted for groundwater plume surrogates, where model updates must satisfy practical acceptance criteria tied to environmental decision support. The objective of this study is to develop and evaluate a validation-driven continual-learning framework for U-Net groundwater plume surrogates that supports practical model updating under evolving remediation conditions. Specifically, the study asks whether targeted updates can improve surrogate performance for rare or extreme plume regimes while maintaining acceptable performance for historical plume regimes, as measured by predefined validation criteria relevant to environmental decision support.
+
+[P0011] STYLE=NormalWeb Methods
+
+[P0012] STYLE=NormalWeb This section describes the experimental design used to evaluate continual learning for groundwater plume surrogates under evolving pump-and-treat conditions. We first describe the U-Net surrogate used as the base model, then define the rare-regime update cases, the continual-learning strategies, and the validation criteria used to determine whether an updated surrogate is acceptable for redeployment. The experiments were designed to address four components of the main research question: quantifying rare-regime degradation under static deployment, evaluating whether replay-based fine-tuning reduces forgetting, testing elastic weight consolidation as a memory-efficient alternative to replay, and assessing whether adaptive replay control can automatically identify an acceptable old/new training ratio based on validation performance.
+
+[P0013] 2.1 U-Net surrogate for pump-and-treat plume prediction
+
+[P0014] The base model is the analytical-solution-enhanced 2D U-Net proposed by Song et al. (2025), which predicts contaminant plume migration under dynamic pump-and-treat conditions. The key innovation is the use of analytical groundwater-flow information to transform sparse pumping-well inputs into continuous spatial fields before U-Net prediction. This lets the network learn plume response in a form that reflects the hydraulic influence of pumping, rather than relying on sparse well metadata alone. Building on the base model, this study shifts the focus from initial surrogate development to surrogate lifecycle management. Rather than focusing only on whether the U-Net can accurately emulate the full-order transport model under the original training distribution, we examine surrogate lifecycle management: how a trained surrogate can be monitored, updated, validated, and redeployed as new plume regimes become available. The proposed framework provides a practical lifecycle extension of the original surrogate-modeling approach, emphasizing controlled adaptation, performance retention, and acceptance criteria for continued use in environmental decision support.
+
+[P0015] 2.2 Dataset and rare plume regime partitioning
+
+[P0016] STYLE=isselectedend This study uses plume simulation data generated for the U-Net pump-and-treat surrogate in Song et al. (2025). Each sample consists of input features describing the plume state and pump-and-treat configuration, and output concentration fields at subsequent time steps. The aquifer was assigned a uniform porosity and hydraulic conductivity. The preliminary dataset includes a two-dimensional pump-and-treat plume-prediction prototype with a 128 × 100 mesh, one to five extraction wells, varied pumping rates, and plume snapshots generated from 10,000 physics-based simulation runs.
+
+[P0017] STYLE=isselectedend Rare plume regimes are defined not only by concentration magnitude, but also by changes in plume morphology and mass distribution. A plume sequence may become operationally important when the plume expands, contracts, fragments, or redistributes rapidly in response to pumping changes or source-term revisions. Such behavior may be underrepresented in the original training set, particularly if the base surrogate was trained primarily on quasi-stable plume sequences, i.e., plume changes only slowly from one time step to the next.
+
+[P0018] In this study, “rare plume dynamics” refer to plume sequences with unusually large changes in plume mass distribution, rather than simply high concentration magnitude. A plume sequence may become operationally challenging when it expands, contracts, fragments, or redistributes rapidly due to pumping changes, source-term revisions, or hydrogeologic heterogeneity. However, in the present offline rare-regime adaptation experiment, rarity is defined from the resulting plume response rather than directly from operational drivers. 
+
+[P0019] To identify rare plume regimes, we use a mass footprint change score based on the spatial area required to contain most of the contaminant mass as a physically interpretable proxy for plume-morphology change:
+
+[P0020] score_{mass90}=(∣size_{90}(plume_{t+1})-size_{90}(plume_{t})∣)/(max⁡(size_{90}(plume_{t}),1))
+
+
+[P0021] where size_{90}(plume_{t}) is the number of grid cells required to contain 90% of total plume mass at time t. This score measures how quickly the spatial footprint containing most contaminant mass changes from one time step (t) to the next (t+1). High values indicate rapid plume expansion, contraction, or redistribution, and are used to identify rare or high-change plume regimes for model updating and validation.
+
+[P0022] The dataset is partitioned into two regimes (Figure 1). The historical regime consists of low-change plume sequences, defined by the bottom 40% of score_{mass90}, and represents quasi-stable plume dynamics that dominate the original deployment setting. The rare or extreme regime consists of high-change plume sequences, defined by the top 3% of score_{mass90}, and represents rare plume redistribution events associated with strong pumping perturbations, source changes, or rapid plume reconfiguration. The bottom-40/top-3 split is intentionally asymmetric to create a realistic imbalance in which the deployed model has broad exposure to routine plume behavior but limited exposure to rare high-change cases.
+
+[P0023]  [IMAGES: media/image1.png]
+
+[P0024] Figure 1. Relative sequential 90%-mass plume-size change distribution
+
+[P0025] STYLE=ListParagraph Continual learning update strategies
+
+[P0026] STYLE=isselectedend After defining rare plume regimes, we frame surrogate updating as a continual-learning problem. The base U-Net surrogate has been trained on historical plume behavior, which is assumed to be dominated by low-change or quasi-stable plume regimes. The goal is to update the surrogate using limited rare-regime data while preserving acceptable performance on the historical regimes represented in the original training distribution.
+
+[P0027] STYLE=isselectedend We compare five model-update strategies (Table 1). The baseline U-Net (Model A) represents static deployment without continual learning. Simple fine-tuning (Model B) updates selected layers of the U-Net using rare-regime samples and provides a minimal adaptation benchmark. Replay fine-tuning (Model C) mixes rare-regime samples with historical-regime samples during updating to reduce catastrophic forgetting. Elastic weight consolidation (Model D) applies a regularization penalty to discourage changes to parameters that are important for historical-regime prediction. Adaptive replay (E) dynamically adjusts the old/new sample ratio during training based on validation performance and is evaluated as the proposed model-management strategy. 
+
+[P0028] STYLE=isselectedend Standard surrogate training and continual learning surrogate updating use similar training, validation, and test splits, but the role of each stage differs. In standard training, validation is used primarily for early stopping and hyperparameter selection, and testing provides final unbiased evaluation. In continual learning, validation also monitors historical regime forgetting and rare regime adaptation. These differences are summarized in Table 2.
+
+[P0029] STYLE=NormalWeb Table 1. Summary of surrogate-update strategies evaluated in this study. Each model is evaluated using the same historical- and rare-regime validation sets to quantify the tradeoff between adaptation to rare plume dynamics and retention of historical plume behavior.
+
+[P0030] TABLE Model
+
+[P0031] TABLE Training data
+
+[P0032] TABLE Trainable parameters
+
+[P0033] TABLE Purpose
+
+[P0034] TABLE Cost/limitation
+
+[P0035] TABLE Model A: Baseline U-Net
+
+[P0036] TABLE Bottom 40% only
+
+[P0037] TABLE Full network during initial training
+
+[P0038] TABLE Static deployed surrogate
+
+[P0039] TABLE No adaptation after deployment
+
+[P0040] TABLE Model B: Simple fine-tuning
+
+[P0041] TABLE Starts from baseline U-Net, fine tuned on top 3%
+
+[P0042] TABLE Last decoder block + output layer
+
+[P0043] TABLE Minimal update with limited plasticity
+
+[P0044] TABLE Low update cost, but high risk of forgetting
+
+[P0045] TABLE Model C: Replay fine-tuning
+
+[P0046] TABLE Starts from baseline U-Net, fine-tuned on top 3% + replay from bottom 40%
+
+[P0047] TABLE Full network
+
+[P0048] TABLE Test rehearsal-based memory preservation
+
+[P0049] TABLE Storing and sampling historical plume data required, higher training cost
+
+[P0050] TABLE Model D: EWC fine-tuning
+
+[P0051] TABLE Starts from baseline U-Net, fine-tuned on top 3% only, with EWC penalty
+
+[P0052] TABLE Full network
+
+[P0053] TABLE Test regularization-based memory preservation
+
+[P0054] TABLE Estimating parameter importance required. 
+
+[P0055] TABLE Model E: Adaptive replay
+
+[P0056] TABLE Starts rom baseline U-Net, fine-tuned on top 3% + validation controlled relay from bottom 40%
+
+[P0057] TABLE Full network
+
+[P0058] TABLE Proposed validation-driven update strategy
+
+[P0059] TABLE Requires validation monitoring and replay-ratio control.
+
+[P0060] STYLE=isselectedend Replay-based fine-tuning
+
+[P0061] Replay fine-tuning uses a mixed update batch:
+
+
+[P0063] TABLE STYLE=Equation B_{update}=rB_{old}+(1-r)B_{new}
+
+[P0064] TABLE STYLE=Equation (1)
+
+[P0066] STYLE=NormalWeb where r is the replay ratio, B_{old} contains historical low-change samples, and B_{new} contains rare high-change samples.
+
+[P0067] STYLE=isselectedend Elastic weight consolidation
+
+[P0068] STYLE=ListParagraph Elastic weight consolidation modifies the fine-tuning objective by penalizing changes to parameters that were important for the historical-regime task. The update objective is:
+
+[P0070] TABLE STYLE=Equation L_{EWC}(θ)=L_{new}(θ)+(λ)/(2)∑_{i}^{}(F_{i})(θ_{i}-θ_{i}^{*})^{2}
+
+[P0071] TABLE STYLE=Equation (2)
+
+[P0073] STYLE=ListParagraph where θ^{*}are the baseline U-Net parameters after training on the historical regime, F_{i} estimates the importance of parameter i, and λ controls the strength of consolidation. The original EWC idea was to preserve old-task performance by selectively slowing learning on parameters important to previous tasks. In this study, F_{i} is estimated using an averaged squared-gradient approximation to the diagonal Fisher information matrix computed over held-out low-change plume samples (Li et al., 2025).
+
+[P0074] STYLE=isselectedend Adaptive replay controller
+
+[P0075] STYLE=isselectedend The adaptive replay controller adjusts the replay ratio based on validation performance rather than prescribed as a fixed hyperparameter (Klasson et al., 2023). The controller is designed to increase historical replay when the model begins to forget the historical regime and decrease historical replay when rare-regime learning is insufficient. Historical-regime forgetting is measured as:
+
+[P0077] TABLE STYLE=Equation forgetting=(RMSE_{old,e})/(RMSE_{old,0})-1
+
+[P0078] TABLE STYLE=Equation (3)
+
+[P0080] STYLE=NormalWeb where RMSE_{old,e} is the root mean square error of the currently updated model on the old/historical-regime validation set. RMSE_{old,0} is RMSE of the original base U-Net before updating on the same old/historical-regime validation set.
+
+[P0081]  If forgetting>α_{high}, increase replay ratio to strengthen retention of historical regimes. If forgetting<α_{low} and the new-regime validation loss is improving, decrease the replay ratio to allow greater adaptation to the rare regime. Here, α_{high} is an upper tolerance threshold, and α_{low} is a lower tolerance threshold. 
+
+[P0082] STYLE=NormalWeb We test three threshold modes. In fixed mode, acceptance thresholds are specified a priori. In relative mode, thresholds are based on fractional increases in historical-regime validation loss or RMSE. In the exponentially weighted moving-average (EMA) threshold mode, acceptance thresholds are computed from a smoothed estimate of the recent variability in the monitored validation signal:
+
+[P0085] TABLE STYLE=Equation σ_{t}=sqrt(max⁡(E[h^{2}]_{t}-(E[h]_{t})^{2},0))
+
+[P0086] TABLE STYLE=Equation τ_{high}=k_{high}σ_{t},τ_{low}=k_{low}σ_{t}
+
+[P0087] TABLE STYLE=Equation (4)
+
+[P0089] STYLE=isselectedend where:
+
+[P0090] ht is the historical-regime forgetting being monitored at update step t. E[h]_{t} is exponentially weighted moving average of h_{t}. This is the smoothed mean of the monitored validation signal up to update step t. E[h^{2}]_{t} = exponentially weighted moving average of h_{t}^{2}. This tracks the smoothed second moment of the monitored validation signal. σ_{t} is estimated moving standard deviation of h_{t}. It measures how much the monitored validation signal is fluctuating recently. τ_{high} is upper threshold for triggering stronger historical replay. If forgetting exceeds this threshold, the controller increases the replay ratio. τ_{low} is lower threshold for allowing less historical replay. If forgetting stays below this threshold and rare-regime learning is improving, the controller can decrease the replay ratio. k_{high} and k_{low} are multiplier constants that control how conservative the thresholds are. For example, k_{high}=2 means the upper threshold is two moving standard deviations above the smoothed behavior.
+
+[P0091] We also evaluate a loss-balanced controller:
+
+[P0093] TABLE STYLE=Equation old=(L_{old,e})/(L_{old,0}),new=(L_{new,e})/(L_{new,0}),r^{*}_{}(ω old)/(ω old+new+ε)r_{e+1}=r_{e}+
+
+[P0094] TABLE STYLE=Equation (5)
+
+[P0096] STYLE=NormalWeb where:
+
+[P0097] STYLE=NormalWeb L_{old,e} is the validation loss of the currently updated model on the old/historical-regime validation set.
+
+[P0098] STYLE=NormalWeb L_{old,0} is the baseline loss on the old/historical-regime validation set.
+
+[P0099] STYLE=NormalWeb L_{new,e} is the validation loss of the currently updated model on the new/rare-regime validation set.
+
+[P0100] STYLE=NormalWeb L_{new,0} is the baseline loss on the new/rare-regime validation set.
+
+[P0101] STYLE=NormalWeb  is a retention priority weight. Larger values of  favor greater historical replay and stronger protection against forgetting.
+
+[P0103] STYLE=NormalWeb With this controller, normalized old loss (old) and new regime loss (new) determine the next replay ratio (rnext). This increases replay when historical degradation dominates and decreases replay when new-regime error dominates. A denominator floor  should be used to avoid unstable ratios when reference losses are extremely small.
+
+[P0104] STYLE=NormalWeb Table 2. Workflow stages for standard surrogate training and continual learning surrogate update.
+
+[P0105] TABLE Stage
+
+[P0106] TABLE Standard surrogate training
+
+[P0107] TABLE Adaptive-replay lifecycle update
+
+[P0108] TABLE Training
+
+[P0109] TABLE Train a surrogate from scratch or from initial model weights
+
+[P0110] TABLE Start from the deployed/base surrogate to update weights using old/new replay samples
+
+[P0111] TABLE Validation
+
+[P0112] TABLE Early stopping and hyperparameter selection
+
+[P0113] TABLE Monitor rare-regime learning and historical regime forgetting during updating, adjust the replay ratio during update epochs based on validation feeback
+
+[P0114] TABLE Test
+
+[P0115] TABLE Final unbiased evaluation of the trained surrogate
+
+[P0116] TABLE Evaluate whether the updated surrogate satisfies acceptance criteria for both rare and historical regime performance
+
+[P0118] STYLE=ListParagraph Validation criteria and acceptance of model updates
+
+[P0119] STYLE=isselectedend Model updates are evaluated using validation criteria designed to measure both adaptation to rare regimes and retention of historical-regime performance. Rather than accepting an updated surrogate solely because it improves prediction for rare plume cases, we require that the update satisfy predefined acceptance criteria. Specifically, an acceptable update should: (1) substantially improve rare-regime prediction accuracy, (2) keep degradation in historical-regime prediction below a predefined tolerance, (3) maintain acceptable errors in physically meaningful quantities such as total plume mass and peak concentration, and (4) require far fewer full-order simulations than full retraining.
+
+[P0120] STYLE=NormalWeb This validation-driven framing connects the machine-learning stability–plasticity tradeoff (Mermillod et al., 2013) with the practical requirements of groundwater model management. The surrogate must be plastic enough to adapt to newly observed plume behavior, but stable enough to remain reliable for previously learned remediation conditions. Therefore, the proposed framework evaluates whether continual learning can support practical surrogate lifecycle management as pump-and-treat conditions evolve.
+
+[P0122] STYLE=ListParagraph Primary metrics and acceptance criteria
+
+[P0123] STYLE=isselectedend Model performance was evaluated using both concentration-field accuracy and physically interpretable plume metrics. Concentration-field accuracy was quantified using root mean squared error (RMSE) and mean absolute error (MAE) computed separately on the historical low-change test set and the rare high-change test set. Spatial error maps were also generated to identify where the updated surrogate improved or degraded plume predictions across the model domain.
+
+[P0124] STYLE=isselectedend In addition to pixel-wise concentration errors (i.e., RMSE, MAE), we evaluated physically meaningful plume quantities relevant to pump-and-treat decision support. These can included total plume mass error, peak concentration error, center-of-mass displacement error, size90(plume) error, and exceedance-area error above regulatory or operational concentration thresholds. Here, size90(plume) denotes the number of grid cells required to contain 90% of the total plume mass. Together, these metrics evaluate not only whether the surrogate reproduces concentration fields, but also whether it preserves plume mass distribution, peak-risk locations, plume footprint, and threshold-based areas of concern.
+
+[P0125] STYLE=NormalWeb To make model updating operationally meaningful, updated surrogates were judged against explicit acceptance criteria rather than relative performance alone. An update was considered acceptable only if it improved rare-regime prediction while keeping degradation on historical plume behavior below a predefined tolerance. For example, the historical-regime RMSE after final updating was required to satisfy
+
+[P0126] STYLE=isselectedend RMSE_{old,final}≤1.05×RMSE_{old,baseline}
+RMSE_{new,final}≤0.80×RMSE_{new,baseline}
+Additional physical constraints can be imposed depending on the decision context, such as
+
+[P0127] MassError_{final}≤X%
+PeakError_{final}≤X μg/L
+The values of X should be selected based on the operational or regulatory context of the application. The central requirement is that a model update is successful only if it improves rare-regime behavior while keeping degradation in historical-regime performance within a tolerable limit.
+
+[P0128] STYLE=ListParagraph Experimental comparisons
+
+[P0129] STYLE=NormalWeb The experimental design was organized to compare the five model families defined in Table 1 in terms of rare-regime adaptation, historical-regime retention, replay-ratio sensitivity, and acceptance of updated surrogates under predefined deployment criteria.
+
+[P0130] STYLE=isselectedend First, we evaluated static generalization failure by training the baseline U-Net on historical low-change plume samples and testing it on the top 3% rare high-change plume samples. This experiment quantified the degradation caused by regime shift and established the operational risk of deploying a static surrogate under rare plume dynamics.
+
+[P0131] STYLE=isselectedend Second, we compared simple fine-tuning, replay-based fine-tuning, and elastic weight consolidation. Starting from the baseline U-Net, each method was updated using rare-regime samples and then evaluated on both historical- and rare-regime test sets. This experiment assessed whether continual-learning strategies can improve rare-regime prediction while preserving performance on previously learned plume behavior.
+
+[P0132] STYLE=isselectedend Third, we conducted an adaptive replay controller comparison. Fixed replay, threshold-based adaptive replay, and loss-balanced replay with denominator flooring were compared to determine whether adaptive control of the old/new sample ratio improves the tradeoff between rare-regime adaptation and historical-regime retention.
+
+[P0133] STYLE=NormalWeb Fourth, we evaluated replay-ratio sensitivity and adaptive replay control to characterize how the amount of historical replay affects the balance between rare-regime adaptation and historical-regime retention. Fixed replay ratios were used to define the old/new tradeoff curve, while adaptive replay controllers were used to test whether the replay ratio could be adjusted automatically based on validation feedback. 
+
+[P0134] STYLE=NormalWeb We also examined whether model degradation and recovery were consistent across plume regimes rather than relying only on aggregate test-set metrics by comparing baseline surrogate performance on historical low-change and rare high-change samples, showing whether rare plume dynamics introduce a distinct generalization challenge. This regime-separated evaluation was used to determine whether surrogate updates preserve accuracy broadly across historical plume behavior while improving performance on rare plume redistribution events.
+
+[P0135] STYLE=NormalWeb Results
+
+[P0136] 3.1 Baseline Static Surrogate Failure on Rare Plume Dynamics
+
+[P0137] The baseline U-Net surrogate performed well on historical low-change plume sequences but showed reduced accuracy when evaluated on rare high-change plume regimes. This difference indicates that aggregate test-set performance alone may overstate the reliability of a static surrogate when future plume dynamics differ from the original training distribution. In particular, rare-regime cases produced larger concentration-field errors and greater deviations in plume-footprint metrics (Figure 2), suggesting that rapid plume expansion, contraction, or redistribution creates a more challenging prediction setting than routine plume evolution.
+
+[P0138]  [IMAGES: media/image2.png]
+
+[P0139] Figure 2. Static baseline performance on historical and rare plume regimes. “Reference” denotes the full-order physics model concentration field, and “baseline prediction” denotes the concentration field predicted by the static U-Net surrogate.
+
+[P0140] The degradation was most apparent for rare-regime samples identified by large changes in the Mass90 mass-footprint metric between consecutive time steps (Figure 2b). These cases represent rapid changes in the spatial footprint of the mass-dominant portion of the plume and are underrepresented in the historical low-change training regime by construction. Spatial error maps show that errors were not distributed uniformly across the domain. Instead, they were concentrated near the plume body, particularly along high-gradient regions and plume boundaries. This pattern suggests that rare plume regimes reveal weakness in the surrogate’s ability to reproduce plume geometry and spatial redistribution, not only concentration magnitude.
+
+[P0141] 3.2 Catastrophic Forgetting in the Fine-Tuning Baseline
+
+[P0142] Simple fine-tuning improves prediction accuracy on rare high-change plume samples, but this improvement comes with degradation on historical low-change samples and may not produce an acceptable model update (Figure 3). After fine-tuning, rare-regime RMSE decreases sharply from 10.04 µg/L of baseline to 3.92 µg/L (Figure 3c), while historical-regime RMSE increases from the baseline value of 0.58 µg/L to 1.11 µg/L (Figure 3a), indicating loss of retention on previously learned plume behavior. This tradeoff becomes more explicit when the changes are expressed as percentages (Figure 3b). Although all fine-tuning configurations produce large rare-regime improvements, some historical-regime degradation remains above the predefined 25% acceptance threshold. This means that the updated models would not be acceptable for redeployment under the proposed validation criteria, despite their improved rare-regime accuracy. The amount of trainable capacity affects the adaptation–retention balance (Figure 3c). Updating only the decoder limits plasticity and produces smaller rare-regime gains, whereas a new full-network provides stronger adaptation to rare plume behavior. The magnitude of historical-regime degradation depended on the extent of fine-tuning. Updating only the last decoder block and output layer limited the degree of parameter change and reduced forgetting relative to full-network fine-tuning, but it also constrained the model’s ability to adapt to rare plume dynamics. In contrast, full-network fine-tuning without historical data provided greater flexibility for rare-regime adaptation but increased the risk of historical-regime degradation (not shown). These results show that fine-tuning alone is not sufficient as a deployment strategy unless the resulting old/new tradeoff is explicitly evaluated against acceptance criteria.
+
+[P0143]  [IMAGES: media/image3.png]
+
+[P0144] Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning.
+
+[P0145] 3.3 Replay strategies and gain in computing efficiency and accuracy
+
+[P0146] Different continual-learning strategies balance rare-regime improvement and historical-regime retention in different ways (Figure 4). Simple fine-tuning substantially reduces rare-regime RMSE (3.92 µg/L) relative to the baseline (10.04 µg/L), but it increases historical-regime error from 0.58 to 1.11 µg/L, indicating that adaptation to rare plume behavior comes with some loss of prior-regime performance. Fixed replay achieves higher rare-regime improvement (RMSE = 1.21 µg/L) while maintaining lower historical-regime RMSE (1.03 µg/L ) than simple fine-tuning (1.11 µg/L) (Figure 4a), showing that including historical samples during updating helps preserve previously learned plume behavior.
+
+[P0147] EWC improves rare-regime metrics (Figure 4a) such as RMSE (1.22 µg/L), plume-mass error, peak-concentration error, and mass90 error, but it produces a large increase in historical-regime RMSE (5.45 µg/L) in this configuration. This suggests that the EWC penalty did not sufficiently protect the historical-regime mapping under the tested configuration, even though it improved the rare-regime prediction. The tradeoff plot in Figure 4b makes this distinction clear: fixed replay lies in a more favorable region, combining strong rare-regime improvement with substantially lower historical degradation, whereas EWC achieves rare-regime improvement at the cost of severe historical-regime degradation.
+
+[P0148]  [IMAGES: media/image4.png]
+
+[P0149] Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability–plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration.
+
+[P0150] The plume maps for a rare-regime sample in Figure 4c support the scalar metrics. The baseline model shows a spatially organized error pattern for the rare-regime case, indicating that the static surrogate does not fully capture the rare plume geometry. Simple fine-tuning reduces some of this error, but fixed replay and EWC provide stronger recovery of the rare plume structure. Among these, fixed replay offers the most balanced result because it improves rare-regime geometry while better retaining historical-regime performance. Overall, replay provides the most practical stability–plasticity tradeoff among the tested update strategies, while EWC may require additional tuning or alternative importance estimates before it can reliably preserve historical plume behavior.
+
+[P0151] 3.4 Adaptive replay and acceptance-region analysis
+
+[P0152] Adaptive replay was evaluated using validation for controlling the balance between rare-regime learning and historical-regime retention (Figure 5). During the early update epochs, the controller increased the replay ratio in response to elevated historical-regime forgetting (Figure 5a). The replay ratio quickly reached the imposed upper cap, indicating that the controller consistently favored stronger historical replay to reduce forgetting. After the replay ratio reached the cap, historical-regime forgetting continued to decline, while rare-regime validation loss also continued to improve. This indicates that the capped replay ratio did not prevent the model from learning the rare-regime cases. It provided enough historical replay to reduce forgetting while still allowing adaptation to the new regime. 
+
+[P0153] Compared with fixed replay, the adaptive replay controllers reduced historical-regime degradation from 80.4% to 26.5% while maintaining similar rare-regime improvement (> 85%) (Figure 5b). Fixed replay achieved strong rare-regime gains (88.9%), but its historical degradation exceeded the allowable threshold (30% as an example), making it unsuitable for redeployment under the predefined acceptance criteria. In contrast, adaptive replay used validation feedback to reduce the amount of unnecessary forgetting while preserving much of the rare-regime improvement.
+
+[P0154] The acceptance-region analysis shown in Figure 5c provides a deployment-oriented interpretation of these results. An updated surrogate is considered acceptable only if it satisfies both criteria: historical-regime degradation must remain below the maximum allowable threshold (30% as an illustrative example), and rare-regime improvement must exceed the required target (85% as an example). In this example, the loss-balanced and forgetting controller strategies fall within the acceptable region. This result suggests that adaptive replay can reduce manual replay-ratio tuning and provide a practical mechanism for selecting model updates that are both adaptive to rare plume dynamics and sufficiently reliable for continued use on historical plume regimes.
+
+[P0155]  [IMAGES: media/image5.png]
+
+[P0156] Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment.
+
+[P0157] STYLE=NormalWeb Discussion
+
+[P0158] STYLE=NormalWeb Surrogate reliability under rare plume-regime shifts
+
+[P0159] STYLE=ListParagraph The results highlight an important distinction between surrogate accuracy under routine plume behavior and surrogate reliability under operationally significant regime shifts. A U-Net pump-and-treat surrogate may provide fast and accurate predictions for plume sequences similar to those represented in the original training data, but rare plume redistribution events can expose weaknesses that are masked by aggregate error metrics. This suggests that surrogate evaluation for remediation decision support should include targeted stress tests for high-change plume dynamics, rather than relying only on average test-set performance. This view is consistent with environmental-model guidance emphasizing model evaluation in relation to intended use and decision context, rather than relying on generic performance measures alone (National Research Council, 2007; U.S. Environmental Protection Agency, 2009).
+
+[P0160] STYLE=NormalWeb Managing the stability-plasticity tradeoff during surrogate updating
+
+[P0161] STYLE=ListParagraph The comparison among update strategies in this study illustrates different mechanisms for managing the stability–plasticity tradeoff. Replay-based updating is attractive because it directly exposes the model to both rare-regime and historical-regime samples during training. This makes the old/new tradeoff explicit and relatively easy to control. Moreover, replay is not guaranteed to reduce forgetting in all settings. Recent theoretical work shows that replay can increase forgetting depending on the data distribution and update dynamics under some conditions (Mahdaviyeh et al., 2025).  However, replay also requires storage, selection, and management of historical plume simulations, which may become costly or inconvenient as surrogate libraries grow. Elastic weight consolidation (EWC) provides a more memory-efficient alternative by discouraging changes to parameters that are important for historical-regime performance. Its effectiveness, however, depends on whether the estimated parameter importance adequately captures the spatial features needed to preserve historical plume behavior. 
+
+[P0162] STYLE=ListParagraph When rare plume dynamics require substantial changes in convolutional feature representations, replay may provide a more flexible adaptation mechanism than parameter regularization alone. This behavior is consistent with the broader continual-learning literature, where replay-based methods preserve prior-task information by reintroducing previous samples during updating, whereas EWC constrains changes to parameters estimated to be important for prior performance (Kirkpatrick et al., 2017; Rolnick et al., 2019).
+
+[P0164] STYLE=ListParagraph Adaptive replay provides a practical compromise between these approaches. Instead of prescribing a fixed replay ratio, the controller uses validation performance to adjust how much historical information is included during updating. When historical-regime degradation approaches the allowable threshold, the controller increases replay to improve retention. When historical performance remains acceptable and rare-regime learning is still needed, the controller can reduce replay and allow stronger adaptation to the new regime. This makes the update process more consistent with practical model management, where model changes should be driven by evidence from validation metrics rather than by manually selected training settings. Similar concerns arise in deployed machine-learning systems, where post-deployment monitoring is needed to detect outliers, data drift, and performance degradation (Gama et al., 2014; Klaise et al., 2020).
+
+[P0165] STYLE=NormalWeb Validation-based acceptance criteria for deployment guidance
+
+[P0166] STYLE=ListParagraph The resulting tradeoff analysis provides a practical basis for deployment guidance. The preferred update strategy is not necessarily the one that maximizes rare-regime improvement, because large gains on rare cases may come with unacceptable degradation in historical plume behavior. Similarly, the most conservative update may preserve historical-regime performance but fail to address the rare plume dynamics that triggered recalibration. Therefore, acceptance criteria should be selected based on the decision context rather than treated as universal thresholds. More conservative tolerances may be appropriate for regulatory compliance or containment decisions, whereas exploratory scenario analysis may allow greater flexibility. In this way, the proposed framework supports expert-guided deployment decisions by translating continual-learning performance into interpretable old/new tradeoffs.
+
+[P0168] STYLE=ListParagraph The framework also provides a technical basis for managed surrogate recalibration. In an operational setting, surrogate updating would not occur as an isolated machine-learning exercise. It would be embedded within a broader workflow that monitors new data, detects possible degradation, decides whether an update is warranted, prepares update data, recalibrates the model, evaluates acceptance criteria, and redeploys the updated surrogate. This is aligned with long-term groundwater-remedy optimization guidance, which treats pump-and-treat management as an iterative process requiring periodic evaluation and adjustment (U.S. Environmental Protection Agency, 2007). The continual-learning methods evaluated here can serve as the technical core of the update step, while the validation criteria provide the basis for deciding whether the updated surrogate should be accepted for continued use in pump-and-treat decision support.
+
+[P0169] STYLE=NormalWeb Managed recalibration and online surrogate maintenance
+
+[P0170] STYLE=ListParagraph The framework is designed for data-driven or hybrid surrogate models whose performance may degrade when future plume dynamics differ from the training distribution. A path toward online surrogate maintenance during decision support is enabled by this framework. In such a workflow, the deployed U-Net surrogate would first be used to rapidly evaluate pump-and-treat scenarios. During decision support, flagged cases arise from new candidate scenarios or newly observed plume conditions submitted to the deployed surrogate. These cases may involve pumping schedules, well configurations, or plume states that differ from the historical training regime. When such a case is flagged as out of distribution or associated with high predictive uncertainty, the surrogate prediction is treated as provisional. A reliable target can then be obtained through a targeted full-order simulation, subsequent monitoring observations, or an observation-assimilated plume estimate before the case is added to the update dataset. This workflow is also consistent with the broader dataset-shift literature, which recognizes that predictive models can degrade when deployment conditions differ from the training distribution (Quiñonero-Candela et al., 2009). Continual-learning methods such as adaptive replay could then be used to incorporate these new cases while preserving historical-regime performance. Importantly, the updated surrogate would not be redeployed automatically. Rather, it would first need to satisfy predefined acceptance criteria based on both rare-regime improvement and bounded historical-regime degradation.
+
+[P0171] STYLE=NormalWeb Limitations and future work
+
+[P0172] STYLE=ListParagraph Several limitations remain. The rare-regime definition used here is based on a mass-footprint change metric, which captures expansion, contraction, and redistribution of the mass-dominant plume region but does not fully describe plume morphology. Future work could incorporate additional morphology descriptors, such as plume elongation, fragmentation, orientation, or boundary overlap. In addition, the acceptance thresholds used in this study should ultimately be selected based on site-specific decision needs, regulatory thresholds, and the consequences of prediction error. Finally, the present framework should be tested on more complex aquifer settings, heterogeneous hydrogeologic conditions, and field monitoring data to evaluate its robustness beyond the simulation setting considered here.
+
+[P0173] STYLE=NormalWeb Conclusion
+
+[P0174] STYLE=ListParagraph This study shows that maintaining a groundwater plume surrogate after deployment is not simply a matter of improving accuracy on newly observed cases. For long-term pump-and-treat applications, model updating must be treated as a controlled tradeoff: the surrogate should adapt to rare plume behavior while retaining the historical-regime performance that made it useful in the first place. The comparison of update strategies highlights this tradeoff. Simple fine-tuning provides adaptation but can sacrifice prior-regime reliability. Replay offers a direct and practical way to preserve historical behavior during updating, whereas elastic weight consolidation provides a memory-efficient alternative whose effectiveness depends on whether historical plume behavior can be protected through parameter-level constraints. Adaptive replay extends this idea by using validation evidence to determine when the model needs more historical retention and when it can focus more strongly on rare-regime learning. Our study shifts how groundwater surrogates are evaluated and maintained. Rather than treating a trained U-Net as a fixed emulator, the proposed framework treats it as a model that must be periodically stress-tested, updated, and accepted according to decision-relevant criteria. This perspective supports more defensible use of deep learning surrogates in remediation workflows where site conditions, pumping operations, and plume responses evolve over time.
+
+[P0177] Acknowledgements
+
+[P0179] References
+
+[P0180] Asher, M. J., Croke, B. F. W., Jakeman, A. J., and Peeters, L. J. M. 2015. “A Review of Surrogate Models and Their Application to Groundwater Modeling.” Water Resources Research 51 (8): 5957–5973. https://doi.org/10.1002/2015WR016967
+
+[P0181] De Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., Slabaugh, G., and Tuytelaars, T. 2021. “A Continual Learning Survey: Defying Forgetting in Classification Tasks.” IEEE Transactions on Pattern Analysis and Machine Intelligence 44 (7): 3366–3385. https://doi.org/10.1109/TPAMI.2021.3057446
+
+[P0182] Elhadidy, M., D’Souza, R. M., & Arzani, A. (2026). SLE-FNO: Single-layer extensions for task-agnostic continual learning in Fourier neural operators. arXiv. https://doi.org/10.48550/arXiv.2603.20410
+
+[P0183] Gama, J., Žliobaitė, I., Bifet, A., Pechenizkiy, M., & Bouchachia, A. (2014). A survey on concept drift adaptation. ACM Computing Surveys, 46(4), Article 44. https://doi.org/10.1145/2523813
+
+[P0184] Huang, C., & Mayer, A. S. (1997). Pump-and-treat optimization using well locations and pumping rates as decision variables. Water Resources Research, 33(5), 1001–1012. https://doi.org/10.1029/97WR00366
+
+[P0185] 	Kemker, R., McClure, M., Abitino, A., Hayes, T. L., and Kanan, C. 2018. “Measuring Catastrophic Forgetting in Neural Networks.” Proceedings of the AAAI Conference on Artificial Intelligence 32 (1). https://doi.org/10.1609/aaai.v32i1.11651
+
+[P0186] Kirkpatrick, J., Pascanu, R., Rabinowitz, N., Veness, J., Desjardins, G., Rusu, A. A., Milan, K., Quan, J., Ramalho, T., Grabska-Barwinska, A., Hassabis, D., Clopath, C., Kumaran, D., and Hadsell, R. 2017. “Overcoming Catastrophic Forgetting in Neural Networks.” Proceedings of the National Academy of Sciences 114 (13): 3521–3526. https://doi.org/10.1073/pnas.1611835114
+
+[P0187] Klaise, J., Van Looveren, A., Cox, C., Vacanti, G., & Coca, A. (2020). Monitoring and explainability of models in production. arXiv. https://doi.org/10.48550/arXiv.2007.06299
+
+[P0188] Klasson, M., Kjellström, H., & Zhang, C. (2023). Learn the time to learn: Replay scheduling in continual learning. arXiv. https://doi.org/10.48550/arXiv.2209.08660
+
+[P0189] Li, Y., Dangel, F., Tam, D., & Raffel, C. (2025). Fishers for free? Approximating the Fisher information matrix by recycling the squared gradient accumulator. arXiv. https://doi.org/10.48550/arXiv.2507.18807
+
+[P0190] Mahdaviyeh, Y., Lucas, J., Ren, M., Tolias, A. S., Zemel, R., & Pitassi, T. (2025). Replay can provably increase forgetting. arXiv. https://doi.org/10.48550/arXiv.2506.04377
+
+[P0191] Mermillod, M., Bugaiska, A., & Bonin, P. (2013). The stability-plasticity dilemma: Investigating the continuum from catastrophic forgetting to age-limited learning effects. Frontiers in Psychology, 4, Article 504. https://doi.org/10.3389/fpsyg.2013.00504
+
+[P0192] National Research Council. (2007). Models in environmental regulatory decision making. The National Academies Press. https://doi.org/10.17226/11972 
+
+[P0193] Quionero-Candela, J., Sugiyama, M., Schwaighofer, A., & Lawrence, N. D. (Eds.). (2009). Dataset shift in machine learning. MIT Press, 248pp.
+
+[P0194] Robins, A. 1995. “Catastrophic Forgetting, Rehearsal and Pseudorehearsal.” Connection Science 7 (2): 123–146. https://doi.org/10.1080/09540099550039318
+
+[P0195] Rolnick, D., Ahuja, A., Schwarz, J., Lillicrap, T. P., & Wayne, G. (2019). Experience replay for continual learning. In Advances in Neural Information Processing Systems, 32. Curran Associates.
+
+[P0196] Rogers, L. L., and Dowla, F. U. 1994. “Optimization of Groundwater Remediation Using Artificial Neural Networks with Parallel Solute Transport Modeling.” Water Resources Research 30 (2): 457–481. https://doi.org/10.1029/93WR01494
+
+[P0197] Ronneberger, O., Fischer, P., and Brox, T. 2015. “U-Net: Convolutional Networks for Biomedical Image Segmentation.” In Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015, 234–241. Springer. https://doi.org/10.1007/978-3-319-24574-4_28
+
+[P0198] Settles, B. 2009. Active Learning Literature Survey. Computer Sciences Technical Report 1648, University of Wisconsin–Madison.
+
+[P0199] Song, X., Demirkanli, I., Hou, Z., Lin, X., Karanovic, M., Tonkin, M., Appriou, D., and Mackley, R. 2025. “Integrating Analytical Solutions and U-Net Model for Predicting Groundwater Contaminant Plumes in Pump-and-Treat Systems.” Advances in Water Resources 202: 105002. https://doi.org/10.1016/j.advwatres.2025.105002
+
+[P0200] Truex, M. J., Johnson, C. D., Becker, D. J., Macbeth, T. W., Lynch, K., Giaudrone, D., Frantz, A., & Lee, M. H. (2017). Performance assessment of pump-and-treat systems. Groundwater Monitoring & Remediation.
+
+[P0201] U.S. Environmental Protection Agency. (2007). Optimization strategies for long-term ground water remedies: With particular emphasis on pump and treat systems (EPA 542-R-07-007). Office of Solid Waste and Emergency Response. https://www.epa.gov/sites/default/files/2015-04/documents/opt_strat_long_term_gw_remed_542r07007.pdf
+
+[P0202] U.S. Environmental Protection Agency. (2009). Guidance on the development, evaluation, and application of environmental models (EPA/100/K-09/003). Council for Regulatory Environmental Modeling. https://www.epa.gov/measurements-modeling/guidance-development-evaluation-and-application-environmental-models
+
+[P0203] Yu, X., Guo, H., Zhang, J., Ma, Y., Wang, X., Liu, G., Xing, M., Xu, N., & Seka, A. M. (2025). A continual-learning-based multilayer perceptron for improved reconstruction of three-dimensional nitrate concentrations. Earth System Science Data, 17, 2735–2759. https://doi.org/10.5194/essd-17-2735-2025
+
+[P0204] Zeynali, M.J., Pourreza-Bilondi, M., Akbarpour, A. et al. Optimizing pump-and-treat method by considering important remediation objectives. Appl Water Sci 12, 268 (2022). https://doi.org/10.1007/s13201-022-01785-2 
+
+[P0205] Zhu, Y., and Zabaras, N. 2018. “Bayesian Deep Convolutional Encoder–Decoder Networks for Surrogate Modeling and Uncertainty Quantification.” Journal of Computational Physics 366: 415–447. https://doi.org/10.1016/j.jcp.2018.04.018

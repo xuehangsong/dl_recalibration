@@ -1,0 +1,9 @@
+# Office and operating-system transient files
+~$*
+*:Zone.Identifier
+*:sec.endpointdlp
+.DS_Store
+
+# Python caches
+__pycache__/
+*.py[cod]

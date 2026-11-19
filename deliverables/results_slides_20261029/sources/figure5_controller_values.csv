@@ -1,0 +1,5 @@
+controller,historical_degradation_percent,rare_improvement_percent,acceptance_historical_max_percent,acceptance_rare_min_percent,passes_figure5_region
+Fixed_replay,80.4,88.9,30,85,NO
+Threshold_adaptive_forgetting,26.5,85.8,30,85,YES
+Loss_balanced,21.1,85.5,30,85,YES
+Loss_balanced_floor,38.1,87.3,30,85,NO

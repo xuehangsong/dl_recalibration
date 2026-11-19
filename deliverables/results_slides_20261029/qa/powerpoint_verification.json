@@ -1,0 +1,56 @@
+﻿{
+    "NativePowerPointOpen":  true,
+    "Slides":  7,
+    "Exporter":  "Microsoft PowerPoint",
+    "SlideChecks":  [
+                        {
+                            "Slide":  1,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  2,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  3,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  4,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  5,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  6,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        },
+                        {
+                            "Slide":  7,
+                            "Pictures":  1,
+                            "TextOverflowShapes":  [
+
+                                                   ]
+                        }
+                    ]
+}

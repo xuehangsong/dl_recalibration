@@ -1,0 +1,8 @@
+calculation_id,formula,inputs,result,interpretation,limitation
+DC-01,"(10.04-0.58)/10.04",baseline historical and rare RMSE,94.2231%,Rare-regime RMSE is 94.2% higher than historical baseline,Uses cross-partition RMSE and is not a deployment criterion
+DC-02,"(1.11-0.58)/0.58",fine-tuning vs baseline historical RMSE,91.3793%,Historical RMSE increases 91.4% from displayed values,Rounded values and unknown matched test protocol
+DC-03,"(3.92-10.04)/10.04",fine-tuning rare vs baseline rare RMSE,-60.9562%,Rare RMSE decreases 61.0% from displayed values,Improvement convention must be declared
+DC-04,"(1.03-0.58)/0.58",fixed replay vs baseline historical RMSE,77.5862%,Historical RMSE increases 77.6% from displayed values,Does not establish manuscript 80.4% figure
+DC-05,"(10.04-1.21)/10.04",fixed replay rare vs baseline rare RMSE,87.9482%,Rare RMSE decreases 87.9% from displayed values,Does not establish manuscript 88.9% figure
+DC-06,"(5.45-0.58)/0.58",EWC vs baseline historical RMSE,839.6552%,Historical RMSE increases 839.7% from displayed values,Configuration appears unacceptable under any 25–30% illustrative bound; bound not frozen
+DC-07,"(10.04-1.22)/10.04",EWC rare vs baseline rare RMSE,87.8486%,Rare RMSE decreases 87.8% from displayed values,Does not establish generalization or UQ

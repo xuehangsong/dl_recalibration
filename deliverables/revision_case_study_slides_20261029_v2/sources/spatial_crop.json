@@ -1,0 +1,21 @@
+{
+  "source": "analyses/seven_step_lifecycle_20261007/source_extracts/embedded_figures/image2.png",
+  "source_size": [
+    1893,
+    1259
+  ],
+  "crop_box_ltrb": [
+    950,
+    600,
+    1893,
+    1259
+  ],
+  "modifications": "Crop only; all in-crop pixels, axes, labels, aspect ratio, and colorbars retained.",
+  "source_caption_role": "Rare-regime full-order reference, static U-Net prediction, and prediction-minus-reference error.",
+  "concentration_max_ugL": 813.6,
+  "signed_error_colorbar_limits_ugL": [
+    -169.4,
+    169.4
+  ],
+  "raw_arrays_and_sample_id": "Not provided in the report evidence package"
+}

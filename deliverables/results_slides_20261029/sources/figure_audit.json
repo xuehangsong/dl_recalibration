@@ -1,0 +1,37 @@
+[
+  {
+    "figure": "01_baseline",
+    "source": "Manuscript Fig. 4; revised report §5.2",
+    "treatment": "Replot two baseline aggregates on a common zero-based axis; derive 17.3× as 10.04/0.58. No uncertainty bars invented."
+  },
+  {
+    "figure": "02_rmse_comparison",
+    "source": "Manuscript Fig. 4; revised report Table 10",
+    "treatment": "Two panels make historical errors readable. Both start at zero; different numerical limits are explicit. No Figure 5 controller values are pooled."
+  },
+  {
+    "figure": "03_rare_plume_metrics",
+    "source": "Manuscript Fig. 4; revised report Table 11",
+    "treatment": "Replot only the three unambiguous rare-regime metrics. Omit the inconsistent historical peak/Mass90 label. All axes start at zero; exact metric normalization still needs code."
+  },
+  {
+    "figure": "04_controller_screen",
+    "source": "Manuscript Fig. 5; revised report Table 9",
+    "treatment": "Replot all four controller outcomes and the illustrative 30%/85% region. Direct labels replace a distant legend. The y-axis range is explicit; this is a screening plot, not deployment evidence."
+  },
+  {
+    "figure": "05_acceptance_margins",
+    "source": "Manuscript Fig. 5; derived/figure5_acceptance_margins.csv",
+    "treatment": "Subtract 85 from each passing reported rare-improvement label. This is arithmetic on rounded aggregate values, not an uncertainty or significance estimate."
+  },
+  {
+    "figure": "06_comparison_provenance",
+    "source": "Manuscript Figs. 4 and 5; revised report §5.6",
+    "treatment": "Display the fixed-replay percentages separately: Fig. 4 is calculated from rounded RMSE labels; Fig. 5 is directly reported. Do not silently reconcile the discrepancy."
+  },
+  {
+    "figure": "07_candidate_status",
+    "source": "Revised report §§5.7–5.9; no calibration or final-test record supplied",
+    "treatment": "Diagram of the supported endpoint. Solid candidate nodes reflect the illustrative screen only; dashed nodes are pending requirements. No operational deployment is implied."
+  }
+]

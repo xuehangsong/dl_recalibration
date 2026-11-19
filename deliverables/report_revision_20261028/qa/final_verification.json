@@ -1,0 +1,61 @@
+{
+  "pdf_pages": 77,
+  "package_checks": {
+    "Framework_revised_20261028.docx": {
+      "xml_revision_elements": 0,
+      "comment_markers": 0,
+      "drawings": 12
+    },
+    "Framework_revised_20261028_tracked.docx": {
+      "xml_revision_elements": 1671,
+      "comment_markers": 0,
+      "drawings": 22
+    }
+  },
+  "all_source_hashes_preserved": true,
+  "accept_all_restores_revised_text_exactly": true,
+  "accept_all_matches_except_generated_page_fields": true,
+  "reject_all_restores_original_text_exactly": true,
+  "no_broken_fields_or_visible_placeholders": true,
+  "inside_title_date": "October 2026; stored date control corrected",
+  "years_0_4_occurrence": "One explicit documentation-discrepancy statement; no study-time claim",
+  "figure_caption_pages": {
+    "1": [
+      12,
+      20
+    ],
+    "2": [
+      12,
+      21
+    ],
+    "3": [
+      12,
+      32
+    ],
+    "4": [
+      12,
+      33
+    ],
+    "5": [
+      12,
+      34
+    ],
+    "6": [
+      12,
+      36
+    ],
+    "7": [
+      12,
+      55
+    ],
+    "8": [
+      12,
+      57
+    ],
+    "9": [
+      12,
+      59
+    ]
+  },
+  "source_figures_not_pooled": "Manuscript Figures 3, 4, and 5 retained as separate comparisons"
+}

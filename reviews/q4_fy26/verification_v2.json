@@ -1,0 +1,228 @@
+﻿{
+    "Output":  "C:\\Users\\song884\\OneDrive - PNNL\\Desktop\\Q4 Status Report Draft_Xuehang_tracked_v2.docx",
+    "SourceSHA256":  "DC513D694E239521404E96F72CFE994E94704F9FF04BDA61C4FE0E2D235DDE4F",
+    "TargetedEdits":  26,
+    "WordRevisionCount":  43,
+    "ParagraphCount":  8,
+    "AcceptedTextMatches":  true,
+    "RejectedTextMatchesOriginal":  true,
+    "SourceUnchanged":  true,
+    "Revisions":  [
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "revision"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "consolidation"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "planning for"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "securing"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "fully "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "status"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "maturity"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "full "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Conducted"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Executed"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "comparing"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "analyzing multiple"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "deeper "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  " and "
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  ", "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  " between"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  ", and the conditions required to achieve balanced accuracy across both"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "rare"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "extreme"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "the final "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Advanced "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Revisions"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Nearing Completion"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Advanced"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Progressed"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "responses to"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "resolution of"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "internal review"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "reviewer-style"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "potential "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "adaptive replay"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "the framework"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "being prepared"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "positioned"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "final technical review"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "NCTE-supported finalization"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "all "
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "comprehensive "
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Secured No-Cost Time Extension and "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "The team"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Meeting cadence"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "allow more time for"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "maximize focused effort on"
+                      }
+                  ],
+    "AcceptedText":  "The project team continued to advance the framework during Q4 of FY26, focusing on manuscript revision, expanded continual-learning experimentation, final deliverable preparation, and planning for project continuity. A No-Cost Time Extension (NCTE) was requested and approved during Q4, extending the period of performance through January 31, 2027 to allow additional time to finalize modeling results, update the Task 2 report, and support project closeout or continuity pending FY27 funding decisions.\rDelivered IR-Approved Mid-Year Technical Briefing to DOE HQ: Completed and delivered the mid-year briefing for the July 14 Environmental Remediation review, clearly communicating project status, technical progress, and the seven-step governance-aligned workflow (Monitor, Detect, Decide, Prepare, Update, Calibrate, Deploy). The briefing was officially cleared through institutional review and submitted to headquarters.\rExpanded Experimentation on Adaptive Replay Ratio Strategies: Conducted additional targeted experiments comparing replay-ratio control strategies, including smoothing algorithms, retention-weight approaches, and step-cap mechanisms. These experiments provided insight into convergence behavior and performance tradeoffs between historical and rare data regimes, strengthening the technical basis for model-update guidance.\rAdvanced Manuscript Revisions: Advanced the journal manuscript through substantive technical edits, including responses to internal review comments, methods section refinement, figure revisions, and integration of adaptive replay results. The manuscript captures both the scientific contribution and potential operational relevance of adaptive replay and is being prepared for submission following final technical review.\rPrepared and Delivered FY26 Data Package: Organized and submitted the FY26 data package as the final fiscal year deliverable, consolidating model performance results, evaluation metrics, figures, and workflow components developed during the year into a technical summary for DOE.\rStructured Remaining Work: With NCTE approval confirmed, the team structured the remaining work required to update the Task 2 report with final modeling results, incorporate adaptive replay-ratio findings, and refine threshold criteria. The team shifted from weekly technical sessions to periodic email updates to streamline coordination and allow more time for deliverable completion.\rThese accomplishments consolidate the technical and documentation progress achieved throughout FY26 and position the project to deliver a complete, defensible Task 2 report during the extended period of performance.\r\r"
+}

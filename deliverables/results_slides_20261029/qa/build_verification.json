@@ -1,0 +1,19 @@
+{
+  "slides": 7,
+  "pictures_per_slide": 1,
+  "speaker_notes_embedded": true,
+  "source_hashes_recorded": true,
+  "manuscript_embedded_figures_match_archive": true,
+  "all_slide_shapes_within_bounds": true,
+  "metric_values_match_revised_section5": true,
+  "figure_titles": false,
+  "baseline_ratio": 17.310344827586206,
+  "fixed_replay_fig4_percentages": [
+    77.58620689655173,
+    87.94820717131473
+  ],
+  "passing_rare_margins_pp": [
+    0.7999999999999972,
+    0.5
+  ]
+}

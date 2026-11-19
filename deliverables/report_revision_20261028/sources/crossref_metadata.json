@@ -1,0 +1,500 @@
+{
+  "10.1029/2011WR011527": {
+    "title": [
+      "Review of surrogate modeling in water resources"
+    ],
+    "author": [
+      {
+        "given": "Saman",
+        "family": "Razavi",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bryan A.",
+        "family": "Tolson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Donald H.",
+        "family": "Burn",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    },
+    "volume": "48",
+    "issue": "7",
+    "page": null,
+    "article-number": "2011WR011527",
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "DOI": "10.1029/2011wr011527"
+  },
+  "10.1029/2018WR023528": {
+    "title": [
+      "Deep Convolutional Encoder‐Decoder Networks for Uncertainty Quantification of Dynamic Multiphase Flow in Heterogeneous Media"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-2831-4805",
+        "authenticated-orcid": false,
+        "given": "Shaoxing",
+        "family": "Mo",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          },
+          {
+            "name": "Center for Informatics and Computational Science University of Notre Dame  Notre Dame IN USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yinhao",
+        "family": "Zhu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Center for Informatics and Computational Science University of Notre Dame  Notre Dame IN USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3144-8388",
+        "authenticated-orcid": false,
+        "given": "Nicholas",
+        "family": "Zabaras",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Center for Informatics and Computational Science University of Notre Dame  Notre Dame IN USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5074-8856",
+        "authenticated-orcid": false,
+        "given": "Xiaoqing",
+        "family": "Shi",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9799-6745",
+        "authenticated-orcid": false,
+        "given": "Jichun",
+        "family": "Wu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
+    },
+    "volume": "55",
+    "issue": "1",
+    "page": "703-728",
+    "article-number": null,
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "DOI": "10.1029/2018wr023528"
+  },
+  "10.1029/2018WR024638": {
+    "title": [
+      "Deep Autoregressive Neural Networks for High‐Dimensional Inverse Problems in Groundwater Contaminant Source Identification"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-2831-4805",
+        "authenticated-orcid": false,
+        "given": "Shaoxing",
+        "family": "Mo",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          },
+          {
+            "name": "Center for Informatics and Computational Science University of Notre Dame  Notre Dame IN USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3144-8388",
+        "authenticated-orcid": false,
+        "given": "Nicholas",
+        "family": "Zabaras",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Center for Informatics and Computational Science University of Notre Dame  Notre Dame IN USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5074-8856",
+        "authenticated-orcid": false,
+        "given": "Xiaoqing",
+        "family": "Shi",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9799-6745",
+        "authenticated-orcid": false,
+        "given": "Jichun",
+        "family": "Wu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Key Laboratory of Surficial Geochemistry of Ministry of Education, School of Earth Sciences and Engineering Nanjing University  Nanjing China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          5
+        ]
+      ]
+    },
+    "volume": "55",
+    "issue": "5",
+    "page": "3856-3881",
+    "article-number": null,
+    "container-title": [
+      "Water Resources Research"
+    ],
+    "DOI": "10.1029/2018wr024638"
+  },
+  "10.1029/2025GL118000": {
+    "title": [
+      "Generative Subsurface Flow Modeling With Pretrained Diffusion Model and Training‐Free Knowledge Alignment"
+    ],
+    "author": [
+      {
+        "given": "Zhongzheng",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Energy and Resources Engineering Peking University  Beijing China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4566-8197",
+        "authenticated-orcid": false,
+        "given": "Yuntian",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Ningbo Institute of Digital Twin Eastern Institute of Technology  Ningbo China"
+          },
+          {
+            "name": "Zhejiang Key Laboratory of Industrial Intelligence and Digital Twin Eastern Institute of Technology  Ningbo China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nanzhe",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Energy Science and Engineering Stanford University  Palo Alto CA USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5704-638X",
+        "authenticated-orcid": false,
+        "given": "Guodong",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Earth Sciences The University of Hong Kong  Hong Kong China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6930-5994",
+        "authenticated-orcid": false,
+        "given": "Dongxiao",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Ningbo Institute of Digital Twin Eastern Institute of Technology  Ningbo China"
+          },
+          {
+            "name": "Zhejiang Key Laboratory of Industrial Intelligence and Digital Twin Eastern Institute of Technology  Ningbo China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          21
+        ]
+      ]
+    },
+    "volume": "52",
+    "issue": "22",
+    "page": null,
+    "article-number": "e2025GL118000",
+    "container-title": [
+      "Geophysical Research Letters"
+    ],
+    "DOI": "10.1029/2025gl118000"
+  },
+  "10.1016/j.apenergy.2025.126071": {
+    "title": [
+      "Generative inverse modeling for improved geological CO2 storage prediction via conditional diffusion models"
+    ],
+    "author": [
+      {
+        "given": "Zhongzheng",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4566-8197",
+        "authenticated-orcid": false,
+        "given": "Yuntian",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wenhao",
+        "family": "Fu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mengge",
+        "family": "Du",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5704-638X",
+        "authenticated-orcid": false,
+        "given": "Guodong",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xiaopeng",
+        "family": "Ma",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dongxiao",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          10
+        ]
+      ]
+    },
+    "volume": "395",
+    "issue": null,
+    "page": "126071",
+    "article-number": "126071",
+    "container-title": [
+      "Applied Energy"
+    ],
+    "DOI": "10.1016/j.apenergy.2025.126071"
+  }
+}

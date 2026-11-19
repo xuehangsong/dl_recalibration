@@ -1,0 +1,63 @@
+﻿{
+    "NativePowerPointOpen":  true,
+    "Slides":  5,
+    "Exporter":  "Microsoft PowerPoint",
+    "ExistingPresentationsPreserved":  2,
+    "SlideChecks":  [
+                        {
+                            "Slide":  1,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  2,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  3,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  4,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  5,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        }
+                    ]
+}

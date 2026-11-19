@@ -1,0 +1,47 @@
+[
+  {
+    "figure": "03_rare_spatial_example",
+    "source": "Manuscript Fig. 2(b), rare-regime triplet",
+    "treatment": "Crop only. Preserve original color maps, axes, scale bars, and aspect ratio. Representative source example; no independent spatial reproduction."
+  },
+  {
+    "figure": "04_joint_rmse",
+    "source": "Manuscript Fig. 4; revised report Table 10",
+    "treatment": "Replot reported historical/rare RMSE pairs together. No connecting trajectory, replicate distribution, or uncertainty is invented."
+  },
+  {
+    "figure": "05_controller_screen",
+    "source": "Manuscript Fig. 5; revised report Table 9",
+    "treatment": "Keep all four controller outcomes separate from Figure 4. The 30%/85% region identifies candidates, not approved deployments."
+  },
+  {
+    "figure": "05_rare_physical_errors",
+    "source": "Manuscript Fig. 4(a); revised report Table 11",
+    "treatment": "Three aligned point panels reproduce rare-regime mass, peak, and Mass90 errors. Each metric has its own labeled linear scale. No uncertainties or time trajectories are inferred."
+  },
+  {
+    "figure": "plan",
+    "source": "Revised report §§2.2, 5.9.",
+    "treatment": "Native editable PowerPoint nodes, text, and attached connectors. Diagram is synthesized from source evidence; no experimental trajectory is inferred."
+  },
+  {
+    "figure": "stress",
+    "source": "Revised report §§5.1–5.5; manuscript Fig. 1.",
+    "treatment": "Native editable PowerPoint nodes, text, and attached connectors. Diagram is synthesized from source evidence; no experimental trajectory is inferred."
+  },
+  {
+    "figure": "replay",
+    "source": "Manuscript Eq. (1), adaptive-replay methods, Table 2, and Fig. 5(a).",
+    "treatment": "Native editable PowerPoint nodes, text, and attached connectors. Diagram is synthesized from source evidence; no experimental trajectory is inferred."
+  },
+  {
+    "figure": "boundary",
+    "source": "Revised report §§5.7–5.9.",
+    "treatment": "Native editable PowerPoint nodes, text, and attached connectors. Diagram is synthesized from source evidence; no experimental trajectory is inferred."
+  },
+  {
+    "figure": "next",
+    "source": "Revised report §5.10; analysis specification; original trigger/UQ plan.",
+    "treatment": "Native editable PowerPoint nodes, text, and attached connectors. Diagram is synthesized from source evidence; no experimental trajectory is inferred."
+  }
+]

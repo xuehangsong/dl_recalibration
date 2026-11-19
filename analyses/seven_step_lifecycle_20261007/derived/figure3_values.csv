@@ -1,0 +1,6 @@
+panel,configuration,historical_rmse,rare_rmse,interpretation
+3a,Baseline_before,0.49,9.20,Displayed before-fine-tuning values
+3a,Fine_tuned_after,0.67,1.20,Displayed after-fine-tuning values
+3c,Baseline_Model_A,0.58,10.04,Displayed layer-freezing comparison
+3c,Decoder_only_Model_B,1.11,3.92,Displayed layer-freezing comparison
+3c,Full_network_Model_C,0.64,0.99,Displayed layer-freezing comparison; configuration unresolved

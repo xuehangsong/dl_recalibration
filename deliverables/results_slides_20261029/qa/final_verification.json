@@ -1,0 +1,53 @@
+{
+  "slides": 7,
+  "native_powerpoint_rendered": true,
+  "pdf_pages": 7,
+  "one_image_per_slide": true,
+  "embedded_notes_verified": true,
+  "text_overflow": false,
+  "source_files_unchanged": true,
+  "slide_checks": [
+    {
+      "slide": 1,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 2,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 3,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 4,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 5,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 6,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    },
+    {
+      "slide": 7,
+      "one_picture": true,
+      "title_rendered": true,
+      "notes_present": true
+    }
+  ]
+}

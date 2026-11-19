@@ -1,0 +1,196 @@
+﻿{
+    "Output":  "C:\\Users\\song884\\OneDrive - PNNL\\Desktop\\PNNL_EM-HQ-TOO_WeeklyHighlight_DeepLearningModels_10_7_26_Xuehang_tracked.docx",
+    "SourceSHA256":  "5B00F1A16F382708E08F5658E99F6A673EE57EA3F973B8AA6A3B9CD691AABE17",
+    "TargetedEdits":  20,
+    "WordRevisionCount":  33,
+    "CommentCount":  3,
+    "ParagraphCount":  18,
+    "AcceptedTextMatches":  true,
+    "RejectedTextMatchesOriginal":  true,
+    "FigureCountUnchanged":  true,
+    "SourceUnchanged":  true,
+    "Revisions":  [
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "deep-learning recalibration"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "multimodal AI"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "(Figure 1) that integrates"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "that integrates"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "self-calibrating "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "is designed to support"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "enables"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "rapid, low-cost "
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "with the aim of improving"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "improving"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "and its supporting documentation"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "from validated technical capability toward a documented, governance-ready decision-support tool"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  " (Figure 1)"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "assess performance tradeoffs between"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "ensure the surrogate performs well on both"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  ", high-consequence"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  " rather than favoring one at the expense of the other"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "during FY26"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "this year"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "scientifically defensible"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "science-defensible"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "be updated"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "continuously evolve"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "documented"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "formalized"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "Conceptual"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "High-level"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  " using high-performance computing"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "three"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "two"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "support model updating"
+                      },
+                      {
+                          "Type":  2,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "maintain long-term reliability"
+                      },
+                      {
+                          "Type":  1,
+                          "Author":  "Song, Xuehang",
+                          "Text":  "recalibration of the physics-based numerical model, "
+                      }
+                  ],
+    "AcceptedText":  "\rArtificial intelligence (AI) continues to emerge as a mission-critical capability for the DOE Office of Environmental Management (EM). Deep-learning surrogate models can reduce groundwater simulation times from hours or days to seconds, making it feasible to rapidly evaluate remediation alternatives, explore uncertainty, and support planning decisions that would otherwise be constrained by computational cost. To fully realize this potential, DOE-EM requires a robust, defensible, and operationally sustainable framework for deploying, maintaining, and governing AI-enabled surrogate models as trusted decision-support tools for groundwater remediation and broader environmental management applications.\rTo support this mission, EM-3.21 funded Pacific Northwest National Laboratory (PNNL) to develop a first-generation deep-learning recalibration framework (Figure 1) that integrates physics-based modeling with modern AI and deep-learning techniques. This framework is designed to support updates to subsurface and operational surrogate models using observational and monitoring data, with the aim of improving predictive fidelity, responsiveness to evolving site conditions, and long-term decision support across the lifecycle of environmental remediation and site operations. In doing so, it addresses one of the primary barriers to operational deployment of surrogate models at DOE-EM sites: maintaining confidence that accelerated model predictions remain accurate, robust, and defensible over the extended timeframes characteristic of DOE groundwater remediation and long-term stewardship activities.\rSince the project\u0027s May update, the team has advanced the framework and its supporting documentation, with several notable milestones:\rDelivered a mid-year technical briefing to DOE HQ. The team completed and delivered the mid-year briefing for the July 14 Environmental Remediation review, communicating project status, technical progress, and the full seven-step governance-aligned workflow (Monitor, Detect, Decide, Prepare, Update, Calibrate, Deploy). This workflow gives EM a documented, auditable path for deciding when and how surrogate models should be updated, strengthening confidence in long-term operational use.\rEarned external recognition for the project\u0027s technical approach. A project paper presented at the Waste Management Symposium (WM26) was selected for a Superior Paper Award, reflecting independent recognition of the technical quality and mission relevance of the team\u0027s approach to AI-enabled decision support across the EM complex.\rAdvanced adaptive replay-ratio experimentation to improve model balance. The team conducted additional experiments comparing replay-ratio control strategies, including smoothing algorithms, retention-weight approaches, and step-cap mechanisms. In plain terms, these methods fine-tune how much \"old\" versus \"new\" information the model relies on when updating, helping assess performance tradeoffs between historical and rare conditions.\rSecured a no-cost time extension to strengthen final deliverables. DOE approved a no-cost time extension through January 31, 2027, giving the team additional time to incorporate the latest modeling results into the Task 2 prototype report and ensure the final deliverable reflects the full body of technical evidence developed during FY26.\r\f\r\rUpcoming work will finalize the journal manuscript capturing the project\u0027s adaptive replay findings, complete the Task 2 prototype report with updated modeling results and threshold criteria, and continue structuring the governance and validation protocols needed to support eventual site-level demonstration.\r\rTogether, these advancements move DOE-EM closer to automated, adaptive, and scientifically defensible predictive modeling capabilities that can be updated with incoming site data. The project\u0027s external recognition, documented governance workflow, and extended development window further strengthen the technical and institutional foundation necessary for reliable AI-enabled decision support across groundwater remediation, long-term stewardship, and other complex environmental and operational challenges throughout the DOE complex.\r\r\r/\r\rFigure 1. Conceptual workflow illustrating how physics-based simulation and deep-learning surrogate models work together within a governed feedback loop. Site understanding begins with the conceptual site model and flows through physics-based numerical simulations that generate training data for the deep-learning surrogate. Once trained, the surrogate delivers accelerated predictions for field validation and operational decision support. As new site data become available, three feedback pathways support model updating: recalibration of the physics-based numerical model, recalibration of the deep-learning model using targeted updates, and revision of the conceptual site model to reflect evolving conditions. This continuous cycle is the foundation of the framework being developed under this project.\r",
+    "Comments":  [
+                     {
+                         "Anchor":  "first-generation",
+                         "Text":  "I adjusted the maturity wording to distinguish the framework design and adaptive-replay experiments from operational deployment. \"Multimodal\" could imply data-modality fusion; \"deep-learning recalibration\" describes the scope documented in the Task 1 report."
+                     },
+                     {
+                         "Anchor":  "Superior Paper Award",
+                         "Text":  "Please confirm the official award title and when the selection was announced, so its inclusion among developments since May is accurate."
+                     },
+                     {
+                         "Anchor":  "Figure 1.",
+                         "Text":  "The figure shows three feedback paths: conceptual site model update, numerical-model recalibration, and surrogate recalibration. I aligned the caption. Please also change \"Physical-based Numerical model\" to \"Physics-based Numerical Model\" in the source figure."
+                     }
+                 ],
+    "PreviewPDF":  "\\\\wsl.localhost\\Ubuntu\\home\\song884\\github\\dl_recalibration\\reviews\\weekly_20261007\\accepted_preview.pdf",
+    "AcceptedPageCount":  2
+}

@@ -1,0 +1,32 @@
+{
+  "all_28_outcome_values_preserved": true,
+  "all_four_empirical_visuals_byte_identical_to_audited_v3": true,
+  "notes_match_current_spec": true,
+  "source_attribution_added": true,
+  "figure_checks": [
+    {
+      "slide": 3,
+      "image": "03_rare_spatial_example.png",
+      "identical_to_audited_v3": true,
+      "embedded_image_matches_asset": true
+    },
+    {
+      "slide": 4,
+      "image": "04_joint_rmse.png",
+      "identical_to_audited_v3": true,
+      "embedded_image_matches_asset": true
+    },
+    {
+      "slide": 5,
+      "image": "05_rare_physical_errors.png",
+      "identical_to_audited_v3": true,
+      "embedded_image_matches_asset": true
+    },
+    {
+      "slide": 7,
+      "image": "05_controller_screen.png",
+      "identical_to_audited_v3": true,
+      "embedded_image_matches_asset": true
+    }
+  ]
+}

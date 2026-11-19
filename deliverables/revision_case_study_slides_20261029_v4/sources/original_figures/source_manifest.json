@@ -1,0 +1,80 @@
+{
+  "source_docx": "method_manuscript/Adaptive_Replay_Manuscript_2026_09_09.docx",
+  "source_filename_version": "2026_09_09",
+  "version_label_semantics": "Filename label only; not an asserted revision or publication date.",
+  "source_docx_sha256": "20ad1fe864942ea089ea68a83a610af4b396e151310f5fafb55cb964576ffed7",
+  "source_figures": [
+    {
+      "manuscript_figure": 1,
+      "docx_part": "word/media/image1.png",
+      "relationship_id": "rId12",
+      "body_paragraph_index_zero_based": 22,
+      "original_caption": "Figure 1. Relative sequential 90%-mass plume-size change distribution",
+      "source_part_sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0",
+      "extracted_path": "sources/original_figures/figure_01_original.png",
+      "dimensions_px": [
+        1562,
+        939
+      ],
+      "treatment": "Complete original image, byte-exact extraction; no crop, recoloring, relabeling, or reconstruction."
+    },
+    {
+      "manuscript_figure": 2,
+      "docx_part": "word/media/image2.png",
+      "relationship_id": "rId13",
+      "body_paragraph_index_zero_based": 79,
+      "original_caption": "Figure 2. Static baseline performance on historical and rare plume regimes. “Reference” denotes the full-order physics model concentration field, and “baseline prediction” denotes the concentration field predicted by the static U-Net surrogate.",
+      "source_part_sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4",
+      "extracted_path": "sources/original_figures/figure_02_original.png",
+      "dimensions_px": [
+        1893,
+        1259
+      ],
+      "treatment": "Complete original image, byte-exact extraction; no crop, recoloring, relabeling, or reconstruction."
+    },
+    {
+      "manuscript_figure": 3,
+      "docx_part": "word/media/image3.png",
+      "relationship_id": "rId14",
+      "body_paragraph_index_zero_based": 84,
+      "original_caption": "Figure 3. Effect of fine-tuning on rare-regime adaptation and historical-regime retention. (a) RMSE before and after fine-tuning for historical low-change samples and rare high-change samples. (b) Historical-regime degradation plotted against rare-regime RMSE improvement for different update configurations. The dashed horizontal line indicates the 25% allowable degradation threshold. (c) Layer-freezing comparison showing RMSE for the baseline model, decoder-only fine-tuning, and full-network tuning.",
+      "source_part_sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59",
+      "extracted_path": "sources/original_figures/figure_03_original.png",
+      "dimensions_px": [
+        2169,
+        657
+      ],
+      "treatment": "Complete original image, byte-exact extraction; no crop, recoloring, relabeling, or reconstruction."
+    },
+    {
+      "manuscript_figure": 4,
+      "docx_part": "word/media/image4.png",
+      "relationship_id": "rId15",
+      "body_paragraph_index_zero_based": 89,
+      "original_caption": "Figure 4. Comparison of continual-learning strategies for rare-regime adaptation and historical-regime retention using fine tuning (FT), fixed replay, and elastic weight consolidation (EWC). (a) Scalar performance metrics for the baseline U-Net, simple fine-tuning, fixed replay, and elastic weight consolidation (EWC). Metrics include historical-regime RMSE, rare-regime RMSE, rare-regime plume-mass error, rare-regime peak-concentration error, historical-regime Mass90 error, and rare-regime Mass90 error. (b) Stability–plasticity tradeoff for the update strategies, where the x-axis shows rare-regime RMSE improvement and the y-axis shows historical-regime degradation relative to the baseline. Points farther to the right indicate greater rare-regime adaptation, whereas lower points indicate better retention of historical-regime performance. (c) Representative rare-regime plume predictions and error maps for the baseline, simple fine-tuning, fixed replay, and EWC models. Error is computed as predicted minus reference concentration.",
+      "source_part_sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121",
+      "extracted_path": "sources/original_figures/figure_04_original.png",
+      "dimensions_px": [
+        2292,
+        1383
+      ],
+      "treatment": "Complete original image, byte-exact extraction; no crop, recoloring, relabeling, or reconstruction."
+    },
+    {
+      "manuscript_figure": 5,
+      "docx_part": "word/media/image5.png",
+      "relationship_id": "rId16",
+      "body_paragraph_index_zero_based": 96,
+      "original_caption": "Figure 5. Adaptive replay control and acceptance-region analysis. Panel (a) shows the update trajectory, where the replay ratio (rt) increases in response to historical-regime forgetting and reaches the imposed replay-ratio cap. Panel (b) compares final historical-regime degradation and rare-regime improvement across fixed and adaptive replay controllers. Panel (c) shows the acceptance region defined by maximum allowable historical degradation and minimum required rare-regime improvement, points inside the shaded region satisfy both criteria for surrogate redeployment.",
+      "source_part_sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5",
+      "extracted_path": "sources/original_figures/figure_05_original.png",
+      "dimensions_px": [
+        3214,
+        854
+      ],
+      "treatment": "Complete original image, byte-exact extraction; no crop, recoloring, relabeling, or reconstruction."
+    }
+  ],
+  "output_pptx": "Yilin_original_figures_20261029.pptx",
+  "output_pptx_sha256": "93830d96940bdc10dda34e836045b8abe757d77246f8b2cebddab44ada19319c"
+}

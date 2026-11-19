@@ -1,0 +1,128 @@
+{
+  "source_docx_sha256": "20ad1fe864942ea089ea68a83a610af4b396e151310f5fafb55cb964576ffed7",
+  "source_media_checks": {
+    "image1.png": {
+      "byte_identical_to_docx": true,
+      "sha256": "de944beace604d00d4eac20afaa7afd13d7b30087e71dd0bb5fd98682027abc0"
+    },
+    "image2.png": {
+      "byte_identical_to_docx": true,
+      "sha256": "933ef4f0d03d942501db57e5c63b807a66aac8cf902033bceb86c25f2d2697b4"
+    },
+    "image3.png": {
+      "byte_identical_to_docx": true,
+      "sha256": "26b8bd338133d392a667e0d01597010f6e8850dd517f5ffcd9c347dde0d1ff59"
+    },
+    "image4.png": {
+      "byte_identical_to_docx": true,
+      "sha256": "624368f75b65d0660a746a591a125f3f7b0cbfdd3983bfb1fde01ec4d00bc121"
+    },
+    "image5.png": {
+      "byte_identical_to_docx": true,
+      "sha256": "0f5a3c45e568af53e900765d28f68da4d8a2adcb2a288ec609ae3af56fe7a9e5"
+    }
+  },
+  "numeric_checks": {
+    "figure4_original_labels_match_csv": true,
+    "figure5_original_labels_match_csv": true,
+    "figure4_displayed_value_recalculations": {
+      "Baseline": {
+        "historical_increase_percent": 0.0,
+        "rare_reduction_percent": 0.0
+      },
+      "Simple_FT": {
+        "historical_increase_percent": 91.37931034482763,
+        "rare_reduction_percent": 60.95617529880477
+      },
+      "Fixed_replay": {
+        "historical_increase_percent": 77.58620689655173,
+        "rare_reduction_percent": 87.94820717131473
+      },
+      "EWC": {
+        "historical_increase_percent": 839.6551724137933,
+        "rare_reduction_percent": 87.84860557768924
+      }
+    },
+    "figure5_recalculations": {
+      "Fixed_replay": {
+        "historical_margin_pp": -50.400000000000006,
+        "rare_margin_pp": 3.9000000000000057,
+        "passes": false
+      },
+      "Threshold_adaptive_forgetting": {
+        "historical_margin_pp": 3.5,
+        "rare_margin_pp": 0.7999999999999972,
+        "passes": true
+      },
+      "Loss_balanced": {
+        "historical_margin_pp": 8.899999999999999,
+        "rare_margin_pp": 0.5,
+        "passes": true
+      },
+      "Loss_balanced_floor": {
+        "historical_margin_pp": -8.100000000000001,
+        "rare_margin_pp": 2.299999999999997,
+        "passes": false
+      }
+    },
+    "rounding_intervals_figure4_fixed_replay": {
+      "historical_min_percent": 75.21367521367522,
+      "historical_max_percent": 80.0,
+      "rare_min_percent": 87.89237668161435,
+      "rare_max_percent": 88.00398208063713
+    },
+    "historical_derived_row_DC01": {
+      "file": "analyses/seven_step_lifecycle_20261007/derived/reported_value_calculations.csv",
+      "incorrect_text": "Rare-regime RMSE is 94.2% higher than historical baseline",
+      "correct_ratio": 17.310344827586206,
+      "correct_higher_percent": 1631.0344827586207,
+      "alternative_historical_lower_percent": 94.22310756972112,
+      "used_in_v3_deck": false
+    },
+    "04_joint_rmse_labels_verified": true,
+    "05_controller_screen_labels_verified": true,
+    "05_rare_physical_errors_labels_verified": true
+  },
+  "pptx_checks": {
+    "1": {
+      "notes_equal_deck_spec": true,
+      "visual": "plan"
+    },
+    "2": {
+      "notes_equal_deck_spec": true,
+      "visual": "stress"
+    },
+    "3": {
+      "notes_equal_deck_spec": true,
+      "visual": "03_rare_spatial_example",
+      "picture_byte_identical_to_build_figure": true
+    },
+    "4": {
+      "notes_equal_deck_spec": true,
+      "visual": "04_joint_rmse",
+      "picture_byte_identical_to_build_figure": true
+    },
+    "5": {
+      "notes_equal_deck_spec": true,
+      "visual": "05_rare_physical_errors",
+      "picture_byte_identical_to_build_figure": true
+    },
+    "6": {
+      "notes_equal_deck_spec": true,
+      "visual": "replay"
+    },
+    "7": {
+      "notes_equal_deck_spec": true,
+      "visual": "05_controller_screen",
+      "picture_byte_identical_to_build_figure": true
+    },
+    "8": {
+      "notes_equal_deck_spec": true,
+      "visual": "boundary"
+    },
+    "9": {
+      "notes_equal_deck_spec": true,
+      "visual": "next"
+    }
+  }
+}

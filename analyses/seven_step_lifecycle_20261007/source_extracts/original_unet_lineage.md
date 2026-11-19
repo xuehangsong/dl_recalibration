@@ -1,0 +1,5 @@
+# Bounded read-only lineage inspection
+
+Inspected `/home/song884/github/dvz_optimization/unet_ms/` on 2026-10-07. The package README identifies scripts for a 2D U-Net paper, generation of 10,000 eSTOMP cases, postprocessing, six 2D training cases, and example model/prediction artifacts. `2d/2d_model/dataset_6_input.py` and `dataset_6_combine_2.py` reference `/rcfs/projects/optimize_pt/ml_test/dataset_6/` and concatenate plume snapshots into training arrays. The training scripts include array-level `train_test_split` calls in the original package.
+
+This inspection establishes contextual lineage for the older synthetic U-Net data package only. It does not establish that these scripts generated Yilin's adaptive-replay manuscript results: the current adaptive-replay controller, exact split, raw predictions, checkpoints, and logs were not found in this repository. The original scripts therefore cannot be used to fill missing Yilin evidence or to attribute their split behavior to the current study.

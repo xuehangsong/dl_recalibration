@@ -1,0 +1,11 @@
+{
+  "slides": 7,
+  "one_image_per_slide": true,
+  "no_bar_charts": true,
+  "figure_titles": false,
+  "source_hashes_recorded": true,
+  "crop_pixels_unchanged": true,
+  "crop_aspect_ratio_preserved": true,
+  "speaker_notes_embedded": true,
+  "source_comparisons_not_pooled": true
+}

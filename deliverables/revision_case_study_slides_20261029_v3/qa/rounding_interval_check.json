@@ -1,0 +1,12 @@
+{
+  "assumption": "Each Fig4 RMSE is nearest0.01; endpoints provide conservative bounds.",
+  "bounds": {
+    "historical_increase_min_percent": "75.21367521367521367521367520",
+    "historical_increase_max_percent": "80.0",
+    "rare_reduction_min_percent": "87.89237668161434977578475336",
+    "rare_reduction_max_percent": "88.00398208063713290194126431"
+  },
+  "figure5_reported_historical_percent": "80.4",
+  "figure5_reported_rare_percent": "88.9",
+  "rounding_alone_cannot_reconcile": true
+}

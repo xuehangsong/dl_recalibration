@@ -1,0 +1,480 @@
+[
+  {
+    "source_paragraph": 6,
+    "old": "Maintaining Deep-Learning Surrogate Accuracy for Long-Term Groundwater Remediation: Concept and Prototype Plan",
+    "new": "Maintaining Deep-Learning Surrogate Accuracy for Long-Term Groundwater Remediation: Framework and Controlled Update Evidence",
+    "reason": "Align title with the revised evidence scope"
+  },
+  {
+    "source_paragraph": 57,
+    "old": "Maintaining Deep-Learning Surrogate Accuracy for Long-Term Groundwater Remediation: Concept and Prototype Plan",
+    "new": "Maintaining Deep-Learning Surrogate Accuracy for Long-Term Groundwater Remediation: Framework and Controlled Update Evidence",
+    "reason": "Align title with the revised evidence scope"
+  },
+  {
+    "source_paragraph": 61,
+    "old": "April 2026",
+    "new": "October 2026 — Revision draft",
+    "reason": "Identify the review copy without claiming formal reissue"
+  },
+  {
+    "source_paragraph": 7,
+    "old": "April 2026",
+    "new": "October 2026 — Revision draft",
+    "reason": "Revision date"
+  },
+  {
+    "source_paragraph": 82,
+    "old": "Deep-learning surrogate models can reduce groundwater simulation times from hours or days to seconds, making it feasible to rapidly evaluate remediation alternatives, explore uncertainty, and support planning decisions that would otherwise be constrained by computational cost. For U.S. Department of Energy (DOE) Office of Environmental Management (EM) sites managing complex, long-duration groundwater cleanup, this capability offers substantial operational value.",
+    "new": "Deep-learning surrogates can accelerate groundwater simulations and make large scenario studies more practical. Their value for long-term remediation depends on maintaining reliability as the conditions they predict change.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 83,
+    "old": "However, surrogate models are trained on data that represent site conditions at a particular point in time. Over the years and decades typical of EM remediation, those conditions may change because of natural system evolution, modifications to pumping or treatment systems, new monitoring data, or revisions to the conceptual site model. As a result, surrogate accuracy may degrade over time. If such degradation is not detected and addressed, surrogate-informed decisions may no longer be reliable. In regulatory settings governed by Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA) and DOE quality assurance requirements, that risk is unacceptable.",
+    "new": "Pumping systems, contaminant sources, boundary conditions, and conceptual site models can evolve over the years and decades typical of DOE environmental management. A surrogate trained on historical conditions may then encounter behavior outside its evaluated domain. Monitoring and evidence-based review are needed to determine whether it remains suitable for use.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 84,
+    "old": "Although interest in surrogate modeling is growing within the environmental modeling community, no established methodology currently exists for maintaining surrogate accuracy over multi-year operational periods while preserving the governance, documentation, and quality assurance standards required for EM applications.",
+    "new": "This report connects model maintenance to the governance and quality assurance expectations of environmental decision support: when to intervene, how to assess an update, and what evidence permits deployment.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 85,
+    "old": "The purpose of this project is to establish a robust and defensible framework for deploying and maintaining artificial-intelligence-enabled deep-learning surrogate models as reliable decision-support tools throughout the lifecycle of EM groundwater remediation. This mid-year report presents the conceptual design and prototype plan for that framework, which addresses the long-term surrogate maintenance challenge through three core components:",
+    "new": "This revised report develops that process through a three-pillar framework and a controlled pump-and-treat U-Net case study. The central questions are when an update is warranted, how the update can preserve useful historical behavior, and what evidence is required before the candidate may be used. The three complementary pillars are:",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 86,
+    "old": "Governance defines the rules for surrogate use, including alignment with CERCLA, U.S. Environmental Protection Agency environmental modeling guidance, and DOE EM-QA-001; acceptance criteria; recalibration triggers; and configuration control. Within this framework, surrogate models are limited to screening, scenario exploration, and planning support, while high-fidelity physics-based models remain the authoritative basis for final regulatory and remedy decisions.",
+    "new": "Governance defines acceptance criteria, recalibration triggers, configuration control, and decision authority. Surrogates support screening and planning; high-fidelity physics-based analysis remains authoritative for final regulatory and remedy decisions.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 87,
+    "old": "Modeling engines include both the physics-based numerical simulators that provide reference predictions and the deep-learning surrogates that provide fast approximate results. Surrogate models are data-driven approximations of the physics-based models and can reproduce simulator behavior at speeds 103 to 105 times faster, while the physics-based model remains the ground-truth reference throughout framework operation.",
+    "new": "Modeling engines provide physics-based reference predictions and fast surrogate approximations. Published applications motivate their potential efficiency, while the end-to-end cost of the present recalibration workflow remains to be measured.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 88,
+    "old": "Recalibration mechanisms provide the technical methods needed to monitor surrogate performance, detect degradation, and execute targeted updates that restore reliability without requiring routine full retraining.",
+    "new": "Recalibration mechanisms provide uncertainty quantification, drift detection, continual learning, and active learning. Their suitability must be evaluated for the intended conditions.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 89,
+    "old": "These three components are connected through a structured, seven-step workflow with two phases: continuous monitoring that runs passively during routine operations, and a triggered response that activates only when monitoring identifies meaningful degradation and governance review authorizes an update. Every step includes defined decision points, acceptance criteria, and documentation requirements to support auditability and independent review.",
+    "new": "The pillars are connected through MONITOR → DETECT → DECIDE → PREPARE → UPDATE → CALIBRATE → DEPLOY. Continuous monitoring and human review identify whether intervention is warranted; a triggered response prepares data, updates the model, calibrates uncertainty, and evaluates the candidate for promotion. Acceptance criteria and documented decisions connect each step.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 90,
+    "old": "Two proof-of-concept implementations are in preparation: a Fourier neural operator surrogate for cross-section contaminant transport, and a convolutional encoder-decoder surrogate for pump and treat plume prediction. These prototypes will exercise the full recalibration workflow on representative groundwater modeling problems, validating that the framework can detect surrogate degradation, execute targeted corrections, and restore accuracy with minimal computational cost.",
+    "new": "The U-Net case study provides measured evidence for the update decision. In one reported comparison, fixed replay reduces rare-regime RMSE from 10.04 to 1.21 µg/L while historical RMSE rises from 0.58 to 1.03 µg/L. A separate controller comparison identifies two candidate outcomes that satisfy illustrative adaptation–retention conditions. These results show why rare-regime improvement must be assessed together with historical retention; the comparisons are not a single verified test protocol.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 91,
+    "old": "The framework contributes a structured, governance-aware approach to surrogate maintenance that is currently absent from both the machine-learning and environmental-modeling literature. By integrating adaptive modeling methods with DOE quality assurance standards and CERCLA expectations, it addresses a key barrier to operational adoption of surrogate models at EM sites: the need for sustained confidence that fast predictions remain reliable over the long timelines that define DOE groundwater remediation.",
+    "new": "The report therefore advances from a conceptual framework and prototype plan to an evidence-backed account of a controlled model-maintenance decision. Prospective drift detection, independent uncertainty calibration, and untouched final-test promotion remain undemonstrated. The candidates are held for further evaluation, and the report specifies the evidence needed to complete a reproducible, governed lifecycle.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 93,
+    "old": "This report presents a framework for deploying and maintaining deep-learning (DL) surrogate models as reliable decision-support tools for long-term groundwater remediation within the U.S. Department of Energy (DOE) Office of Environmental Management (EM) complex. DL surrogates can accelerate predictions of groundwater flow and transport by factors of 103 to 105 relative to physics-based numerical simulators, making it feasible to evaluate large scenario sets, explore uncertainty, and support planning decisions that would otherwise be computationally impractical. However, surrogates trained at a single point in time may lose accuracy as site conditions evolve, remediation systems are modified, conceptual models are refined, or new field data reveal behavior outside the original training domain. Without a systematic process for detecting and correcting such degradation, surrogate-based decision support may become unreliable, which is unacceptable in compliance-driven settings governed by the Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA) and DOE EM-QA-001 quality assurance requirements.",
+    "new": "Deep-learning (DL) surrogates can accelerate groundwater flow and transport predictions, making large scenario sets and uncertainty analyses more practical. Their reliability can change as pumping systems, source conditions, boundary conditions, or conceptual models change. This report connects a governance-aware framework for managing those changes to a controlled U-Net update case study for pump-and-treat plume prediction. The intended role remains screening, scenario exploration, and planning support within DOE environmental management.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 100,
+    "old": "These objectives are implemented through a seven-step, two-phase workflow. The first phase, continuous monitoring, runs during routine surrogate operation and includes monitoring performance indicators, detecting potential drift, and determining whether observed changes warrant action. The second phase, triggered response, is activated only when monitoring indicates meaningful degradation and governance review approves an update. It includes preparing new training data, updating surrogate parameters, validating the revised model against predefined acceptance criteria, and deploying the approved version under formal configuration control. Throughout this process, governance records document trigger rationale, data provenance, validation results, and deployment decisions to support transparency and auditability.",
+    "new": "The workflow has seven distinct steps. MONITOR collects performance and uncertainty evidence; DETECT evaluates possible degradation; DECIDE records the human judgment that an update is warranted. PREPARE assembles traceable data; UPDATE produces a candidate; CALIBRATE assesses and adjusts its predictive uncertainty; DEPLOY applies an independent final test and records the promotion decision. These are framework requirements, and the case study explicitly identifies which requirements have evidence and which remain to be demonstrated.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 101,
+    "old": "The report describes the methods underlying each pillar, including governance procedures aligned with EPA and DOE quality assurance standards, surrogate and physics-model architectures, and recalibration techniques drawn from the continual-learning and concept-drift literature. It also presents an implementation roadmap and a prototype demonstration plan featuring two proof-of-concept applications: a Fourier neural operator surrogate for two-dimensional cross-section transport and a U-Net surrogate for pump and treat plume prediction. These demonstrations are designed to test the complete recalibration cycle under controlled synthetic drift conditions.",
+    "new": "The case study uses reported U-Net/adaptive-replay results to examine rare-regime recovery and historical retention. Mass90 response changes define a retrospective stress condition, and reported update comparisons quantify the resulting tradeoff. An illustrative decision screen retains selected controller outcomes for further evaluation. No interval-calibration or final-promotion artifact is available, so the supported endpoint is a candidate awaiting calibration and final validation.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 102,
+    "old": "This work makes three main contributions. First, it proposes a structured, governance-aware approach for maintaining surrogate models over long operational periods, addressing a gap in both the machine-learning and environmental-modeling literature. Second, it integrates uncertainty quantification, drift detection, and continual learning into a single operational workflow rather than treating them as isolated technical methods. Third, it establishes a governance template for applying adaptive machine-learning models in regulatory contexts, helping address a major barrier to operational adoption at EM sites.",
+    "new": "The report makes three connected contributions: a three-pillar governance and methods framework, a quantitative offline update case study mapped to its seven steps, and a concrete evidence specification for advancing toward an operational demonstration. The contribution is the connection between measured performance, decision criteria, and the next required evidence.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 103,
+    "old": "The framework remains at the concept and design stage. Current limitations include dependence on the quality of the underlying physics-based models, the computational cost of some uncertainty quantification methods, and the need for validation under real field conditions with measurement noise, data gaps, and site complexity representative of EM applications. Prototype development and testing on representative groundwater remediation problems are the next steps toward eventual operational deployment.",
+    "new": "The current maturity is a defined framework with controlled update evidence. Prospective detector performance, independent uncertainty calibration, final-test promotion, and long-duration use with field data remain unverified. Physics-model limitations, data independence, measurement noise, irregular sampling, and operational complexity must be addressed as the framework progresses. The roadmap prioritizes those gaps while preserving human decision authority.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 270,
+    "old": "Despite this clear need, no established framework exists for systematically maintaining surrogate model accuracy over multi-year operational periods while preserving regulatory confidence. The machine-learning literature offers individual methods for uncertainty quantification (UQ), drift detection, continual learning, and active learning, but these techniques are typically developed and evaluated in isolation, outside the governance and quality assurance context required for environmental compliance applications. The environmental modeling community, in turn, has well-established governance practices for physics-based models but lacks guidance for managing adaptive machine-learning models that update over time. Therefore, this report addresses the gap between the technical capability to build surrogates and the operational infrastructure to maintain them.",
+    "new": "The practical challenge is to connect established machine-learning methods with the governance and quality assurance requirements of environmental decision support. Uncertainty quantification, drift detection, continual learning, and active learning each address part of surrogate maintenance. Their integration must establish when action is justified, how a candidate is evaluated, and who can approve its use. This report addresses that connection for EM groundwater applications.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 271,
+    "old": "The objective of the report is to define a structured, end-to-end framework for the deployment, monitoring, and lifecycle management of DL surrogate models within EM decision processes. It translates emerging machine learning capabilities into a practical, auditable system aligned with site technical needs, and regulatory and quality assurance expectations.",
+    "new": "The report defines a structured framework for surrogate monitoring and lifecycle management and evaluates its update decision using available pump-and-treat U-Net evidence. It distinguishes completed offline comparisons from the prospective detection, uncertainty calibration, and independent promotion records needed for operational use.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 284,
+    "old": "Section 5.0 presents the prototype demonstration plan, defining two proof-of-concept surrogate implementations and a controlled case study designed to evaluate the complete recalibration cycle on representative groundwater modeling problems.",
+    "new": "Section 5.0 presents the controlled pump-and-treat U-Net case study, connects the reported update results to all seven lifecycle steps, and identifies the evidence required beyond the present calibration and deployment hold.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 285,
+    "old": "Section 6.0 discusses current limitations, open research questions, expected impact, and conclusions.",
+    "new": "Section 6.0 discusses the measured findings, current limitations, remaining validation tasks, and conclusions. Appendix A provides the curated surrogate-literature table supporting Section 3.2.3.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 314,
+    "old": "The workflow is structured as a seven-step cycle organized into two phases. Phase 1, Continuous Monitoring, encompasses Steps 1 through 3 and runs continuously during operations, tracking surrogate performance and determining when intervention may be needed. Phase 2, Triggered Response, encompasses Steps 4 through 7 and is activated only when Phase 1 indicates that an update is warranted and governance approves the intervention.",
+    "new": "Figure 2 shows the seven-step cycle organized into two phases. Phase 1, Continuous Monitoring, encompasses MONITOR, DETECT, and DECIDE. Phase 2, Triggered Response, encompasses PREPARE, UPDATE, CALIBRATE, and DEPLOY and begins when governance approves an update. The figure describes the intended operational workflow; the evidence status of its implementation is assessed in Section 5.0.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 346,
+    "old": "The CALIBRATE step evaluates the updated model’s uncertainty calibration on held-out validation data and generates reliability diagrams comparing stated confidence levels to empirical coverage. The step verifies that calibrated prediction intervals meet acceptance criteria and documents calibration parameters for reproducibility.",
+    "new": "CALIBRATE fits or assesses the uncertainty procedure using held-out calibration data that are separate from training and controller selection, then reports empirical coverage, interval width, and reliability across relevant regimes and locations. Calibration parameters and the applicable assumptions are archived. An untouched final test remains reserved for DEPLOY.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 353,
+    "old": "The DEPLOY step draws from Pillar A for acceptance criteria, audit requirements, and rollback procedures, and from Pillar B for model versioning and artifact management. The outputs of this step are a deployed operational model if the model passes validation, or an escalation decision if the model fails validation, along with a complete audit trail. This cycle repeats continuously during site operations, with the frequency of updates determined by the rate of change in site conditions and the availability of new monitoring data. The automated nature ensures that surrogates remain accurate without requiring manual intervention or complete retraining.",
+    "new": "DEPLOY draws from Pillar A for acceptance criteria, review authority, audit requirements, and withdrawal procedures, and from Pillar B for model versioning and artifact management. Its output is either an approved model with a complete record or a documented hold or escalation decision. Routine calculations may be automated, while intervention and promotion remain governed decisions.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 485,
+    "old": "Recent work in hydrogeology and subsurface reactive transport has demonstrated that DL surrogates can emulate high-fidelity simulators with orders-of-magnitude speedup while retaining physical accuracy (Luo et al. 2023; Xu and Zhang 2024). A Web of Science topic search combining groundwater and subsurface keywords with surrogate-modeling terms reveals modest activity before 2010, followed by rapid growth after approximately 2018 as DL and operator-learning architectures entered the field (Figure 3). ",
+    "new": "Published groundwater and subsurface applications demonstrate the breadth of DL surrogate methods and their potential to accelerate numerical-model predictions (Luo et al. 2023; Xu and Zhang 2024). Figure 3 summarizes publication years in the curated literature table used here. This selected sample supplies methodological context; its counts are not a census or an estimate of field-wide publication growth.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 488,
+    "old": "To characterize this landscape, we assembled a screened corpus of 47 peer-reviewed research articles (Appendix A, Table A.1) spanning five primary surrogate families and classified each paper by its dominant architecture, target application, and project domain. Figure 4 shows the resulting method evolution: Early work is dominated by classical regression surrogates, while post-2017 studies increasingly adopt convolutional, operator-learning, and generative approaches.",
+    "new": "The curated table retains 45 representative entries spanning five primary surrogate families (Appendix A, Table A.1). Figure 4 groups those entries by publication year and inherited primary family. The table includes journal articles and preprints and is intended to illustrate methodological diversity. Ambiguous source mappings were excluded from the plotted counts rather than assigned an inferred identity.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 491,
+    "old": "Figure 5 provides a conceptual overview of these five families, organized by input-output structure and typical EM use-case (after Luo et al. 2023). The remainder of this section describes each family in turn, followed by a cross-cutting synthesis of the corpus.",
+    "new": "Figure 5 identifies the five model families discussed below. Their suitability depends on the prediction target, available data, temporal structure, and uncertainty requirements; the associated applications and limitations are described in the text.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 501,
+    "old": "Variational autoencoder (VAE), generative adversarial network (GAN), and diffusion architectures sample entire ensembles of plausible states and parameter fields consistent with physics and observations, making them natural tools for probabilistic inversion and UQ. Applications include VAE and GAN for facies realizations and Bayesian inversion (Graham and Chen 2020), diffusion models for multivariate subsurface property fields (Miele and Linde 2025), pretrained diffusion models for porous-media flow, and conditional diffusion for CO2 storage plume forecasting (Wang et al. 2025).",
+    "new": "Variational autoencoders, generative adversarial networks, and diffusion models can represent ensembles of states or parameter fields for probabilistic inversion and uncertainty quantification. Representative applications include Bayesian inversion of generative models for CO₂ storage (Graham and Chen 2020), diffusion models for multivariate subsurface property fields (Miele and Linde 2025), pretrained diffusion for subsurface flow (Wang et al. 2025b), and conditional diffusion for geological CO₂ storage prediction (Wang et al. 2025a). Physical and observational consistency depend on the model construction and validation.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 505,
+    "old": "Figure 6 summarizes the distribution of the 47-paper corpus across application type and project domain. Two patterns stand out. First, traditional regression and classification surrogates remain most prevalent in design and optimization workflows, reflecting their efficiency for low-dimensional decision variables and scalar objectives. Second, DL families show clear specialization: Convolutional encoder-decoders concentrate in inverse and calibration tasks involving high-dimensional spatial fields; operator-learning models dominate forward emulation; sequence models align with monitoring and time-series prediction; and generative models cluster in UQ and ensemble generation.",
+    "new": "Figure 6 summarizes the 45 retained entries by primary family, application, and project domain. In this selected table, classical surrogates are concentrated in design and optimization, while operator-learning examples are concentrated in forward emulation. Convolutional, sequence, and generative examples cover other combinations. These descriptive counts organize the examples; they do not establish method superiority or field-wide prevalence.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 506,
+    "old": "Across project domains, the corpus is weighted toward contaminant hydrogeology and groundwater flow, consistent with the EM focus of this review, while operator-learning and generative models also appear in CO2 storage and general scientific computing, illustrating the cross-domain transferability of these architectures. Domain definitions are provided in Appendix A, Table A.1.",
+    "new": "The table emphasizes contaminant remediation and groundwater flow, with additional examples from CO₂ storage, coastal aquifers, and general scientific computing. These examples motivate considering a range of architectures; their appearance across domains does not itself demonstrate transferability to a new site or task.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 517,
+    "old": "UQ within hybrid modeling is motivated by the need to reconcile the rapid execution of DL surrogates with the rigorous physical consistency of DA. By formalizing UQ across both domains, the framework provides reliable confidence intervals, identifies when a system is operating outside its known regime, and ensures that surrogate models remain physically bounded while assimilation cycles are informed by high-fidelity error characterizations.",
+    "new": "Uncertainty quantification supports evaluation of predictive reliability in both surrogate modeling and data assimilation. Surrogate uncertainty and physics-model uncertainty address different sources of error and should be reported separately. Their estimates can inform monitoring and update decisions, but physical consistency and interval calibration must be checked rather than inferred from the presence of an uncertainty method.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 530,
+    "old": "Provides statistically valid uncertainty bounds with guaranteed coverage, without requiring strong distributional assumptions",
+    "new": "Provides marginal prediction-interval coverage under stated assumptions such as exchangeability; distribution shift and temporal dependence require additional care",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 627,
+    "old": "Within the environmental modeling literature, sequential fine-tuning has repeatedly been shown to outperform static surrogates in non-stationary systems such as energy load forecasting (Hurtado et al. 2023) and long-horizon operational forecasting (Sayed et al. 2025). These same studies emphasize that frequent retraining is unnecessary – and often destabilizing – when well-designed continual learning mechanisms are in place. This aligns with findings in hydrologic surrogate modeling, where modest periodic updates informed by new hydrologic states and compact replay buffers maintain performance while avoiding the computational cost of full retraining (Asher et al. 2015; Wang et al. 2023). ",
+    "new": "Continual-learning reviews describe opportunities and limitations in predictive maintenance and energy-management applications (Hurtado et al. 2023; Sayed et al. 2025). Groundwater surrogate reviews and active-learning studies provide complementary context for model refinement (Asher et al. 2015; Wang et al. 2023). These sources motivate evaluating update strategies; they do not establish that a particular replay ratio, update schedule, or computational saving transfers to groundwater plume prediction. Section 5.0 provides the report-specific update evidence.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 629,
+    "old": "Step 1: Assemble update dataset. A compact update batch is assembled from three sources: (1) targeted physics simulations representing the changed regime, (2) recent validated field observations, and (3) a replay sample of historical cases comprising 70–75% of the batch to mitigate catastrophic forgetting, consistent with replay ratios shown effective in continual learning applications (De Lange et al. 2021).",
+    "new": "Step 1: Assemble Update Dataset. Assemble a traceable update dataset from relevant new simulations or validated observations and historical replay. Approximately 70–75% historical replay is the framework’s illustrative starting guidance, not a universal optimum or a verified composition for the present study. The ratio should be assessed against paired historical/new validation outcomes; replay itself is supported by the continual-learning literature (De Lange et al. 2021).",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 632,
+    "old": "Step 4: Uncertainty Recalibration. Predictive uncertainty using held-out data or ensemble-based UQ methods ensure that nominal confidence intervals align with empirical coverage. This step applies the surrogate-level UQ methods described in Section 3.3.1, such as deep ensembles or conformal prediction, to verify that the updated model’s uncertainty estimates remain calibrated rather than overconfident in the new regime (Lakshminarayanan et al. 2017; Zhu and Zabaras 2018).",
+    "new": "Step 4: Uncertainty Recalibration. Recalibrate predictive intervals using independent held-out data and evaluate empirical coverage and interval width. Deep ensembles or other uncertainty estimators supply candidate predictive distributions; calibration and final testing remain distinct tasks. Apply the surrogate-level UQ methods in Section 3.3.1 under their stated assumptions (Lakshminarayanan et al. 2017; Zhu and Zabaras 2018).",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 633,
+    "old": "Step 5: Governance Review. A governance package needs to be prepared following the configuration control and acceptance criteria defined in Section 3.1. The package includes pre- and post-update performance metrics, the drift indicators that triggered the update, and updated uncertainty diagnostics. The revised surrogate is promoted to operational status only if all predefined acceptance criteria are satisfied; otherwise, the update is rejected and the system retains the prior approved model pending further evaluation.",
+    "new": "Step 5: Governance Review. Prepare a record of pre- and post-update performance, trigger evidence, data provenance, and uncertainty diagnostics under Section 3.1. Promote the candidate only after all applicable acceptance conditions are met. A failed candidate remains unapproved; when the incumbent’s operational validity is in question, surrogate use is withdrawn and the governed retraining policy in Section 3.1.5 applies. Archiving a prior model does not authorize its continued use.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 653,
+    "old": "Step 2: Apply Diversity Constraints and Select Batch. Diversity constraints are applied to ensure that selected scenarios span hydraulic gradients, hydrostratigraphic units, and forcing conditions, preventing clustering in redundant regions of the input space and enhancing surrogate generalization (Wen et al. 2021). A series of high-value simulations selected to collectively maximize expected information gain.",
+    "new": "Step 2: Apply Diversity Constraints and Select Batch. Apply diversity constraints so that selected scenarios span relevant hydraulic gradients, hydrostratigraphic units, and forcing conditions, limiting redundant sampling. Select a batch intended to improve information coverage under the simulation budget, and record its scores and rationale. Simulation designs in related subsurface applications provide context for such coverage (Wen et al. 2021); their results do not establish an optimum batch size for this workflow.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 658,
+    "old": "By combining large low-fidelity ensembles with targeted high-fidelity data, the framework covers a broad parameter space at low cost while preserving localized accuracy, yielding strong surrogate performance with orders-of-magnitude reduction in total simulation cost compared to relying on high-fidelity data alone. The fusion strategies described below provide the mathematical machinery for integrating these fidelity levels into a unified surrogate prediction (Asher et al. 2015).",
+    "new": "Combining low-fidelity ensembles with targeted high-fidelity data can reduce data-generation cost when the fidelity relationship is informative. The achieved accuracy and savings depend on the fidelity gap, validation design, and computational budget and must be measured for the application. The strategies below describe ways to integrate these information sources (Asher et al. 2015).",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 731,
+    "old": "The immediate goal is to demonstrate that the recalibration concept works by completing one full cycle on a synthetic or simplified test case.",
+    "new": "The first development phase aims to complete a reproducible lifecycle demonstration on a controlled test case. Section 5.0 supplies the current offline U-Net update evidence; prospective detector evaluation, independent uncertainty calibration, and final-test promotion are the remaining milestones.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 732,
+    "old": "The scope of Phase 1 includes developing a single surrogate architecture – such as U-FNO for the two-dimensional (2D) cross-section transport case or U-Net for P&T plume prediction – trained on synthetic physics model outputs. Basic UQ using MC-Dropout or deep ensembles provides predictive uncertainty estimates. Simple threshold-based drift detection identifies when performance has degraded. The recalibration workflow is executed manually: A researcher runs diagnostics, decides an update is needed, generates new training data through targeted physics simulations, fine-tunes the model using continual learning techniques, recalibrates uncertainty estimates, and validates results against acceptance criteria. The work is documented in Jupyter notebooks or Python scripts that capture each step.",
+    "new": "The current prototype uses the pump-and-treat U-Net trained on synthetic physics-model outputs. The next increment will preserve trajectory identity, resolve the time axis and sampling protocol, freeze detection and acceptance criteria, and compare candidate updates under a common evaluation design. It will then calibrate predictive uncertainty and evaluate an untouched final test. These steps can be executed manually with reproducible scripts and an explicit reviewer record before a persistent monitoring service is developed.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 733,
+    "old": "The key deliverable is a working demonstration showing before-and-after performance when the surrogate is updated in response to simulated drift. This demonstration proves that the seven-step workflow can improve surrogate performance and that the methods from Section 3.0 work together as intended.",
+    "new": "The next deliverable is a reproducible evidence package containing executed configurations, split manifests, predictions, detector diagnostics, update comparisons, calibration outputs, and the final decision. A candidate that fails a gate remains unapproved. Completion is defined by a documented and scientifically valid evaluation, not by assuming that every candidate must pass.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 734,
+    "old": "Success is measured by completing the full MONITOR → DETECT → DECIDE → PREPARE → UPDATE → CALIBRATE → DEPLOY cycle with documented performance improvement. At this phase, there is no persistent software system, just reproducible code that proves the concept.",
+    "new": "Phase 1 success requires traceability across MONITOR → DETECT → DECIDE → PREPARE → UPDATE → CALIBRATE → DEPLOY and a justified promotion or hold decision. The present study reaches a quantitative update comparison and a calibration/final-validation hold; the missing evidence is listed in Section 5.0.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 748,
+    "old": "Physics simulations are the most expensive component. A single PFLOTRAN run for a 2D cross-section case takes minutes; a full 3D site model may take hours or days. Generating training ensembles of hundreds to thousands of runs requires HPC access with batch scheduling. Recalibration updates need fewer runs – typically tens of runs selected by active learning – but still benefit from parallel execution. Surrogate training requires GPU resources for efficient execution. Initial training of a U-FNO or U-Net model may take hours on a modern GPU. Fine-tuning for recalibration is faster, typically minutes to an hour, but still benefits from GPU acceleration. Training can occur on HPC GPU nodes, cloud resources, or dedicated workstations, depending on availability.",
+    "new": "Physics simulations and surrogate training require resources matched to problem size and solver or network configuration. Large training ensembles should run through HPC batch scheduling. The simulation-driven PREPARE pathway uses approximately 6–10 targeted runs as an illustrative initial batch, with expansion governed by the evidence and budget. Training, update, inference, and uncertainty-processing times must be benchmarked on specified hardware; the current adaptive-replay evidence does not supply an end-to-end cost comparison.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 749,
+    "old": "Inference and monitoring are lightweight by comparison. A trained surrogate generates predictions in milliseconds. Diagnostic calculations – residuals, uncertainty metrics, drift statistics – are similarly fast. These operations can run on standard computing resources without specialized hardware.",
+    "new": "Inference and diagnostic calculations may be less costly than physics simulations, but their operational cost depends on model size, monitoring frequency, ensemble size, and data volume. Resource planning should use measured throughput and include uncertainty-processing and data-transfer costs.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 767,
+    "old": "The framework supports adaptive surrogate management that maintains prediction accuracy over multiyear remediation timelines while meeting DOE quality assurance and regulatory requirements. By combining automated monitoring with human decision points, the implementation balances operational efficiency with the accountability required for environmental management applications.",
+    "new": "The roadmap defines how adaptive surrogate maintenance could be implemented with appropriate scientific and governance controls. Its operational benefits remain objectives to be demonstrated through the phased evidence requirements. The current case study supplies update comparisons and identifies the remaining validation work.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 844,
+    "old": "This section addresses the current limitations of the framework, identifies areas for further investigation that extend beyond the implementation roadmap presented in Section 4.0 and the prototype demonstration plan in Section 5.0, summarizes the expected impact, and concludes with key takeaways for DOE stakeholders.",
+    "new": "The case study advances the framework with a quantitative offline update comparison and a documented boundary on what can be concluded. This section interprets that evidence, distinguishes the remaining scientific and operational requirements, and connects the next validation tasks to the roadmap in Section 4.0.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 851,
+    "old": "The framework presented in this report is at the concept and design stage. Validation to date has been limited to illustrative synthetic test cases. Application to real field data – with actual measurement noise, irregular sampling intervals, data gaps, and full 3D site complexity typical of EM applications – remains to be demonstrated through the prototype development outlined in Section 5.0.",
+    "new": "The framework is defined and the U-Net case study supplies controlled update evidence. The available results remain rounded aggregate manuscript values rather than independently reproduced trajectory-level tests. Prospective detection, an independent calibration result, a verified untouched final test, and a model-version promotion record are absent. Field validation with measurement noise, irregular sampling, data gaps, and site complexity also remains to be demonstrated. A retrospective response-based stress partition does not by itself establish an operational regime change.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 853,
+    "old": "The implementation roadmap in Section 4.0 defines the sequencing and deliverables for framework development, and the prototype demonstration plan in Section 5.0 describes the initial proof-of-concept implementations. Several scientific questions that cut across those efforts warrant specific attention.",
+    "new": "The roadmap in Section 4.0 defines development phases, and Section 5.0 identifies the current evidence and its limits. The immediate scientific priorities are to verify the time axis and trajectory split, reconcile panel-specific model configurations, evaluate a matched fixed-replay control, and complete uncertainty calibration and independent final testing. Broader questions concern detector design, multi-fidelity fusion, transferability, and scalability.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 866,
+    "old": "The primary operational benefit of the framework is sustained surrogate accuracy over multi-year remediation timelines without requiring costly full retraining. Surrogate inference speedups of 103 to 105 relative to physics-based models enable real-time decision support and interactive scenario exploration that are infeasible with numerical simulation alone – particularly for planning tasks that require ensembles of simulations, Monte Carlo realizations of hydrogeologic variability, or scenario sweeps over remediation designs, where the number of model evaluations needed can easily reach the hundreds or thousands. Targeted recalibration further reduces computational cost by focusing physics-model runs on the scenarios that most improve surrogate performance, rather than regenerating the full training dataset.",
+    "new": "Potential operational benefits include faster scenario exploration and a reduced need to regenerate complete training ensembles when a targeted update is sufficient. Published surrogate applications motivate that possibility, but the current study does not quantify full-lifecycle speedup, physics-run savings, memory, or training cost. Those benefits should be evaluated under a common workload by comparing physics-only analysis, a static surrogate, and the hybrid recalibration workflow.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 868,
+    "old": "The framework contributes to a novel integration of UQ, drift detection, continual learning, and active learning within a governance-aware architecture. This integration addresses a gap in the scientific ML literature, where these methods are typically developed and evaluated in isolation. The governance layer – rarely addressed in machine learning research – provides a template for deploying adaptive models in regulatory contexts beyond groundwater remediation.",
+    "new": "The report connects three management domains and seven lifecycle steps to an evidence-based model-maintenance decision. The measured case study shows a material tradeoff between rare-regime recovery and historical retention. The uncertainty and governance gates specify why a candidate that improves point predictions may still require further evaluation. The scientific contribution is this explicit connection between performance evidence, acceptance conditions, and the next action.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 870,
+    "old": "Although developed for EM groundwater applications, the framework’s three-pillar architecture and seven-step workflow are domain-general. The framework systematically updates the surrogate only as needed, maintaining accuracy without incurring the cost of full retraining. Potential applications include other EM sites with different contaminant types, hydrogeological settings, or remediation technologies; long-term climate-resilience modeling; and scientific surrogate maintenance in fields such as materials science and engineering design. Open-source release of code, containers, and demonstration datasets – planned as part of the implementation roadmap in Section 4.0 – will enable community adoption and contribution.",
+    "new": "The framework may be adapted to other contaminants, sites, and scientific surrogates, but transferability requires application-specific data, error limits, and governance decisions. Long-horizon forecasting and digital-twin applications are possible extensions rather than results established here. Reusable code and demonstration datasets, when documented and cleared for release, can support independent evaluation and broader adoption.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 872,
+    "old": "Five key takeaways emerge from this framework development:",
+    "new": "Five conclusions follow from the framework and controlled update evidence:",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 873,
+    "old": "Surrogates require systematic maintenance. DL models trained once and deployed indefinitely will degrade as site conditions, remediation operations, or conceptual models evolve. Systematic monitoring and recalibration are essential for multi-year operational use.",
+    "new": "Surrogate maintenance is a lifecycle problem. Monitoring, evidence-based intervention, uncertainty assessment, and review must accompany model updating when conditions move beyond the evaluated domain.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 874,
+    "old": "Physics-based models remain the authoritative reference. Surrogates accelerate prediction but do not replace numerical simulation. Every recalibration cycle is anchored to new physics-model truth data, preserving the scientific foundation of site decisions.",
+    "new": "Physics-based analysis remains authoritative for final remedy decisions. Surrogates support efficient screening and scenario exploration, while their approximation errors and the limitations of the underlying physics model must both be assessed.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 875,
+    "old": "Governance is not optional. Embedding oversight, documentation, acceptance criteria, and human decision authority throughout the workflow is what distinguishes an operationally deployable framework from a research prototype. Regulatory confidence depends on this structure.",
+    "new": "Historical retention and rare-regime recovery must be evaluated jointly. In the reported comparison, fixed replay reduces rare RMSE from 10.04 to 1.21 µg/L while historical RMSE increases from 0.58 to 1.03 µg/L. That tradeoff makes a pre-established acceptance contract necessary.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 876,
+    "old": "Targeted updates outperform static approaches. Adaptive strategies that detect drift and execute focused recalibration are more efficient than either ignoring degradation or performing periodic full retraining regardless of need.",
+    "new": "The illustrative controller screen identifies candidates, not approved deployments. Two displayed controller outcomes satisfy the 30%/85% conditions, but uncertainty, matched-control, and independent-test evidence remain necessary to interpret and confirm their performance.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 877,
+    "old": "The framework balances accuracy, efficiency, and trust. By integrating technical recalibration methods (Pillar C) with governance procedures (Pillar A) around a shared modeling infrastructure (Pillar B), the framework addresses the coupled technical and institutional requirements of long-term environmental management.",
+    "new": "A documented hold is a valid lifecycle outcome. The current candidates remain awaiting uncertainty calibration and final validation. Completing those records, together with a traceable model version and reviewer decision, is the next step toward a reproducible operational demonstration.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 878,
+    "old": "This report has established the conceptual design, methodological foundations, implementation roadmap, and prototype demonstration plan for the recalibration framework. The next step is prototype development and validation on representative groundwater modeling problems, as detailed in Section 5.0, providing the empirical basis needed before the framework can be responsibly applied to operational EM site data.",
+    "new": "This revised report moves from a conceptual framework and prototype plan to an evidence-backed account of how a groundwater surrogate update should be assessed. It connects a measured adaptation–retention tradeoff to the seven-step workflow and clearly specifies the evidence still required for promotion. The immediate objective is to complete that evidence chain; reliable long-term field use remains the longer-term validation goal.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 997,
+    "old": "The surrogate model literature review was conducted using Web of Science with search terms targeting DL applications in groundwater modeling, subsurface flow prediction, and contaminant transport simulation. The search covered publications from 2018 to 2024, reflecting the rapid development of DL methods for scientific computing during this period. Papers were selected based on relevance to groundwater remediation applications, with emphasis on architectures that have demonstrated success in predicting spatiotemporal fields from physics-based model outputs.",
+    "new": "The literature table is a curated selection used to illustrate surrogate families and applications; it is not a systematic review or an exhaustive publication census. The original draft combined an annual Web of Science plot, inconsistent search-window descriptions, and a classified example table. Because the search export and reproducible query record were unavailable for this revision, Figures 3, 4, and 6 are reconstructed from the retained table entries only.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 998,
+    "old": "The review identified six primary architectural families with demonstrated applicability to subsurface modeling: convolutional encoder-decoder models, operator-learning models, sequence models, generative models, regression and classical surrogates, and structured domain surrogates. Each family offers distinct advantages depending on the prediction task, data availability, and computational constraints. Comprehensive reviews by Razavi et al. (2012) and Asher et al. (2015) provide foundational context for surrogate modeling in water resources applications. Surrogate modeling publication trends were quantified using the Web of Science Core Collection (Clarivate Analytics). We performed a topic search (12/5/2025) combining groundwater and subsurface keywords with surrogate-modeling terms (TS = ((groundwater OR subsurface OR aquifer OR “reactive transport” OR “porous media”) AND (“surrogate model*” OR emulator* OR “reduced-order” OR metamodel* OR “response surface” OR “Fourier neural operator*” OR “neural operator*” OR “operator learning” OR “deep learning surrogate” OR “physics-informed”)), limited to articles and reviews in English for the period 2005 to 2026.",
+    "new": "The retained set contains 45 entries across five model families and includes both journal publications and preprints. Two inherited rows with unresolved author–year mappings were excluded: a generative-model entry labeled Yang et al. (2018) and a monitoring entry labeled Chen et al. (2022). A duplicated Tang et al. (2020) citation was removed from the Majumder and Eldho row, and the Wang et al. (2025a) conditional-diffusion entry was classified as generative. The remaining primary labels are descriptive and should not be interpreted as an independently re-screened or statistically representative sample. Reviews by Razavi et al. (2012) and Asher et al. (2015) supply broader context.",
+    "reason": "Align evidence, governance, scope, or source traceability"
+  },
+  {
+    "source_paragraph": 878,
+    "old": "This revised report moves from a conceptual framework and prototype plan to an evidence-backed account of how a groundwater surrogate update should be assessed. It connects a measured adaptation–retention tradeoff to the seven-step workflow and clearly specifies the evidence still required for promotion. The immediate objective is to complete that evidence chain; reliable long-term field use remains the longer-term validation goal.",
+    "new": "",
+    "reason": "Remove repetitive closing paragraph after the five conclusions"
+  },
+  {
+    "source_paragraph": 456,
+    "old": "The physical phenomena represented typically include advection and dispersion of dissolved species, sorption onto solid phases, and associated reaction processes (Genuchten 2016; Sethi and Di Molfetta 2019), and non-Fickian plume spreading arising from heterogeneity and diffusion-controlled mass exchange between transmissive and low-permeability zones (Guo et al. 2021). Back diffusion from fine grained or low-permeability units is recognized as a major control on plume persistence after source removal (Yang et al. 2016, 2017). Density-driven flow occurs in systems impacted by dense nonaqueous phase liquid / light nonaqueous phase liquid (Huling 1991; McCaulou 1995; Newell 1995) or by seawater intrusion (Werner et al. 2013; Xu et al. 2019). Engineered operations – pump and treat (P&T) wells, injection/extraction networks, permeable reactive barriers, and hydraulic barriers – must also be represented, enabling planners to evaluate how alternative configurations and engineered controls affect plume pathways and concentrations at compliance points. ",
+    "new": "The physical phenomena represented typically include advection and dispersion of dissolved species, sorption onto solid phases, and associated reaction processes (Šimůnek and van Genuchten 2016; Sethi and Di Molfetta 2019), and non-Fickian plume spreading arising from heterogeneity and diffusion-controlled mass exchange between transmissive and low-permeability zones (Guo et al. 2021). Back diffusion from fine grained or low-permeability units is recognized as a major control on plume persistence after source removal (Yang et al. 2016, 2017). Density-driven flow occurs in systems impacted by dense nonaqueous phase liquid / light nonaqueous phase liquid (Huling 1991; McCaulou 1995; Newell 1995) or by seawater intrusion (Werner et al. 2013; Xu et al. 2019). Engineered operations – pump and treat (P&T) wells, injection/extraction networks, permeable reactive barriers, and hydraulic barriers – must also be represented, enabling planners to evaluate how alternative configurations and engineered controls affect plume pathways and concentrations at compliance points. ",
+    "reason": "Correct chapter author citation using source BibTeX"
+  },
+  {
+    "source_paragraph": 495,
+    "old": "Convolutional encoder-decoder architectures such as U-Net and residual network variants treat spatial fields as images and learn direct mappings from input fields, including hydraulic conductivity, boundary conditions, and pumping patterns, to output fields such as hydraulic heads, salinity distributions, and plume extents. Convolutions preserve interfaces, sharp fronts, and channelized structures, making these networks well suited for high-resolution spatial prediction. Representative applications include attention U-Net architectures for steady-state hydraulic head fields (Taccari et al. 2022), image-to-image regression for multiphase flow (Mo et al. 2019), autoregressive residual U-Net for dynamic multiphase flow and solute transport (Jiang et al. 2021), and U-Net surrogates for transient groundwater flow inverse problems (Lauzon 2024) and P&T optimization (Song et al. 2025).",
+    "new": "Convolutional encoder-decoder architectures such as U-Net and residual network variants treat spatial fields as images and learn direct mappings from input fields, including hydraulic conductivity, boundary conditions, and pumping patterns, to output fields such as hydraulic heads, salinity distributions, and plume extents. Convolutions preserve interfaces, sharp fronts, and channelized structures, making these networks well suited for high-resolution spatial prediction. Representative applications include attention U-Net architectures for steady-state hydraulic head fields (Taccari et al. 2022), image-to-image regression for multiphase flow (Mo et al. 2019b), autoregressive residual U-Net for dynamic multiphase flow and solute transport (Jiang et al. 2021), and U-Net surrogates for transient groundwater flow inverse problems (Lauzon 2024) and P&T optimization (Song et al. 2025).",
+    "reason": "Disambiguate the multiphase-flow paper"
+  },
+  {
+    "source_paragraph": 509,
+    "old": "Across the five families, several training practices recur in literature. Training datasets are generated by sampling parameter and boundary condition ranges, commonly using Latin hypercube or quasi-random designs, and running the corresponding high-fidelity simulations to produce input-output pairs (Asher et al. 2015; Razavi et al. 2012). The number of simulations required varies by problem complexity and surrogate architecture but generally falls in the range of hundreds to low thousands of realizations (Mo et al. 2019; Wen et al. 2022; Zhu and Zabaras 2018). Input fields that span orders of magnitude, such as hydraulic conductivity, are typically log-transformed prior to training (Tang et al. 2020), and all features are standardized to stabilize optimization and ensure consistent inference (Mo et al. 2019). Hold-out realizations spanning distinct parameter ranges or time windows are reserved for testing to guard against overfitting (Jiang et al. 2025; Wen et al. 2022). ",
+    "new": "Across the five families, several training practices recur in literature. Training datasets are generated by sampling parameter and boundary condition ranges, commonly using Latin hypercube or quasi-random designs, and running the corresponding high-fidelity simulations to produce input-output pairs (Asher et al. 2015; Razavi et al. 2012). The number of simulations required varies by problem complexity and surrogate architecture but generally falls in the range of hundreds to low thousands of realizations (Mo et al. 2019b; Wen et al. 2022; Zhu and Zabaras 2018). Input fields that span orders of magnitude, such as hydraulic conductivity, are typically log-transformed prior to training (Tang et al. 2020), and all features are standardized to stabilize optimization and ensure consistent inference (Mo et al. 2019b). Hold-out realizations spanning distinct parameter ranges or time windows are reserved for testing to guard against overfitting (Jiang et al. 2025; Wen et al. 2022). ",
+    "reason": "Disambiguate the multiphase-flow paper"
+  },
+  {
+    "source_paragraph": 622,
+    "old": "Defining triggers. Quantitative thresholds are established as formal recalibration triggers. When a composite index of these signals, such as rising autocorrelation combined with latent space drift, exceeds a critical value, the surrogate is flags as unreliable.",
+    "new": "Defining triggers. Quantitative thresholds are established as formal recalibration triggers. When a composite index of these signals, such as rising autocorrelation combined with latent space drift, exceeds a critical value, the surrogate is flagged as unreliable.",
+    "reason": "Correct grammar"
+  },
+  {
+    "source_paragraph": 497,
+    "old": "Architectures such as Fourier neural operator (FNO), U-FNO, and deep operator network (DeepONet) learn the solution operator of a partial differential equation in function space rather than at fixed grid points, yielding resolutioninvariant surrogates that generalize across boundary and parameter configurations (Li et al. 2020). Notable subsurface applications include U-FNO for CO2-water multiphase flow (Wen et al. 2022), DeepONet for confined aquifer systems (Taccari et al. 2024), the GeoFUSE framework for seawater intrusion achieving approximately 105speedup per inference relative to PFLOTRAN (Jiang et al. 2025), and physics-informed U-FNO for climate stress testing at the Savannah River Site (Wang et al. 2022).",
+    "new": "Architectures such as Fourier neural operator (FNO), U-FNO, and deep operator network (DeepONet) learn the solution operator of a partial differential equation in function space rather than at fixed grid points, yielding surrogates that can be evaluated across discretizations, subject to architecture and training-domain limits (Li et al. 2020). Notable subsurface applications include U-FNO for CO2-water multiphase flow (Wen et al. 2022), DeepONet for confined aquifer systems (Taccari et al. 2024), the GeoFUSE framework for seawater intrusion achieving approximately 105speedup per inference relative to PFLOTRAN (Jiang et al. 2025), and physics-informed U-FNO for climate stress testing at the Savannah River Site (Wang et al. 2022).",
+    "reason": "Bound operator-generalization claim"
+  },
+  {
+    "source_paragraph": 497,
+    "old": "Architectures such as Fourier neural operator (FNO), U-FNO, and deep operator network (DeepONet) learn the solution operator of a partial differential equation in function space rather than at fixed grid points, yielding surrogates that can be evaluated across discretizations, subject to architecture and training-domain limits (Li et al. 2020). Notable subsurface applications include U-FNO for CO2-water multiphase flow (Wen et al. 2022), DeepONet for confined aquifer systems (Taccari et al. 2024), the GeoFUSE framework for seawater intrusion achieving approximately 105speedup per inference relative to PFLOTRAN (Jiang et al. 2025), and physics-informed U-FNO for climate stress testing at the Savannah River Site (Wang et al. 2022).",
+    "new": "Architectures such as Fourier neural operator (FNO), U-FNO, and deep operator network (DeepONet) learn the solution operator of a partial differential equation in function space rather than at fixed grid points, yielding surrogates that can be evaluated across discretizations, subject to architecture and training-domain limits (Li et al. 2020). Notable subsurface applications include U-FNO for CO2-water multiphase flow (Wen et al. 2022), DeepONet for confined aquifer systems (Taccari et al. 2024), the GeoFUSE framework for seawater intrusion achieving approximately 10⁵ speedup per inference relative to PFLOTRAN (Jiang et al. 2025), and physics-informed U-FNO for climate stress testing at the Savannah River Site (Wang et al. 2022).",
+    "reason": "Restore exponent and spacing"
+  },
+  {
+    "source_paragraph": 332,
+    "old": "Phase 2 is activated only when Step 3 (DECIDE) approves an update. These steps implement the prepareupdate-calibrate-deploy sequence that modifies the operational surrogate.",
+    "new": "Phase 2 is activated only when Step 3 (DECIDE) approves an update. These steps implement the prepare–update–calibrate–deploy sequence that modifies the operational surrogate.",
+    "reason": "Correct word join"
+  },
+  {
+    "source_paragraph": 281,
+    "old": "Section 2.0 presents the framework overview, introducing the three-pillar architecture and the sevenstep, two-phase recalibration workflow that operationalizes the framework.",
+    "new": "Section 2.0 presents the framework overview, introducing the three-pillar architecture and the seven-step, two-phase recalibration workflow that operationalizes the framework.",
+    "reason": "Correct word join"
+  },
+  {
+    "source_paragraph": 941,
+    "old": "Mo, S., N. Zabaras, X. Shi, and J. Wu. 2019. “Deep Autoregressive Neural Networks for High-Dimensional Inverse Problems in Groundwater Contaminant Source Identification.” Water Resources Research 55 (5): 3856–3881. https://doi.org/10.1029/2018WR024638 ",
+    "new": "Mo, S., N. Zabaras, X. Shi, and J. Wu. 2019a. “Deep Autoregressive Neural Networks for High-Dimensional Inverse Problems in Groundwater Contaminant Source Identification.” Water Resources Research 55 (5): 3856–3881. https://doi.org/10.1029/2018WR024638 ",
+    "reason": "Assign suffix to autoregressive inversion paper"
+  },
+  {
+    "source_paragraph": 942,
+    "old": "Mo, S., Y. Zhu, N. Zabaras, X. Shi, and J. Wu. 2019. “Deep Convolutional Encoder-Decoder Networks for Uncertainty Quantification of Dynamic Multiphase Flow in Heterogeneous Media.” Water Resources Research 55 (1): 703–728. https://doi.org/10.1029/2018WR023528 ",
+    "new": "Mo, S., Y. Zhu, N. Zabaras, X. Shi, and J. Wu. 2019b. “Deep Convolutional Encoder-Decoder Networks for Uncertainty Quantification of Dynamic Multiphase Flow in Heterogeneous Media.” Water Resources Research 55 (1): 703–728. https://doi.org/10.1029/2018WR023528 ",
+    "reason": "Assign suffix to convolutional multiphase paper"
+  },
+  {
+    "source_paragraph": 972,
+    "old": "Wang, Z., Y. Chen, N. Wang, G. Chen, and D. Zhang. 2025. “Generative Subsurface Flow Modeling With Pretrained Diffusion Model and Training-Free Knowledge Alignment.” Geophysical Research Letters 52 (22): e2025GL118000. https://doi.org/10.1029/2025GL118000 ",
+    "new": "Wang, Z., Y. Chen, N. Wang, G. Chen, and D. Zhang. 2025b. “Generative Subsurface Flow Modeling With Pretrained Diffusion Model and Training-Free Knowledge Alignment.” Geophysical Research Letters 52 (22): e2025GL118000. https://doi.org/10.1029/2025GL118000 ",
+    "reason": "Assign suffix to pretrained diffusion paper"
+  },
+  {
+    "source_paragraph": 973,
+    "old": "Wang, Z., Y. Chen, W. Fu, M. Du, G. Chen, X. Ma, and D. Zhang. 2025. “Generative Inverse Modeling for Improved Geological CO2 Storage Prediction via Conditional Diffusion Models.” Applied Energy 395: 126071. https://doi.org/10.1016/j.apenergy.2025.126071 .",
+    "new": "Wang, Z., Y. Chen, W. Fu, M. Du, G. Chen, X. Ma, and D. Zhang. 2025a. “Generative Inverse Modeling for Improved Geological CO2 Storage Prediction via Conditional Diffusion Models.” Applied Energy 395: 126071. https://doi.org/10.1016/j.apenergy.2025.126071 .",
+    "reason": "Assign suffix to conditional diffusion paper"
+  },
+  {
+    "source_paragraph": 904,
+    "old": "Genuchten, J. Šimůnek and Martinus Th van. 2016. “Contaminant Transport in the Unsaturated Zone: Theory and Modeling.” In The Handbook of Groundwater Engineering, 3rd ed. CRC Press.",
+    "new": "Šimůnek, J., and M. Th. van Genuchten. 2016. “Contaminant Transport in the Unsaturated Zone: Theory and Modeling.” In The Handbook of Groundwater Engineering, 3rd ed., 221–254. CRC Press.",
+    "reason": "Correct authors from literature/references.bib"
+  },
+  {
+    "old": "",
+    "new": "Adaptive Replay for U-Net Groundwater Plume Surrogates: Learning Rare Pump-and-Treat Dynamics Without Forgetting. 2026. Internal manuscript, version dated September 9, 2026. Project source: Adaptive_Replay_Manuscript_2026_09_09.docx.",
+    "reason": "Add source reference used in report"
+  },
+  {
+    "old": "",
+    "new": "Razavi, S., B. A. Tolson, and D. H. Burn. 2012. “Review of Surrogate Modeling in Water Resources.” Water Resources Research 48 (7). https://doi.org/10.1029/2011WR011527",
+    "reason": "Add source reference used in report"
+  },
+  {
+    "source_paragraph": 999,
+    "old": "Table A.1.Curated set of representative surrogate-modeling publications for groundwater and subsurface transport, with primary classifications.",
+    "new": "Table A.1. Retained curated entries used for the descriptive literature figures. The selection includes journal articles and preprints; classifications are illustrative.",
+    "reason": ""
+  },
+  {
+    "source_paragraph": 768,
+    "old": "Prototype Demonstration Plan ",
+    "new": "Prototype Demonstration and Pump-and-Treat Lifecycle Case Study",
+    "reason": "Replace duplicate/legacy Section 5 with the complete case study"
+  }
+]

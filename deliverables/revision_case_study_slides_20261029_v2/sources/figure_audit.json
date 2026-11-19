@@ -1,0 +1,37 @@
+[
+  {
+    "figure": "01_plan_and_evidence",
+    "source": "Revised report §§2.2, 5.9",
+    "treatment": "Align intended workflow with evidence types. Reported offline evidence is not the same as completed operational execution."
+  },
+  {
+    "figure": "02_controlled_stress_test",
+    "source": "Revised report §§5.1–5.5",
+    "treatment": "The pumping input uses Thiem preprocessing. The score requires the next reference plume and cannot provide prospective warning. Exact time units and executed partitions remain unresolved."
+  },
+  {
+    "figure": "03_rare_spatial_example",
+    "source": "Manuscript Fig. 2(b), rare-regime triplet",
+    "treatment": "Crop only. Preserve original color maps, axes, scale bars, and aspect ratio. Representative source example; no independent spatial reproduction."
+  },
+  {
+    "figure": "04_joint_rmse",
+    "source": "Manuscript Fig. 4; revised report Table 10",
+    "treatment": "Replot reported historical/rare RMSE pairs together. No connecting trajectory, replicate distribution, or uncertainty is invented."
+  },
+  {
+    "figure": "05_controller_screen",
+    "source": "Manuscript Fig. 5; revised report Table 9",
+    "treatment": "Keep all four controller outcomes separate from Figure 4. The 30%/85% region identifies candidates, not approved deployments."
+  },
+  {
+    "figure": "06_validation_boundary",
+    "source": "Revised report §§5.7–5.9",
+    "treatment": "Distinguish controller selection, independent UQ calibration, untouched final testing, and a versioned promotion record. These roles are not verified dataset partitions in the present study."
+  },
+  {
+    "figure": "07_next_demonstration",
+    "source": "Revised report §5.10; analysis specification; original trigger/UQ plan",
+    "treatment": "Planned experiment only. The original aim is a trigger-to-validated-update demonstration. Fixed-r=0.8 is a needed control, not a completed result."
+  }
+]

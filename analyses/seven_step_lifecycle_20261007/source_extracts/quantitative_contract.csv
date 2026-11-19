@@ -1,0 +1,12 @@
+contract_id,quantity_or_rule,operational_definition,role,authoritative_anchor,measurement_status
+QC-01,Prediction error,"RMSE/error thresholds at priority monitoring locations; limit is site/use specific",acceptance criterion,Task 1 report §3.1.3 printed p15,Not measured in Yilin lifecycle package
+QC-02,UQ coverage,"Prediction interval coverage probability remains near 90%",acceptance criterion,Task 1 report §3.1.3 printed p15,Not reported
+QC-03,Consistency,"Spatial and temporal consistency with physics reference; no systematic bias at compliance boundaries",acceptance criterion,Task 1 report §3.1.3 printed p15,Partial plume metrics only
+QC-04,Persistence,"Evidence persists 60–90 days unless a documented regime change justifies earlier action",trigger/governance rule,Task 1 report §2.2.3 printed p11 and §3.3.2 printed p25,Not transferable as calendar time to 4-day sequence
+QC-05,Tipping-point-inspired indicators,"Rolling variance; lag-1 autocorrelation; skewness/kurtosis; residual and latent diagnostics; no universal critical value",candidate detector suite,Task 1 report §3.3.2 printed pp25–26 and Table 6 printed p26,Not reported
+QC-06,Detector operating characteristics,"Sensitivity/true-positive rate; specificity/true-negative rate; false alarms; warning lead time",detector evaluation,Task 1 report §3.3.2 printed p26,Not reported
+QC-07,Active-learning batch,"Select 6–10 high-value scenarios using uncertainty, residuals, and diversity; run targeted physics simulations",PREPARE design criterion,Task 1 report §2.2.2 printed p10,Not documented
+QC-08,Replay composition,"Historical replay approximately 70–75% of update batch",UPDATE design guidance,Task 1 report §3.3.3 printed p27,Actual Yilin exposure/cap not verified
+QC-09,Efficiency,"Inference speedup 10^3–10^5 relative to physics model; task and hardware must be specified",framework context/target,Task 1 report §2.0 printed p2 and §5.4 printed p45,Not measured in Yilin package
+QC-10,Final validation,"Held-out test data not used for training or calibration; compare error,UQ,spatiotemporal consistency,baseline",DEPLOY gate,Task 1 report §2.2.2 printed p11,Not available
+QC-11,Failure path,"Failed candidate is not deployed; return to PREPARE or escalate to full retraining according to failure rationale",governance rule,Task 1 report §2.2.2 printed p11 and §3.1.5 printed pp16–17,Not exercised

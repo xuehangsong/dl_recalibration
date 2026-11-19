@@ -1,0 +1,55 @@
+{
+  "title": "Updated U-Net / adaptive-replay results",
+  "footer": null,
+  "slides": [
+    {
+      "layout": "image",
+      "title": "Baseline rare-regime RMSE is 17.3× historical RMSE",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/01_baseline.png",
+      "notes": "Start with the reliability problem. The ratio is 10.04/0.58 = 17.31, calculated from rounded labels in the September 9, 2026 internal adaptive-replay manuscript. These are reported aggregate results, not a new training run or an independently reproduced test. The rare and historical subsets were selected by a retrospective Mass90 response score. They do not represent a prospective detector evaluation. The reported 128 × 100 grid and one to five wells describe the case-study setting; no physical time interval is asserted here.\n\nSource: adaptive-replay manuscript, Fig. 4; revised report §5.2."
+    },
+    {
+      "layout": "image",
+      "title": "Fixed replay recovers rare accuracy, with a historical cost",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/02_rmse_comparison.png",
+      "notes": "Read the historical and rare panels together. Baseline: 0.58/10.04 µg/L; simple fine-tuning: 1.11/3.92; fixed replay: 1.03/1.21; EWC: 5.45/1.22. Fixed replay has lower RMSE in both regimes than simple fine-tuning or EWC in this comparison, but historical performance remains worse than the baseline. The percentages are calculated from these rounded values. Panel limits differ to preserve readability, and both axes start at zero. EWC means elastic weight consolidation. The full-network 0.64/0.99 pair from manuscript Figure 3 is excluded because its model/configuration identity and protocol equivalence remain unresolved. Do not merge Figure 5 controllers into this ranking.\n\nSource: adaptive-replay manuscript, Fig. 4; revised report Table 10."
+    },
+    {
+      "layout": "image",
+      "title": "Replay reduces three additional rare-plume error metrics",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/03_rare_plume_metrics.png",
+      "notes": "These three panels remain within the same Figure 4 comparison. Fixed replay changes plume-mass error from 32.30% to 1.82%, peak-concentration error from 14.20% to 3.43%, and Mass90 error from 7.11% to 1.89%. EWC has slightly lower peak and Mass90 errors but much worse historical RMSE; this is why rare-regime metrics alone are insufficient. Values and metric names are reproduced from the unambiguous source panels. Exact normalization and aggregation still require metric-generation code. The historical plume-metric column is omitted because the source caption/prose and panel labels conflict. These aggregate errors do not establish performance at actual compliance wells.\n\nSource: adaptive-replay manuscript, Fig. 4; revised report Table 11."
+    },
+    {
+      "layout": "image",
+      "title": "Two controllers pass the illustrative 30% / 85% screen",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/04_controller_screen.png",
+      "notes": "This is a separate controller comparison. Fixed replay: 80.4% historical increase and 88.9% rare reduction. Threshold adaptive forgetting: 26.5% and 85.8%. Loss-balanced: 21.1% and 85.5%. Loss-balanced with floor: 38.1% and 87.3%. The shaded upper-left region satisfies both illustrative conditions. Only threshold adaptive forgetting and loss-balanced satisfy them. A variant with a replay floor fails the historical limit, so a blanket claim that adaptive replay passes would be incorrect. The limits are illustrative rather than approved or preregistered deployment criteria. No uncertainty bars are available for the displayed aggregates.\n\nSource: adaptive-replay manuscript, Fig. 5; revised report Table 9."
+    },
+    {
+      "layout": "image",
+      "title": "The rare-improvement margins are only 0.5–0.8 points",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/05_acceptance_margins.png",
+      "notes": "For the two candidates, subtract the illustrative 85% rare-improvement threshold: 85.8 - 85 = 0.8 percentage points and 85.5 - 85 = 0.5. Their historical margins are 30 - 26.5 = 3.5 points and 30 - 21.1 = 8.9 points. The rare-side margins are small, which makes independent testing and repeated-run evaluation important. These numbers are deterministic arithmetic on rounded labels, not confidence intervals, significance tests, or proof that either result is unstable. No raw replicate-level predictions were supplied with the evidence package.\n\nSource: manuscript Fig. 5; audited acceptance-margin calculations."
+    },
+    {
+      "layout": "image",
+      "title": "Keep the two reported comparisons separate",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/06_comparison_provenance.png",
+      "notes": "For fixed replay, Figure 4 rounded RMSE gives (1.03/0.58 - 1) × 100 = 77.6% historical increase and (1 - 1.21/10.04) × 100 = 87.9% rare reduction. Figure 5 reports 80.4% and 88.9%. Do not replace either pair or assume rounding explains the discrepancy. Executed configurations, evaluation partitions, denominators, seeds, and historical/new exposure are needed to reconcile the comparisons. The displayed adaptive replay trajectory reaches r = 0.8 for most of 100 epochs; without controller logs we do not re-create that curve. A matched fixed-ratio-0.8 comparison is still needed to isolate the contribution of adaptive scheduling. That is a limitation of the current results, not a new experiment shown here.\n\nSource: manuscript Figs. 4 and 5; revised report §5.6."
+    },
+    {
+      "layout": "image",
+      "title": "Two candidates remain awaiting independent validation",
+      "kicker": "Updated results · internal discussion",
+      "image": "/home/song884/github/dl_recalibration/deliverables/results_slides_20261029/figures/07_candidate_status.png",
+      "notes": "The current result is a controlled offline update assessment that identifies two candidate controller outcomes under the illustrative screen. No independent uncertainty-calibration result, untouched final-test record, or versioned promotion decision accompanies these aggregates. The dashed stages show the evidence still required; they are not completed operations. The candidate names are controller outcomes, not verified production checkpoints. Before stronger claims, resolve trajectory partitions and figure-specific protocols, evaluate matched controls, calibrate uncertainty, and test independently. This deck stays focused on updated result interpretation and does not claim new training, prospective drift detection, active-learning gains, or field deployment.\n\nSource: revised report §§5.7–5.9."
+    }
+  ]
+}

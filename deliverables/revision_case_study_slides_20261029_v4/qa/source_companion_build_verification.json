@@ -1,0 +1,10 @@
+{
+  "slides": 5,
+  "one_picture_per_slide": true,
+  "all_five_embedded_picture_hashes_match_docx_parts": true,
+  "no_image_cropping": true,
+  "original_aspect_ratios_preserved": true,
+  "all_shapes_in_bounds": true,
+  "full_original_captions_in_notes": true,
+  "native_render_pending": false
+}

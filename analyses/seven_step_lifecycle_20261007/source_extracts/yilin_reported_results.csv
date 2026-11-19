@@ -1,0 +1,18 @@
+result_id,reported_quantity,value,unit_or_scale,partition_or_condition,source_anchor,evidence_label,verification_note
+YR-01,Grid dimensions,128 x 100,grid cells,synthetic homogeneous aquifer,Adaptive Replay manuscript §2.1 extracted text lines 170–175,Manuscript-reported,Raw mesh not present in this repo
+YR-02,Extraction wells,1–5,count,synthetic scenarios,Adaptive Replay manuscript §2.1 extracted text lines 170–175,Manuscript-reported,Configuration manifest not present
+YR-03,Nominal physics runs,10000,count,synthetic dataset,Adaptive Replay manuscript §2.1 extracted text lines 170–175,Manuscript-reported,Raw simulation archive not present
+YR-04,Historical regime,bottom 40%,score distribution,low Mass90 footprint-change,Adaptive Replay manuscript §2.1 and Results,Manuscript-reported,Exact counts/partition code not present
+YR-05,Rare regime,top 3%,score distribution,high Mass90 footprint-change,Adaptive Replay manuscript §2.1 and Results,Manuscript-reported,Exact counts/partition code not present
+YR-06,Baseline RMSE,0.58,ug/L,historical regime,Adaptive Replay manuscript Results around extracted lines 587–592,Manuscript-reported,Not independently reproduced
+YR-07,Baseline RMSE,10.04,ug/L,rare regime,Adaptive Replay manuscript Results around extracted lines 587–592,Manuscript-reported,Not independently reproduced
+YR-08,Simple fine-tuning RMSE,1.11,ug/L,historical regime,Adaptive Replay manuscript Results around extracted lines 587–592,Manuscript-reported,Not independently reproduced
+YR-09,Simple fine-tuning RMSE,3.92,ug/L,rare regime,Adaptive Replay manuscript Results around extracted lines 587–592,Manuscript-reported,Not independently reproduced
+YR-10,Fixed replay RMSE,1.03,ug/L,historical regime,Adaptive Replay manuscript Results around extracted lines 627–637,Manuscript-reported,Not independently reproduced
+YR-11,Fixed replay RMSE,1.21,ug/L,rare regime,Adaptive Replay manuscript Results around extracted lines 627–637,Manuscript-reported,Not independently reproduced
+YR-12,EWC RMSE,5.45,ug/L,historical regime,Adaptive Replay manuscript Results around extracted lines 639–644,Manuscript-reported,Not independently reproduced
+YR-13,EWC RMSE,1.22,ug/L,rare regime,Adaptive Replay manuscript Results around extracted lines 639–644,Manuscript-reported,Not independently reproduced
+YR-14,Adaptive vs fixed historical degradation,80.4% to 26.5%,percent,reported comparison,Adaptive Replay manuscript Results around extracted lines 698–706,Manuscript-reported,Comparator protocol and denominator require verification
+YR-15,Adaptive rare improvement,>85%,percent,reported comparison,Adaptive Replay manuscript Results around extracted lines 698–706,Manuscript-reported,Exact value/test split require verification
+YR-16,Fixed replay rare improvement,88.9%,percent,reported comparison,Adaptive Replay manuscript Results around extracted lines 698–706,Manuscript-reported,Exact value/test split require verification
+YR-17,Replay controller behavior,reached imposed upper cap,qualitative trajectory,adaptive replay controller,Adaptive Replay manuscript Results around extracted lines 686–696,Manuscript-reported,Cap value and log require verification

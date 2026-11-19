@@ -578,6 +578,53 @@ This system prompt should be updated when:
 
 ### Change History
 
+### 2026-10-07 - Task 10: Integrated seven-step lifecycle case-study rewrite
+**Status:** Completed
+**Output File:** `drafts/final/section5_FINAL.md`
+**Changes Made:**
+- Reorganized Section 5 as one connected pump-and-treat case-study narrative.
+- Connected baseline monitoring, Mass90 stress detection, old/new decision screening, regime-selected preparation, update comparisons, calibration, and deployment gating.
+- Added the quantitative transition trace and preserved figure-level results with explicit evidence boundaries.
+**Notes:**
+- The available evidence ends at a governed CALIBRATE/DEPLOY hold because adaptive-replay uncertainty and untouched final-test artifacts are not available.
+
+
+### 2026-10-08 - Task 11: Final reader-facing copy edit and FNO removal
+**Status:** Completed
+**Output File:** `drafts/final/section5_FINAL.md`; `drafts/section5_yilin_results_update_draft.md`
+**Changes Made:**
+- Kept Section 5 centered on the pump-and-treat U-Net and removed FNO/internal-routing language from the case-study text.
+- Clarified that the available evidence is an offline baseline/update evaluation, not prospective monitoring or completed deployment.
+- Added UQ terminology, framework replay guidance of approximately 70–75%, and captions for the two quantitative tables.
+- Preserved the illustrative status of the Figure 5 acceptance screen and the governed CALIBRATE/DEPLOY hold.
+**Notes:**
+- The working and final Section 5 files are byte-for-byte aligned and ready for copy into the report.
+
+
+### 2026-10-08 - Task 12: Section 5 version freeze and legacy-content disposition
+**Status:** Completed
+**Output File:** `drafts/final/section5_FINAL_20261008_FROZEN.md`; `analyses/seven_step_lifecycle_20261007/section5_legacy_content_disposition.md`
+**Changes Made:**
+- Preserved the current U-Net lifecycle section as a dated frozen snapshot.
+- Recorded which earlier Section 5 material remains relevant, belongs in framework/roadmap sections, or should stay archive-only.
+- Established that future Section 5 edits must use a new dated file.
+**Notes:**
+- The earlier Section 5 files remain preserved; they should not be merged back wholesale into the quantitative U-Net case study.
+
+
+### 2026-10-07 - Task 9: Seven-step lifecycle evidence audit and Section 5 update
+**Status:** In Progress
+**Output File:** `drafts/final/section5_FINAL.md`; `analyses/seven_step_lifecycle_20261007/`
+**Changes Made:**
+- Added a quantitative evidence-status table for MONITOR, DETECT, DECIDE, PREPARE, UPDATE, CALIBRATE, and DEPLOY.
+- Integrated Yilin's manuscript-reported RMSE and adaptive-replay results while separating reported values from rounded-value calculations and framework criteria.
+- Recorded the UQ, tipping-point-inspired diagnostics, persistence, active-learning, replay, efficiency, split, and deployment evidence requirements.
+- Created a dated source manifest, evidence matrix, inconsistency register, analysis specification, and execution log.
+**Notes:**
+- Current evidence supports a controlled UPDATE demonstration and retrospective rare-regime stress case; complete CALIBRATE and DEPLOY claims remain blocked pending raw artifacts and governance records.
+- The FY26 data-package discussion was excluded per project direction.
+
+
 ### 2025-03-19 - Task 1: Section 2.1 Style Conversion
 **Status:** Completed
 **Output File:** `drafts/section2_1_FINAL.md`

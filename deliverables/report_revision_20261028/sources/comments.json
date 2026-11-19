@@ -1,0 +1,254 @@
+[
+  {
+    "id": "15",
+    "author": "Wilburn, Matt",
+    "text": "I replaced the floating text box with an inline table as they tend to move better with the text",
+    "anchors": [
+      {
+        "i": 264,
+        "style": "",
+        "text": "Deep learning surrogate models are AIenabled, data-driven approximations of complex physical, numerical, or computational models, built using deep neural networks to emulate the behavior of high-fidelity simulations. Instead of repeatedly running computationally expensive models (e.g., groundwater flow, contaminant transport, or reactive chemistry), a surrogate model is trained on simulation or observational data to learn the input–output relationships and then provide rapid predictions."
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "author": "Wilburn, Matt",
+    "text": "There’s no mention of Appendix A.",
+    "anchors": [
+      {
+        "i": 285,
+        "style": "ListBullet",
+        "text": "Section 6.0 discusses current limitations, open research questions, expected impact, and conclusions."
+      }
+    ]
+  },
+  {
+    "id": "56",
+    "author": "Wilburn, Matt",
+    "text": "There’s no mention of this figure in the text",
+    "anchors": [
+      {
+        "i": 317,
+        "style": "Caption-Fig",
+        "text": "Figure 2.Seven-step, two-phase recalibration workflow. Phase 1 (green) operates continuously during routine surrogate use and consists of three steps: MONITOR, DETECT, and DECIDE. Phase 2 (red) activates only when the DECIDE step determines that observed degradation warrants recalibration, and consists of four steps: PREPARE, UPDATE, CALIBRATE, and DEPLOY. The DECIDE step (filled circle) serves as the governance gate connecting both phases, ensuring that recalibration is initiated only through a documented, criteria-based decision. Upon successful deployment, the workflow returns to Phase 1 continuous monitoring. The “Fallback” path (black) represents escalation to complete surrogate retraining under governance procedures defined in Pillar A."
+      }
+    ]
+  },
+  {
+    "id": "199",
+    "author": "Wilburn, Matt",
+    "text": "There are two Mo et al. 2019 references. Label them 2019a and b in the reference list and update citations accordingly",
+    "anchors": [
+      {
+        "i": 495,
+        "style": "BodyText",
+        "text": "Convolutional encoder-decoder architectures such as U-Net and residual network variants treat spatial fields as images and learn direct mappings from input fields, including hydraulic conductivity, boundary conditions, and pumping patterns, to output fields such as hydraulic heads, salinity distributions, and plume extents. Convolutions preserve interfaces, sharp fronts, and channelized structures, making these networks well suited for high-resolution spatial prediction. Representative applications include attention U-Net architectures for steady-state hydraulic head fields (Taccari et al. 2022), image-to-image regression for multiphase flow (Mo et al. 2019), autoregressive residual U-Net for dynamic multiphase flow and solute transport (Jiang et al. 2021), and U-Net surrogates for transient groundwater flow inverse problems (Lauzon 2024) and P&T optimization (Song et al. 2025)."
+      }
+    ]
+  },
+  {
+    "id": "200",
+    "author": "Wilburn, Matt",
+    "text": "OK? This is the form used elsewhere in the report",
+    "anchors": [
+      {
+        "i": 497,
+        "style": "BodyText",
+        "text": "Architectures such as Fourier neural operator (FNO), U-FNO, and deep operator network (DeepONet) learn the solution operator of a partial differential equation in function space rather than at fixed grid points, yielding resolutioninvariant surrogates that generalize across boundary and parameter configurations (Li et al. 2020). Notable subsurface applications include U-FNO for CO2-water multiphase flow (Wen et al. 2022), DeepONet for confined aquifer systems (Taccari et al. 2024), the GeoFUSE framework for seawater intrusion achieving approximately 105speedup per inference relative to PFLOTRAN (Jiang et al. 2025), and physics-informed U-FNO for climate stress testing at the Savannah River Site (Wang et al. 2022)."
+      }
+    ]
+  },
+  {
+    "id": "201",
+    "author": "Wilburn, Matt",
+    "text": "There are two Wang et al. 2025 references. Label the references 2025a and b and update the citations accordingly.",
+    "anchors": [
+      {
+        "i": 501,
+        "style": "BodyText",
+        "text": "Variational autoencoder (VAE), generative adversarial network (GAN), and diffusion architectures sample entire ensembles of plausible states and parameter fields consistent with physics and observations, making them natural tools for probabilistic inversion and UQ. Applications include VAE and GAN for facies realizations and Bayesian inversion (Graham and Chen 2020), diffusion models for multivariate subsurface property fields (Miele and Linde 2025), pretrained diffusion models for porous-media flow, and conditional diffusion for CO2 storage plume forecasting (Wang et al. 2025)."
+      }
+    ]
+  },
+  {
+    "id": "205",
+    "author": "Wilburn, Matt",
+    "text": "Not in reference list",
+    "anchors": [
+      {
+        "i": 509,
+        "style": "BodyText",
+        "text": "Across the five families, several training practices recur in literature. Training datasets are generated by sampling parameter and boundary condition ranges, commonly using Latin hypercube or quasi-random designs, and running the corresponding high-fidelity simulations to produce input-output pairs (Asher et al. 2015; Razavi et al. 2012). The number of simulations required varies by problem complexity and surrogate architecture but generally falls in the range of hundreds to low thousands of realizations (Mo et al. 2019; Wen et al. 2022; Zhu and Zabaras 2018). Input fields that span orders of magnitude, such as hydraulic conductivity, are typically log-transformed prior to training (Tang et al. 2020), and all features are standardized to stabilize optimization and ensure consistent inference (Mo et al. 2019). Hold-out realizations spanning distinct parameter ranges or time windows are reserved for testing to guard against overfitting (Jiang et al. 2025; Wen et al. 2022). "
+      }
+    ]
+  },
+  {
+    "id": "206",
+    "author": "Wilburn, Matt",
+    "text": "a or b?",
+    "anchors": [
+      {
+        "i": 509,
+        "style": "BodyText",
+        "text": "Across the five families, several training practices recur in literature. Training datasets are generated by sampling parameter and boundary condition ranges, commonly using Latin hypercube or quasi-random designs, and running the corresponding high-fidelity simulations to produce input-output pairs (Asher et al. 2015; Razavi et al. 2012). The number of simulations required varies by problem complexity and surrogate architecture but generally falls in the range of hundreds to low thousands of realizations (Mo et al. 2019; Wen et al. 2022; Zhu and Zabaras 2018). Input fields that span orders of magnitude, such as hydraulic conductivity, are typically log-transformed prior to training (Tang et al. 2020), and all features are standardized to stabilize optimization and ensure consistent inference (Mo et al. 2019). Hold-out realizations spanning distinct parameter ranges or time windows are reserved for testing to guard against overfitting (Jiang et al. 2025; Wen et al. 2022). "
+      }
+    ]
+  },
+  {
+    "id": "207",
+    "author": "Wilburn, Matt",
+    "text": "a or b?",
+    "anchors": [
+      {
+        "i": 509,
+        "style": "BodyText",
+        "text": "Across the five families, several training practices recur in literature. Training datasets are generated by sampling parameter and boundary condition ranges, commonly using Latin hypercube or quasi-random designs, and running the corresponding high-fidelity simulations to produce input-output pairs (Asher et al. 2015; Razavi et al. 2012). The number of simulations required varies by problem complexity and surrogate architecture but generally falls in the range of hundreds to low thousands of realizations (Mo et al. 2019; Wen et al. 2022; Zhu and Zabaras 2018). Input fields that span orders of magnitude, such as hydraulic conductivity, are typically log-transformed prior to training (Tang et al. 2020), and all features are standardized to stabilize optimization and ensure consistent inference (Mo et al. 2019). Hold-out realizations spanning distinct parameter ranges or time windows are reserved for testing to guard against overfitting (Jiang et al. 2025; Wen et al. 2022). "
+      }
+    ]
+  },
+  {
+    "id": "275",
+    "author": "Wilburn, Matt",
+    "text": "Sentence fragment. Make a complete sentence for list parallelism",
+    "anchors": [
+      {
+        "i": 632,
+        "style": "BodyText",
+        "text": "Step 4: Uncertainty Recalibration. Predictive uncertainty using held-out data or ensemble-based UQ methods ensure that nominal confidence intervals align with empirical coverage. This step applies the surrogate-level UQ methods described in Section 3.3.1, such as deep ensembles or conformal prediction, to verify that the updated model’s uncertainty estimates remain calibrated rather than overconfident in the new regime (Lakshminarayanan et al. 2017; Zhu and Zabaras 2018)."
+      }
+    ]
+  },
+  {
+    "id": "284",
+    "author": "Wilburn, Matt",
+    "text": "Sentence fragment, confusing",
+    "anchors": [
+      {
+        "i": 653,
+        "style": "BodyText",
+        "text": "Step 2: Apply Diversity Constraints and Select Batch. Diversity constraints are applied to ensure that selected scenarios span hydraulic gradients, hydrostratigraphic units, and forcing conditions, preventing clustering in redundant regions of the input space and enhancing surrogate generalization (Wen et al. 2021). A series of high-value simulations selected to collectively maximize expected information gain."
+      }
+    ]
+  },
+  {
+    "id": "294",
+    "author": "Wilburn, Matt",
+    "text": "GP not used again",
+    "anchors": [
+      {
+        "i": 664,
+        "style": "TableText",
+        "text": "Co-Kriging and autoregressive Gaussian process"
+      }
+    ]
+  },
+  {
+    "id": "528",
+    "author": "Wilburn, Matt",
+    "text": "There’s no mention of Figures 7-10 in the text",
+    "anchors": [
+      {
+        "i": 779,
+        "style": "Caption-Fig",
+        "text": "Figure 7.The 2D cross-section domain of the first prototype."
+      }
+    ]
+  },
+  {
+    "id": "561",
+    "author": "Cao, Ross",
+    "text": "Figure placeholder: overview diagram of the U‑Net surrogate workflow for PaT.",
+    "anchors": [
+      {
+        "i": 795,
+        "style": "BodyText",
+        "text": "In operational P&T systems, surrogate models are trained on historical plume snapshots that reflect a limited range of extraction configurations and plume dynamics. Over time, well-field modifications, source-strength changes, or aquifer property updates can produce plume behavior that differs substantially from training conditions. The case study replicates this situation by partitioning the 10,000-realization simulation dataset (Section 5.2.2) into two regimes:"
+      }
+    ]
+  },
+  {
+    "id": "601",
+    "author": "Wilburn, Matt",
+    "text": "I aligned the citations and references with PNNL style and added as many missing DOIs that I could find",
+    "anchors": [
+      {
+        "i": 880,
+        "style": "Heading1",
+        "text": "References"
+      }
+    ]
+  },
+  {
+    "id": "602",
+    "author": "Wilburn, Matt",
+    "text": "Are these names correct?",
+    "anchors": [
+      {
+        "i": 904,
+        "style": "",
+        "text": "Genuchten, J. Šimůnek and Martinus Th van. 2016. “Contaminant Transport in the Unsaturated Zone: Theory and Modeling.” In The Handbook of Groundwater Engineering, 3rd ed. CRC Press."
+      }
+    ]
+  },
+  {
+    "id": "603",
+    "author": "Wilburn, Matt",
+    "text": "See comment on Mo et al. 2019 citation.",
+    "anchors": [
+      {
+        "i": 941,
+        "style": "",
+        "text": "Mo, S., N. Zabaras, X. Shi, and J. Wu. 2019. “Deep Autoregressive Neural Networks for High-Dimensional Inverse Problems in Groundwater Contaminant Source Identification.” Water Resources Research 55 (5): 3856–3881. https://doi.org/10.1029/2018WR024638 "
+      }
+    ]
+  },
+  {
+    "id": "604",
+    "author": "Wilburn, Matt",
+    "text": "See comment on Wang et al. 2025 citation",
+    "anchors": [
+      {
+        "i": 972,
+        "style": "",
+        "text": "Wang, Z., Y. Chen, N. Wang, G. Chen, and D. Zhang. 2025. “Generative Subsurface Flow Modeling With Pretrained Diffusion Model and Training-Free Knowledge Alignment.” Geophysical Research Letters 52 (22): e2025GL118000. https://doi.org/10.1029/2025GL118000 "
+      }
+    ]
+  },
+  {
+    "id": "613",
+    "author": "Wilburn, Matt",
+    "text": "Not in reference list",
+    "anchors": [
+      {
+        "i": 998,
+        "style": "BodyText",
+        "text": "The review identified six primary architectural families with demonstrated applicability to subsurface modeling: convolutional encoder-decoder models, operator-learning models, sequence models, generative models, regression and classical surrogates, and structured domain surrogates. Each family offers distinct advantages depending on the prediction task, data availability, and computational constraints. Comprehensive reviews by Razavi et al. (2012) and Asher et al. (2015) provide foundational context for surrogate modeling in water resources applications. Surrogate modeling publication trends were quantified using the Web of Science Core Collection (Clarivate Analytics). We performed a topic search (12/5/2025) combining groundwater and subsurface keywords with surrogate-modeling terms (TS = ((groundwater OR subsurface OR aquifer OR “reactive transport” OR “porous media”) AND (“surrogate model*” OR emulator* OR “reduced-order” OR metamodel* OR “response surface” OR “Fourier neural operator*” OR “neural operator*” OR “operator learning” OR “deep learning surrogate” OR “physics-informed”)), limited to articles and reviews in English for the period 2005 to 2026."
+      }
+    ]
+  },
+  {
+    "id": "615",
+    "author": "Wilburn, Matt",
+    "text": "Not in reference list",
+    "anchors": [
+      {
+        "i": 1079,
+        "style": "TableText",
+        "text": "Moet al. 2019"
+      }
+    ]
+  },
+  {
+    "id": "616",
+    "author": "Wilburn, Matt",
+    "text": "a or b?",
+    "anchors": [
+      {
+        "i": 1219,
+        "style": "TableText",
+        "text": "Wang et al. 2025"
+      }
+    ]
+  }
+]

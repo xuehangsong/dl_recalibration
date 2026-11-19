@@ -1,0 +1,338 @@
+[
+  [
+    "Year",
+    "Primary Surrogate Family",
+    "Application Family",
+    "Project Domain",
+    "Reference"
+  ],
+  [
+    "1994",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Rogers and Dowla 1994"
+  ],
+  [
+    "1995",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Rogers et al. 1995"
+  ],
+  [
+    "2000",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Johnson and Rogers 2000"
+  ],
+  [
+    "2006",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Yan and Minsker 2006"
+  ],
+  [
+    "2011",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Yan and Minsker 2011"
+  ],
+  [
+    "2013",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Luo et al. 2013"
+  ],
+  [
+    "2014",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Luo et al. 2014"
+  ],
+  [
+    "2017",
+    "Generative models",
+    "UQ & ensemble generation",
+    "Groundwater flow / fluid mechanics",
+    "Mosser et al. 2017"
+  ],
+  [
+    "2018",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Luo et al. 2018"
+  ],
+  [
+    "2018",
+    "Regression & classical surrogates",
+    "Forward emulation",
+    "Groundwater flow / fluid mechanics",
+    "Wang and Sun 2018"
+  ],
+  [
+    "2018",
+    "Conv encoder-decoder",
+    "UQ & ensemble generation",
+    "General scientific computing",
+    "Zhu and Zabaras 2018"
+  ],
+  [
+    "2018",
+    "Generative models",
+    "UQ & ensemble generation",
+    "Contaminant hydrogeology / remediation",
+    "Yang et al. 2018"
+  ],
+  [
+    "2018",
+    "Generative models",
+    "Inverse & calibration",
+    "Groundwater flow / fluid mechanics",
+    "Laloy et al. 2018"
+  ],
+  [
+    "2019",
+    "Conv encoder-decoder",
+    "UQ & ensemble generation",
+    "Groundwater flow / fluid mechanics",
+    "Zhu et al. 2019"
+  ],
+  [
+    "2019",
+    "Conv encoder-decoder",
+    "UQ & ensemble generation",
+    "CO2 storage / geoenergy",
+    "Moet al. 2019"
+  ],
+  [
+    "2020",
+    "Operator-learning",
+    "Forward emulation",
+    "General scientific computing",
+    "Li et al. 2020"
+  ],
+  [
+    "2020",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Groundwater flow / fluid mechanics",
+    "Siade et al. 2020"
+  ],
+  [
+    "2020",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Majumder and Eldho 2020; Tang et al. 2020"
+  ],
+  [
+    "2020",
+    "Conv encoder-decoder",
+    "Inverse & calibration",
+    "General scientific computing",
+    "Tang et al. 2020"
+  ],
+  [
+    "2020",
+    "Generative models",
+    "Inverse & calibration",
+    "CO2 storage / geoenergy",
+    "Graham and Chen 2020"
+  ],
+  [
+    "2021",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Shams et al. 2021"
+  ],
+  [
+    "2021",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Vali et al. 2021"
+  ],
+  [
+    "2021",
+    "Conv encoder-decoder",
+    "Forward emulation",
+    "Contaminant hydrogeology / remediation",
+    "Jiang et al. 2021"
+  ],
+  [
+    "2021",
+    "Sequence models",
+    "Inverse & calibration",
+    "Groundwater flow / fluid mechanics",
+    "Chen et al. 2021"
+  ],
+  [
+    "2022",
+    "Conv encoder-decoder",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Du et al. 2022"
+  ],
+  [
+    "2022",
+    "Regression & classical surrogates",
+    "Design & optimization",
+    "Contaminant hydrogeology / remediation",
+    "Chen et al. 2022"
+  ],
+  [
+    "2022",
+    "Conv encoder-decoder",
+    "Forward emulation",
+    "Groundwater flow / fluid mechanics",
+    "Taccari et al. 2022"
+  ],
+  [
+    "2022",
+    "Operator-learning",
+    "Forward emulation",
+    "General scientific computing",
+    "Lu et al. 2022"
+  ],
+  [
+    "2022",
+    "Operator-learning",
+    "Forward emulation",
+    "General scientific computing",
+    "Wang et al. 2022"
+  ],
+  [
+    "2022",
+    "Operator-learning",
+    "Forward emulation",
+    "CO2 storage / geoenergy",
+    "Wen et al. 2022"
+  ],
+  [
+    "2022",
+    "Conv encoder-decoder",
+    "Inverse & calibration",
+    "Groundwater flow / fluid mechanics",
+    "Kontos et al. 2022"
+  ],
+  [
+    "2022",
+    "Conv encoder-decoder",
+    "Monitoring & time-series prediction",
+    "Groundwater monitoring & forecasting",
+    "Chen et al. 2022"
+  ],
+  [
+    "2022",
+    "Sequence models",
+    "Monitoring & time-series prediction",
+    "Groundwater monitoring & forecasting",
+    "Zhang and Thorburn 2022"
+  ],
+  [
+    "2023",
+    "Operator-learning",
+    "Forward emulation",
+    "General scientific computing",
+    "Kovachki et al. 2023"
+  ],
+  [
+    "2023",
+    "Operator-learning",
+    "Forward emulation",
+    "CO2 storage / geoenergy",
+    "Wen et al. 2023"
+  ],
+  [
+    "2023",
+    "Conv encoder-decoder",
+    "Inverse & calibration",
+    "Contaminant hydrogeology / remediation",
+    "Anshuman and Eldho 2023"
+  ],
+  [
+    "2024",
+    "Operator-learning",
+    "Forward emulation",
+    "Contaminant hydrogeology / remediation",
+    "Meray et al. 2024"
+  ],
+  [
+    "2024",
+    "Conv encoder-decoder",
+    "Inverse & calibration",
+    "Groundwater flow / fluid mechanics",
+    "Lauzon 2024"
+  ],
+  [
+    "2024",
+    "Operator-learning",
+    "Inverse & calibration",
+    "Groundwater flow / fluid mechanics",
+    "Taccari et al. 2024"
+  ],
+  [
+    "2024",
+    "Sequence models",
+    "Monitoring & time-series prediction",
+    "Coastal aquifers / seawater intrusion",
+    "Xie and Zhang 2024"
+  ],
+  [
+    "2025",
+    "Sequence models",
+    "Forward emulation",
+    "Groundwater flow / fluid mechanics",
+    "Li et al. 2025"
+  ],
+  [
+    "2025",
+    "Regression & classical surrogates",
+    "Forward emulation",
+    "Contaminant hydrogeology / remediation",
+    "Nguyen et al. 2025"
+  ],
+  [
+    "2025",
+    "Conv encoder-decoder",
+    "Inverse & calibration",
+    "CO2 storage / geoenergy",
+    "Wang et al. 2025"
+  ],
+  [
+    "2025",
+    "Generative models",
+    "Inverse & calibration",
+    "General scientific computing",
+    "Miele and Linde 2025"
+  ],
+  [
+    "2025",
+    "Operator-learning",
+    "Inverse & calibration",
+    "Coastal aquifers / seawater intrusion",
+    "Jiang et al. 2025"
+  ],
+  [
+    "2025",
+    "Regression & classical surrogates",
+    "Monitoring & time-series prediction",
+    "Contaminant hydrogeology / remediation",
+    "Yazdi et al. 2025"
+  ],
+  [
+    "2025",
+    "Generative models",
+    "UQ & ensemble generation",
+    "Groundwater flow / fluid mechanics",
+    "Wang et al. 2025b"
+  ]
+]

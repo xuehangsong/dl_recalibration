@@ -1,0 +1,5 @@
+method,historical_rmse,rare_rmse,rare_mass_error,rare_peak_error,historical_peak_error,rare_mass90_error
+Baseline,0.58,10.04,32.30,14.20,0.23,7.11
+Simple_FT,1.11,3.92,9.86,7.70,0.54,3.59
+Fixed_replay,1.03,1.21,1.82,3.43,0.40,1.89
+EWC,5.45,1.22,1.88,3.40,2.02,1.64

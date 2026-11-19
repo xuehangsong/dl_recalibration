@@ -1,0 +1,77 @@
+{
+  "slides": 9,
+  "native_flowcharts": [
+    1,
+    2,
+    6,
+    8,
+    9
+  ],
+  "scientific_figure_slides": [
+    3,
+    4,
+    5,
+    7
+  ],
+  "no_bar_charts": true,
+  "figure_titles": false,
+  "source_hashes_recorded": true,
+  "speaker_notes_embedded": true,
+  "source_comparisons_not_pooled": true,
+  "slide_checks": [
+    {
+      "slide": 1,
+      "pictures": 0,
+      "connectors": 16,
+      "fully_attached_connectors": 13
+    },
+    {
+      "slide": 2,
+      "pictures": 0,
+      "connectors": 8,
+      "fully_attached_connectors": 8
+    },
+    {
+      "slide": 3,
+      "pictures": 1,
+      "connectors": 0,
+      "fully_attached_connectors": 0
+    },
+    {
+      "slide": 4,
+      "pictures": 1,
+      "connectors": 0,
+      "fully_attached_connectors": 0
+    },
+    {
+      "slide": 5,
+      "pictures": 1,
+      "connectors": 0,
+      "fully_attached_connectors": 0
+    },
+    {
+      "slide": 6,
+      "pictures": 0,
+      "connectors": 6,
+      "fully_attached_connectors": 6
+    },
+    {
+      "slide": 7,
+      "pictures": 1,
+      "connectors": 0,
+      "fully_attached_connectors": 0
+    },
+    {
+      "slide": 8,
+      "pictures": 0,
+      "connectors": 9,
+      "fully_attached_connectors": 7
+    },
+    {
+      "slide": 9,
+      "pictures": 0,
+      "connectors": 7,
+      "fully_attached_connectors": 7
+    }
+  ]
+}

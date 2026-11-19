@@ -1,0 +1,376 @@
+﻿{
+    "NativePowerPointOpen":  true,
+    "Slides":  9,
+    "Exporter":  "Microsoft PowerPoint",
+    "SlideChecks":  [
+                        {
+                            "Slide":  1,
+                            "NativeDiagram":  true,
+                            "Pictures":  0,
+                            "TextShapes":  23,
+                            "Connectors":  [
+                                               {
+                                                   "Name":  "Link: CALIBRATE -\u003e DEPLOY",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: DEPLOY evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: UPDATE -\u003e CALIBRATE",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: CALIBRATE evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: PREPARE -\u003e UPDATE",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: UPDATE evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: DECIDE -\u003e PREPARE",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: PREPARE evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: DETECT -\u003e DECIDE",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: DECIDE evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: MONITOR -\u003e DETECT",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: DETECT evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: MONITOR evidence mapping",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Legend: Reported offline evidence",
+                                                   "BeginConnected":  false,
+                                                   "EndConnected":  false
+                                               },
+                                               {
+                                                   "Name":  "Legend: Retrospective / illustrative",
+                                                   "BeginConnected":  false,
+                                                   "EndConnected":  false
+                                               },
+                                               {
+                                                   "Name":  "Legend: Still required",
+                                                   "BeginConnected":  false,
+                                                   "EndConnected":  false
+                                               }
+                                           ],
+                            "AttachedConnectors":  13,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  2,
+                            "NativeDiagram":  true,
+                            "Pictures":  0,
+                            "TextShapes":  15,
+                            "Connectors":  [
+                                               {
+                                                   "Name":  "Link: Rare: top 3% / s ≥ 0.329 -\u003e Controlled / update",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Historical: bottom 40% / s ≤ 0.133 -\u003e Controlled / update",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Mass90 / change score -\u003e Rare: top 3% / s ≥ 0.329",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Mass90 / change score -\u003e Historical: bottom 40% / s ≤ 0.133",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Reference plumes / at t and t + 1 -\u003e Mass90 / change score",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Predicted plume / at t + 1 -\u003e Errors against / reference",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: U-Net -\u003e Predicted plume / at t + 1",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Plume at t / + pumping input -\u003e U-Net",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               }
+                                           ],
+                            "AttachedConnectors":  8,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  3,
+                            "NativeDiagram":  false,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "Connectors":  [
+
+                                           ],
+                            "AttachedConnectors":  0,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  4,
+                            "NativeDiagram":  false,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "Connectors":  [
+
+                                           ],
+                            "AttachedConnectors":  0,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  5,
+                            "NativeDiagram":  false,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "Connectors":  [
+
+                                           ],
+                            "AttachedConnectors":  0,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  6,
+                            "NativeDiagram":  true,
+                            "Pictures":  0,
+                            "TextShapes":  13,
+                            "Connectors":  [
+                                               {
+                                                   "Name":  "Link: Replay controller -\u003e next mixed update batch",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Historical + rare / validation -\u003e Replay / controller",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: U-Net / update -\u003e Historical + rare / validation",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Mixed / update batch -\u003e U-Net / update",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Rare data -\u003e Mixed / update batch",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Historical data -\u003e Mixed / update batch",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               }
+                                           ],
+                            "AttachedConnectors":  6,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  7,
+                            "NativeDiagram":  false,
+                            "Pictures":  1,
+                            "TextShapes":  4,
+                            "Connectors":  [
+
+                                           ],
+                            "AttachedConnectors":  0,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  8,
+                            "NativeDiagram":  true,
+                            "Pictures":  0,
+                            "TextShapes":  14,
+                            "Connectors":  [
+                                               {
+                                                   "Name":  "Link: Accuracy, UQ / + consistency -\u003e Promotion / review",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Versioned / evidence record -\u003e Promotion / review",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Coverage / + interval width -\u003e Accuracy, UQ / + consistency",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Untouched / final-test data -\u003e Accuracy, UQ / + consistency",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Two candidate / outcomes -\u003e Coverage / + interval width",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Independent / calibration data -\u003e Coverage / + interval width",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Controller / selection -\u003e Two candidate / outcomes",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Legend: Reported screen",
+                                                   "BeginConnected":  false,
+                                                   "EndConnected":  false
+                                               },
+                                               {
+                                                   "Name":  "Legend: Required evidence",
+                                                   "BeginConnected":  false,
+                                                   "EndConnected":  false
+                                               }
+                                           ],
+                            "AttachedConnectors":  7,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        },
+                        {
+                            "Slide":  9,
+                            "NativeDiagram":  true,
+                            "Pictures":  0,
+                            "TextShapes":  13,
+                            "Connectors":  [
+                                               {
+                                                   "Name":  "Link: Adaptive replay -\u003e Matched / updates",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Fixed replay r = 0.8 -\u003e Matched / updates",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Independent / calibration -\u003e Final test / + review",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Matched / updates -\u003e Independent / calibration",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Frozen detector / + decision -\u003e Matched / updates",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Ordered / trajectories -\u003e Frozen detector / + decision",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               },
+                                               {
+                                                   "Name":  "Link: Declared / change -\u003e Ordered / trajectories",
+                                                   "BeginConnected":  true,
+                                                   "EndConnected":  true
+                                               }
+                                           ],
+                            "AttachedConnectors":  7,
+                            "TextOverflowShapes":  [
+
+                                                   ],
+                            "OutOfBoundsShapes":  [
+
+                                                  ]
+                        }
+                    ]
+}

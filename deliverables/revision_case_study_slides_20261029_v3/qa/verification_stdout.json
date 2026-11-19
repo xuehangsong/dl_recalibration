@@ -1,0 +1,301 @@
+{
+  "slides": 9,
+  "native_powerpoint_rendered": true,
+  "pdf_pages": 9,
+  "native_flowchart_slides": [
+    1,
+    2,
+    6,
+    8,
+    9
+  ],
+  "native_shape_editability_verified": true,
+  "connector_attachments_verified": true,
+  "embedded_notes_verified": true,
+  "text_overflow": false,
+  "source_files_unchanged": true,
+  "spatial_crop_pixel_exact": true,
+  "spatial_crop_aspect_ratio_preserved": true,
+  "previous_deck_and_frozen_report_preserved": true,
+  "slide_checks": [
+    {
+      "slide": 1,
+      "native_diagram": true,
+      "pictures": 0,
+      "attached_connectors": 13,
+      "connector_checks": [
+        {
+          "name": "Link: CALIBRATE -> DEPLOY",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: DEPLOY evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: UPDATE -> CALIBRATE",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: CALIBRATE evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: PREPARE -> UPDATE",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: UPDATE evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: DECIDE -> PREPARE",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: PREPARE evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: DETECT -> DECIDE",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: DECIDE evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: MONITOR -> DETECT",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: DETECT evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: MONITOR evidence mapping",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Legend: Reported offline evidence",
+          "both_endpoints_attached": false
+        },
+        {
+          "name": "Legend: Retrospective / illustrative",
+          "both_endpoints_attached": false
+        },
+        {
+          "name": "Legend: Still required",
+          "both_endpoints_attached": false
+        }
+      ],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 2,
+      "native_diagram": true,
+      "pictures": 0,
+      "attached_connectors": 8,
+      "connector_checks": [
+        {
+          "name": "Link: Rare: top 3% / s \u2265 0.329 -> Controlled / update",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Historical: bottom 40% / s \u2264 0.133 -> Controlled / update",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Mass90 / change score -> Rare: top 3% / s \u2265 0.329",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Mass90 / change score -> Historical: bottom 40% / s \u2264 0.133",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Reference plumes / at t and t + 1 -> Mass90 / change score",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Predicted plume / at t + 1 -> Errors against / reference",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: U-Net -> Predicted plume / at t + 1",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Plume at t / + pumping input -> U-Net",
+          "both_endpoints_attached": true
+        }
+      ],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 3,
+      "native_diagram": false,
+      "pictures": 1,
+      "attached_connectors": 0,
+      "connector_checks": [],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 4,
+      "native_diagram": false,
+      "pictures": 1,
+      "attached_connectors": 0,
+      "connector_checks": [],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 5,
+      "native_diagram": false,
+      "pictures": 1,
+      "attached_connectors": 0,
+      "connector_checks": [],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 6,
+      "native_diagram": true,
+      "pictures": 0,
+      "attached_connectors": 6,
+      "connector_checks": [
+        {
+          "name": "Link: Replay controller -> next mixed update batch",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Historical + rare / validation -> Replay / controller",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: U-Net / update -> Historical + rare / validation",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Mixed / update batch -> U-Net / update",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Rare data -> Mixed / update batch",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Historical data -> Mixed / update batch",
+          "both_endpoints_attached": true
+        }
+      ],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 7,
+      "native_diagram": false,
+      "pictures": 1,
+      "attached_connectors": 0,
+      "connector_checks": [],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 8,
+      "native_diagram": true,
+      "pictures": 0,
+      "attached_connectors": 7,
+      "connector_checks": [
+        {
+          "name": "Link: Accuracy, UQ / + consistency -> Promotion / review",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Versioned / evidence record -> Promotion / review",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Coverage / + interval width -> Accuracy, UQ / + consistency",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Untouched / final-test data -> Accuracy, UQ / + consistency",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Two candidate / outcomes -> Coverage / + interval width",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Independent / calibration data -> Coverage / + interval width",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Controller / selection -> Two candidate / outcomes",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Legend: Reported screen",
+          "both_endpoints_attached": false
+        },
+        {
+          "name": "Legend: Required evidence",
+          "both_endpoints_attached": false
+        }
+      ],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    },
+    {
+      "slide": 9,
+      "native_diagram": true,
+      "pictures": 0,
+      "attached_connectors": 7,
+      "connector_checks": [
+        {
+          "name": "Link: Adaptive replay -> Matched / updates",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Fixed replay r = 0.8 -> Matched / updates",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Independent / calibration -> Final test / + review",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Matched / updates -> Independent / calibration",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Frozen detector / + decision -> Matched / updates",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Ordered / trajectories -> Frozen detector / + decision",
+          "both_endpoints_attached": true
+        },
+        {
+          "name": "Link: Declared / change -> Ordered / trajectories",
+          "both_endpoints_attached": true
+        }
+      ],
+      "title_rendered": true,
+      "notes_present": true,
+      "in_bounds": true
+    }
+  ]
+}
