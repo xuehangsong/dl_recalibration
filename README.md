@@ -14,6 +14,7 @@ The strongest completed technical evidence is the controlled offline pump-and-tr
 - `analyses/seven_step_lifecycle_20261007/` contains source extracts, calculations, evidence matrices, and the execution log.
 - `deliverables/report_revision_20261028/` contains the integrated report package and verification records.
 - `deliverables/revision_case_study_slides_20261029_v4/` contains the current audited case-study deck and source companion.
+- `deliverables/results_brief_20261118/` contains the [November 19 meeting brief](deliverables/results_brief_20261118/index.html) with new monitoring results and the earlier U-Net update comparison.
 - `method_manuscript/` contains the selected manuscript source and the review records.
 - `TTP/` contains the revised FY27 scope, tracked comparison, and native Word QA records.
 - `reviews/` contains the weekly and Q4 status-review packages.
@@ -23,4 +24,4 @@ The strongest completed technical evidence is the controlled offline pump-and-tr
 
 The report package and slide package each include their own rebuild and verification instructions. The v4 deck checks source hashes, numeric values, native PowerPoint shape editability, notes, layout bounds, and source-image fidelity. The manuscript lineage audit checks the 22 retained and archived Word derivatives against the selected source figures and captions.
 
-The project currently contains planning and evidence-audit work. The next technical milestone is an executed trigger-and-recalibration demonstration using simulated monitoring observations, before-and-after predictions, an independent calibration set, and a final-test decision record.
+The [November monitoring pilot](analyses/monitoring_pilot_20261118/README.md) tests two early-warning signals against future plume-footprint changes on 5,000 evaluation trajectories. Linking those warnings to surrogate prediction errors and before-and-after recalibration outcomes is the remaining demonstration step.
